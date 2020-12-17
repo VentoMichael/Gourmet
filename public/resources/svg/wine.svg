@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 24.0.3, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:url(#Shape_1_);stroke:#FFFFFF;stroke-width:0.75;}
+</style>
+<title>Shape</title>
+<g id="Page-1">
+	<g id="Desktop-exposant-hover-search" transform="translate(-677.000000, -1139.000000)">
+		<g id="wine" transform="translate(678.000000, 1140.000000)">
+			
+				<linearGradient id="Shape_1_" gradientUnits="userSpaceOnUse" x1="-41.443" y1="645.0297" x2="-33.2299" y2="645.0297" gradientTransform="matrix(24 0 0 -61 1151.0724 39601.8047)">
+				<stop  offset="0" style="stop-color:#210050"/>
+				<stop  offset="1" style="stop-color:#4C0030"/>
+			</linearGradient>
+			<path id="Shape" class="st0" d="M298.3,148.6V19.3c0-8.2-6.6-14.8-14.8-14.8h-57c-8.2,0-14.8,6.6-14.8,14.8v129.3
+				c-33.5,15.6-55.3,49.4-55.3,87v255.1c0,8.2,6.6,14.8,14.8,14.8h167.6c8.2,0,14.8-6.6,14.8-14.8V235.6
+				C353.6,197.9,331.7,164.2,298.3,148.6z M241.3,34.1h27.5v22.5h-27.5V34.1z M186,235.6c0-28.6,18.2-53.9,45.2-63
+				c6-2,10.1-7.7,10.1-14V86.2h27.5v72.3c0,6.4,4.1,12,10.1,14c27,9.1,45.2,34.4,45.2,63V256H186V235.6z M324,475.9H186v-66h138
+				V475.9z M324,380.3H186v-94.7h138V380.3z"/>
+		</g>
+	</g>
+</g>
+</svg>

@@ -1,0 +1,1 @@
+window.addEventListener("load",()=>{let e=1;function t(t){let n;const l=document.querySelectorAll(".mySlides");for(t>l.length&&(e=1),t<1&&(e=l.length),n=0;n<l.length;n++)l[n].style.display="none";l[e-1].style.display="block"}t(e),document.getElementById("next").addEventListener("click",()=>{t(e+=1)}),document.getElementById("prev").addEventListener("click",()=>{t(e-=1)})});
