@@ -140,7 +140,7 @@
         <div class="slider">
             <div class="containerTitleSlide">
                 <h2 aria-level="2">
-                    Nos 3 derniers exposants
+                    3 exposants aléatoire
                 </h2>
                 <div class="arrowsSlide">
                     <a class="prev" id="prev"></a>
