@@ -52,7 +52,8 @@
                     pays et régions se sont succédé comme notamment : l'Irlande, le Portugal, l'Italie et tant d’autres.
                 </p>
                 <div>
-                    <a href="{{route('expoBecome.index')}}" class="btnCta">Devenir exposant <span class="arrowCta"></span></a>
+                    <a href="{{route('expoBecome.index')}}" class="btnCta">Devenir exposant <span
+                            class="arrowCta"></span></a>
                 </div>
             </div>
         </div>
@@ -79,7 +80,8 @@
                         monde.
                     </p>
                     <div class="containerCtaButton">
-                        <a href="{{route('tickets.index')}}" class="btnCta btnCtaResto">Acheter un billet <span class="arrowCta"></span></a>
+                        <a href="{{route('tickets.index')}}" class="btnCta btnCtaResto">Acheter un billet <span
+                                class="arrowCta"></span></a>
                     </div>
                 </div>
             </div>
@@ -104,7 +106,8 @@
                             dégustations</b> et de rencontres et ce dans la bonne humeur bien sûr !
                     </p>
                     <div class="containerCtaButton">
-                        <a href="{{route('tickets.index')}}" class="btnCta">Acheter un billet <span class="arrowCta"></span></a>
+                        <a href="{{route('tickets.index')}}" class="btnCta">Acheter un billet <span
+                                class="arrowCta"></span></a>
                     </div>
                 </div>
 
@@ -128,7 +131,8 @@
                         goût, nous mettons tout en oeuvre pour que votre visite se passe pour le mieux.
                     </p>
                     <div class="containerCtaButton">
-                        <a href="{{route('restaurant.index')}}" class="btnCta btnCtaResto">Notre restaurant <span class="arrowCta"></span></a>
+                        <a href="{{route('restaurant.index')}}" class="btnCta btnCtaResto">Notre restaurant <span
+                                class="arrowCta"></span></a>
                     </div>
                 </div>
 
@@ -148,7 +152,6 @@
                 </div>
             </div>
             <div class="slideshow-container">
-
                 <section class="mySlides fade">
                     <div class="containerSlide">
                         <div>
@@ -181,7 +184,8 @@
                                 et
                                 unique!</p>
                             <div>
-                                <a href="{{route('expoShow.index')}}" class="btnCta">Vins nobles de la sicile <span class="arrowCta"></span></a>
+                                <a href="{{route('expoShow.index')}}" class="btnCta">Vins nobles de la sicile <span
+                                        class="arrowCta"></span></a>
                             </div>
                         </div>
                     </div>
@@ -208,18 +212,23 @@
                             </div>
                         </div>
                         <div class="containerTextExposant">
-                            <p class="textExposant">Patrice et Philippe Marchand ne sont pas frères par hasard tant leur passion commune pour les
-                                fromages d’exception est intense. Un lien d’autant plus fort qu’ils partagent des secrets de famille
-                                pour fabriquer de vraies merveilles ! Rob vous propose près de 30 fromages créés et affinés par les
+                            <p class="textExposant">Patrice et Philippe Marchand ne sont pas frères par hasard tant leur
+                                passion commune pour les
+                                fromages d’exception est intense. Un lien d’autant plus fort qu’ils partagent des
+                                secrets de famille
+                                pour fabriquer de vraies merveilles ! Rob vous propose près de 30 fromages créés et
+                                affinés par les
                                 frères Marchand.</p>
                             <div>
-                                <a href="{{route('expoShow.index')}}" class="btnCta">Rob Market <span class="arrowCta"></span></a>
+                                <a href="{{route('expoShow.index')}}" class="btnCta">Rob Market <span
+                                        class="arrowCta"></span></a>
                             </div>
                         </div>
                     </div>
                 </section>
                 <div class="containerAllExposants">
-                    <a href="{{route('exposants.index')}}" class="btnCta">Tous les exposants <span class="arrowCta"></span></a>
+                    <a href="{{route('exposants.index')}}" class="btnCta">Tous les exposants <span
+                            class="arrowCta"></span></a>
                 </div>
             </div>
         </div>
