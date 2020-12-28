@@ -2040,7 +2040,9 @@ option {
     .containerTextExposant, .containerTextHome {
         margin-left: auto
     }
-
+    .containerBckgImages{
+        width: 100px;
+    }
     .containerText {
         width: inherit;
         -ms-flex-item-align: center;

@@ -31,11 +31,11 @@
 </head>
 <body>
 <header>
-    <h2 class="hidden">
+    <h2 aria-level="2" class="hidden">
         Informations d'en-tête
     </h2>
     <nav class="navbar navbarId" id="navbar" role="navigation">
-        <h3 class="hidden">
+        <h3 aria-level="3" class="hidden">
             Navigation Principale
         </h3>
         <div class="navbrand" role="banner">
@@ -102,15 +102,21 @@
         </div>
     </nav>
 </header>
+<div class="containerBckgImages">
+    <img src="resources/img/cheese.png" alt="Cheese" class="cheese">
+    <img src="resources/img/coldcuts.png" alt="Coldcuts" class="coldcuts">
+    <img src="resources/img/wine.png" alt="Wine bottle" class="wineBckg">
+</div>
 <main>
+
     @yield('content')
 </main>
 <footer>
-    <h2 class="hidden">
+    <h2 aria-level="2" class="hidden">
         Informations du pied de page
     </h2>
     <section>
-        <h3 aria-level="2" class="hidden">
+        <h3 aria-level="3" class="hidden">
             Informations pratiques
         </h3>
         <div class="containerPracticalInformation">
@@ -118,7 +124,7 @@
                 <div>
                     <div class="pictoDateFooter">
                     </div>
-                    <h4 aria-level="3" class="titleDateFooter">
+                    <h4 aria-level="4" class="titleDateFooter">
                         Quand ?
                     </h4>
                 </div>
@@ -135,7 +141,7 @@
                 <div>
                     <div class="pictoPriceFooter">
                     </div>
-                    <h4 aria-level="3" class="titlePriceFooter">
+                    <h4 aria-level="4" class="titlePriceFooter">
                         Prix ?
                     </h4>
                 </div>
@@ -152,7 +158,7 @@
                 <div>
                     <div class="pictoLocationFooter">
                     </div>
-                    <h4 aria-level="3" class="titleLocationFooter">
+                    <h4 aria-level="4" class="titleLocationFooter">
                         Où ?
                     </h4>
                 </div>
