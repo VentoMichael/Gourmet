@@ -16,9 +16,6 @@ class AddForeignKeysTable extends Migration
         Schema::table('gallery', function(Blueprint $table) {
             $table->foreignId("edition_id")->constrained('editions');
         });
-        Schema::table('exposants', function(Blueprint $table) {
-            $table->foreignId('countries_id')->constrained('countries');
-        });
         Schema::table('exposants_tags', function(Blueprint $table) {
             $table->bigInteger('exposants_id')->unsigned();
             $table->bigInteger('tags_id')->unsigned();

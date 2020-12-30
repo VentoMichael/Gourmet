@@ -2,17 +2,17 @@
 
 namespace Database\Factories;
 
-use App\Models\ExposantsTags;
+use App\Models\ExposantTag;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-class ExposantsTagsFactory extends Factory
+class ExposantTagFactory extends Factory
 {
     /**
      * The name of the factory's corresponding model.
      *
      * @var string
      */
-    protected $model = ExposantsTags::class;
+    protected $model = ExposantTag::class;
 
     /**
      * Define the model's default state.
@@ -22,8 +22,7 @@ class ExposantsTagsFactory extends Factory
     public function definition()
     {
         return [
-            'tags_id'=>1,
-            'exposants_id'=>1
+            //
         ];
     }
 }

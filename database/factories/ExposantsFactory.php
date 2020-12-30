@@ -26,7 +26,7 @@ class ExposantsFactory extends Factory
             'phone' => $this->faker->e164PhoneNumber,
             'email' => $this->faker->email,
             'website' => $this->faker->url,
-            'countries_id'=>1,
+            'country'=>$this->faker->country,
             'postal_code' => $this->faker->postcode,
             'participate_other_exhibition_belgium'=> $this->faker->boolean($chanceOfGettingTrue = 50),
             'bio_product'=> $this->faker->boolean($chanceOfGettingTrue = 50),

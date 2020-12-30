@@ -18,11 +18,6 @@ class Exposants extends Model
     protected $dates = ['deleted_at'];
 
 
-    public function country()
-    {
-        return $this->belongsTo(Countries::class);
-    }
-
     public function tags(){
         return $this->belongsToMany(Tags::class);
     }

@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Countries;
+use App\Models\ExposantTag;
 use Illuminate\Http\Request;
 
-class CountriesController extends Controller
+class ExposantTagController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -41,10 +41,10 @@ class CountriesController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Countries  $countries
+     * @param  \App\Models\ExposantTag  $exposantTag
      * @return \Illuminate\Http\Response
      */
-    public function show(Countries $countries)
+    public function show(ExposantTag $exposantTag)
     {
         //
     }
@@ -52,10 +52,10 @@ class CountriesController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Countries  $countries
+     * @param  \App\Models\ExposantTag  $exposantTag
      * @return \Illuminate\Http\Response
      */
-    public function edit(Countries $countries)
+    public function edit(ExposantTag $exposantTag)
     {
         //
     }
@@ -64,10 +64,10 @@ class CountriesController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Countries  $countries
+     * @param  \App\Models\ExposantTag  $exposantTag
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Countries $countries)
+    public function update(Request $request, ExposantTag $exposantTag)
     {
         //
     }
@@ -75,10 +75,10 @@ class CountriesController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Countries  $countries
+     * @param  \App\Models\ExposantTag  $exposantTag
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Countries $countries)
+    public function destroy(ExposantTag $exposantTag)
     {
         //
     }

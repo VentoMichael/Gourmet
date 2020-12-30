@@ -2,10 +2,9 @@
 
 namespace Database\Seeders;
 
-use App\Models\Countries;
 use Illuminate\Database\Seeder;
 
-class CountriesSeeder extends Seeder
+class ExposantTagSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -14,6 +13,6 @@ class CountriesSeeder extends Seeder
      */
     public function run()
     {
-        Countries::factory()->count(10)->create();
+        //
     }
 }
