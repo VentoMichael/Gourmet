@@ -2,17 +2,17 @@
 
 namespace Database\Factories;
 
-use App\Models\Tags;
+use App\Models\ExposantsTags;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-class TagsFactory extends Factory
+class ExposantsTagsFactory extends Factory
 {
     /**
      * The name of the factory's corresponding model.
      *
      * @var string
      */
-    protected $model = Tags::class;
+    protected $model = ExposantsTags::class;
 
     /**
      * Define the model's default state.
@@ -22,8 +22,8 @@ class TagsFactory extends Factory
     public function definition()
     {
         return [
-            'name' => $this->faker->word,
-            'slug' => $this->faker->word,
+            'tags_id'=>1,
+            'exposants_id'=>1
         ];
     }
 }

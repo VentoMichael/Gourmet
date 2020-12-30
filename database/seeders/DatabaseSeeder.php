@@ -24,5 +24,6 @@ class DatabaseSeeder extends Seeder
         $this->call(CountriesSeeder::class);
         $this->call(ExposantSeeder::class);
         $this->call(TagsSeeder::class);
+        $this->call(ExposantsTagsSeeder::class);
     }
 }

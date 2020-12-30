@@ -11,20 +11,19 @@ class Exposants extends Model
     use HasFactory;
 
     protected $table = 'exposants';
-    public $timestamps = true;
 
     use SoftDeletes;
 
     protected $guarded = [];
     protected $dates = ['deleted_at'];
 
-    public function edition()
-    {
-        return $this->hasOne(Editions::class);
-    }
 
     public function country()
     {
         return $this->hasOne(Countries::class);
+    }
+
+    public function tags(){
+        return $this->belongsToMany(Tags::class);
     }
 }
