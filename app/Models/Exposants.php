@@ -20,7 +20,7 @@ class Exposants extends Model
 
     public function country()
     {
-        return $this->hasOne(Countries::class);
+        return $this->belongsTo(Countries::class);
     }
 
     public function tags(){

@@ -8,11 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Countries extends Model
 {
     use HasFactory;
-
-    public function edition(){
-        return $this->hasOne(Editions::class);
-    }
-
+    protected $table = 'countries';
     public function exposants(){
         return $this->hasMany(Exposants::class);
     }
