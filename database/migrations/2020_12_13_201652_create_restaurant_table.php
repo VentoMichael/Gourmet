@@ -14,7 +14,7 @@ class CreateRestaurantTable extends Migration {
 			$table->string('dish_section', 256);
 			$table->string('title_dish', 256);
 			$table->string('description_dish', 256)->nullable();
-			$table->float('price_dish')->nullable();
+			$table->smallInteger('price_dish')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

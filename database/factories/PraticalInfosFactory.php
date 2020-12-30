@@ -23,7 +23,8 @@ class PraticalInfosFactory extends Factory
     {
         return [
             'priceTicket' => '255',
-            'date' => '24, 25 mars 2021',
+            'startDate' => '24 mars 2021',
+            'endDate' => '25 mars 2021',
             'place' => $this->faker->streetAddress,
             'email' => $this->faker->email,
             'website' => $this->faker->url,
