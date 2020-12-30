@@ -24,7 +24,6 @@ class TagsFactory extends Factory
         return [
             'name' => $this->faker->word,
             'exposant_id' => 1,
-            'edition_id' => 1,
         ];
     }
 }

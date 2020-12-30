@@ -26,7 +26,7 @@ class RestaurantFactory extends Factory
             'title_dish' => $this->faker->sentence($nbWords = 6, $variableNbWords = true),
             'description_dish' => $this->faker->sentence($nbWords = 8, $variableNbWords = true),
             'price_dish' => $this->faker->numberBetween($min = 5, $max = 20),
-            'edition_id'=>1,
+
 
         ];
     }

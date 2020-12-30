@@ -18,7 +18,6 @@ class DatabaseSeeder extends Seeder
         $this->call(EditionsSeeder::class);
         $this->call(GallerySeeder::class);
         $this->call(PraticalInfosSeeder::class);
-        $this->call(RandomImagesSeeder::class);
         $this->call(RestaurantSeeder::class);
         $this->call(SalesSeeder::class);
         $this->call(ContactSeeder::class);

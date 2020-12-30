@@ -28,8 +28,6 @@ class SalesFactory extends Factory
             'ticket' => $this->faker->numberBetween($min = 1, $max = 10),
             'total_price' => $this->faker->numberBetween($min = 6, $max = 600),
             'comment' => $this->faker->text($maxNbChars = 200),
-            'edition_id' => 1,
-
         ];
     }
 }

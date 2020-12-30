@@ -23,7 +23,6 @@ class CountriesFactory extends Factory
     {
         return [
             'name'=>$this->faker->country,
-            'edition_id'=>1,
         ];
     }
 }

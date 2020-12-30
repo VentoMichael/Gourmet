@@ -28,7 +28,6 @@ class ExposantsFactory extends Factory
             'website' => $this->faker->url,
             'location' => $this->faker->city,
             'country_id'=>1,
-            'edition_id'=>1,
             'postal_code' => $this->faker->postcode,
             'participate_other_exhibition_belgium'=> $this->faker->boolean($chanceOfGettingTrue = 50),
             'bio_product'=> $this->faker->boolean($chanceOfGettingTrue = 50),
