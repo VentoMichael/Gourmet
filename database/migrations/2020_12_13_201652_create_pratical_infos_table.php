@@ -10,7 +10,7 @@ class CreatePraticalInfosTable extends Migration {
 	{
 		Schema::create('praticalinfos', function(Blueprint $table) {
             $table->id();
-            $table->smallInteger('priceTicket')->default('255');
+            $table->smallInteger('priceTicketExposant')->default('255');
             $table->string('startDate');
             $table->string('endDate');
 			$table->string('place', 256);

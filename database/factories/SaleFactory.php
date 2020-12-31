@@ -25,8 +25,9 @@ class SaleFactory extends Factory
             'name_surname' => $this->faker->name,
             'phone' => $this->faker->e164PhoneNumber,
             'email' => $this->faker->email,
-            'ticket' => $this->faker->numberBetween($min = 1, $max = 10),
-            'total_price' => $this->faker->numberBetween($min = 6, $max = 600),
+            'ticketCount' => $this->faker->numberBetween($min = 1, $max = 10),
+            'ticketPrice' => $this->faker->numberBetween($min = 6, $max = 600),
+            'total_ticket_price' => $this->faker->numberBetween($min = 6, $max = 600),
             'comment' => $this->faker->text($maxNbChars = 200),
         ];
     }

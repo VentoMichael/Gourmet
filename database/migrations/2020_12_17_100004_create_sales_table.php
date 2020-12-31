@@ -18,9 +18,10 @@ class CreateSalesTable extends Migration
             $table->string('name_surname', 256);
             $table->string('phone', 256);
             $table->string('email', 256);
-            $table->float('ticket')->default('1');
-            $table->integer('total_price');
-            $table->text('comment');
+            $table->float('ticketCount')->default('1');
+            $table->string('ticketPrice')->default('6');
+            $table->integer('total_ticket_price');
+            $table->text('comment')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

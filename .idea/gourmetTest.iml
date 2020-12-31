@@ -134,6 +134,8 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/giggsey/libphonenumber-for-php" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/giggsey/locale" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/benjaminhirsch/nova-slug-field" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/codebykyle/calculated-field" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/chris-ware/nova-clock-card" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

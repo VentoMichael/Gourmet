@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7eee806d8124078d79063cc2f721d087",
+    "content-hash": "17fadf34c8c0de44a0da139b29e97d9f",
     "packages": [
         {
             "name": "acme/analytics",
@@ -322,6 +322,99 @@
                 "source": "https://github.com/cakephp/chronos"
             },
             "time": "2020-08-22T02:42:12+00:00"
+        },
+        {
+            "name": "chris-ware/nova-clock-card",
+            "version": "1.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/chris-ware/nova-clock-card.git",
+                "reference": "55a82d471e4c75c65ddc1ae6fe227aed09d48eeb"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/chris-ware/nova-clock-card/zipball/55a82d471e4c75c65ddc1ae6fe227aed09d48eeb",
+                "reference": "55a82d471e4c75c65ddc1ae6fe227aed09d48eeb",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.1.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "ChrisWare\\NovaClockCard\\CardServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "ChrisWare\\NovaClockCard\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "A Laravel Nova card to display the date and time.",
+            "keywords": [
+                "laravel",
+                "nova"
+            ],
+            "support": {
+                "issues": "https://github.com/chris-ware/nova-clock-card/issues",
+                "source": "https://github.com/chris-ware/nova-clock-card/tree/master"
+            },
+            "time": "2018-12-09T19:46:22+00:00"
+        },
+        {
+            "name": "codebykyle/calculated-field",
+            "version": "1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/codebykyle/calculated-field.git",
+                "reference": "9216d02c15e0e4d8453ba79b4f1218e50e6548d4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/codebykyle/calculated-field/zipball/9216d02c15e0e4d8453ba79b4f1218e50e6548d4",
+                "reference": "9216d02c15e0e4d8453ba79b4f1218e50e6548d4",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.1.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Codebykyle\\CalculatedField\\FieldServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Codebykyle\\CalculatedField\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "A server side calculated field for Laravel Nova",
+            "keywords": [
+                "calculated",
+                "field",
+                "laravel",
+                "nova",
+                "server-side"
+            ],
+            "support": {
+                "issues": "https://github.com/codebykyle/calculated-field/issues",
+                "source": "https://github.com/codebykyle/calculated-field/tree/1.1"
+            },
+            "time": "2019-10-10T15:13:58+00:00"
         },
         {
             "name": "dniccum/phone-number",

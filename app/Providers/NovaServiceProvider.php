@@ -57,6 +57,12 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
     {
         return [
             new Help,
+            (new \ChrisWare\NovaClockCard\NovaClockCard)
+                ->locale('sk')
+                ->dateFormat('dddd, Do MMMM YYYY')
+                ->timeFormat('LTS')
+                ->timezone('UTC')
+                ->display('analogue'),
         ];
     }
 
