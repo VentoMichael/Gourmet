@@ -2,19 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Editions;
+use App\Models\Sale;
 use Illuminate\Http\Request;
 
-class EditionsController extends Controller
+class SaleController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
      */
     public function index()
     {
-        //
+        return view('tickets.index');
     }
 
     /**
@@ -41,10 +41,10 @@ class EditionsController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Editions  $editions
+     * @param  \App\Models\Sale  $sale
      * @return \Illuminate\Http\Response
      */
-    public function show(Editions $editions)
+    public function show(Sale $sale)
     {
         //
     }
@@ -52,10 +52,10 @@ class EditionsController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Editions  $editions
+     * @param  \App\Models\Sale  $sale
      * @return \Illuminate\Http\Response
      */
-    public function edit(Editions $editions)
+    public function edit(Sale $sale)
     {
         //
     }
@@ -64,10 +64,10 @@ class EditionsController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Editions  $editions
+     * @param  \App\Models\Sale  $sale
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Editions $editions)
+    public function update(Request $request, Sale $sale)
     {
         //
     }
@@ -75,10 +75,10 @@ class EditionsController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Editions  $editions
+     * @param  \App\Models\Sale  $sale
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Editions $editions)
+    public function destroy(Sale $sale)
     {
         //
     }

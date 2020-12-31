@@ -5,11 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Tags extends Model
+class Edition extends Model
 {
     use HasFactory;
 
-    public function exposants(){
-        return $this->belongsToMany(Exposants::class);
+    public function galleries()
+    {
+        return $this->hasMany(Gallery::class);
     }
 }

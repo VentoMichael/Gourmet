@@ -11,14 +11,13 @@ class Restaurant extends Model
     use HasFactory;
 
     protected $table = 'restaurant';
-    public $timestamps = true;
 
     use SoftDeletes;
 
     protected $dates = ['deleted_at'];
 
-    public function edition()
+    public function editions()
     {
-        return $this->hasOne(Editions::class);
+        return $this->hasOne(Edition::class);
     }
 }

@@ -13,9 +13,10 @@ class CreateExposantsTagsTable extends Migration
      */
     public function up()
     {
-        Schema::create('exposants_tags', function (Blueprint $table) {
+        Schema::create('exposant_tag', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
@@ -26,6 +27,6 @@ class CreateExposantsTagsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('exposants_tags');
+        Schema::dropIfExists('exposant_tag');
     }
 }

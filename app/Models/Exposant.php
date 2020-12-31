@@ -6,19 +6,19 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Sales extends Model
+class Exposant extends Model
 {
     use HasFactory;
 
-    protected $table = 'sales';
-    public $timestamps = true;
+    protected $table = 'exposants';
 
     use SoftDeletes;
 
+    protected $guarded = [];
     protected $dates = ['deleted_at'];
 
-    public function edition()
-    {
-        return $this->hasOne(Editions::class);
+
+    public function tags(){
+        return $this->belongsToMany(Tag::class);
     }
 }

@@ -15,14 +15,12 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         Model::unguard();
-        $this->call(EditionsSeeder::class);
-        $this->call(GallerySeeder::class);
         $this->call(PraticalInfosSeeder::class);
         $this->call(RestaurantSeeder::class);
-        $this->call(SalesSeeder::class);
+        $this->call(SaleSeeder::class);
         $this->call(ContactSeeder::class);
         $this->call(ExposantSeeder::class);
-        $this->call(TagsSeeder::class);
+        $this->call(TagSeeder::class);
         $this->call(ExposantTagSeeder::class);
     }
 }

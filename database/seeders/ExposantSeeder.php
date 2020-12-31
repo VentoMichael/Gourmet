@@ -2,7 +2,7 @@
 
 namespace Database\Seeders;
 
-use App\Models\Exposants;
+use App\Models\Exposant;
 use Illuminate\Database\Seeder;
 
 class ExposantSeeder extends Seeder
@@ -14,6 +14,6 @@ class ExposantSeeder extends Seeder
      */
     public function run()
     {
-        Exposants::factory()->count(10)->create();
+        Exposant::factory()->count(10)->create();
     }
 }

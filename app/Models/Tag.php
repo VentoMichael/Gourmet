@@ -5,12 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Editions extends Model
+class Tag extends Model
 {
     use HasFactory;
 
-    public function praticalInfo()
-    {
-        return $this->hasOne(PraticalInfos::class);
+    public function exposants(){
+        return $this->belongsToMany(Exposant::class);
     }
 }

@@ -2,11 +2,9 @@
 
 namespace Database\Seeders;
 
-use App\Models\Contact;
-use App\Models\Editions;
 use Illuminate\Database\Seeder;
 
-class EditionsSeeder extends Seeder
+class ArchiveSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -15,6 +13,6 @@ class EditionsSeeder extends Seeder
      */
     public function run()
     {
-        Editions::factory()->count(10)->create();
+        //
     }
 }

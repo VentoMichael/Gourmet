@@ -2,17 +2,17 @@
 
 namespace Database\Factories;
 
-use App\Models\Exposants;
+use App\Models\Exposant;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-class ExposantsFactory extends Factory
+class ExposantFactory extends Factory
 {
     /**
      * The name of the factory's corresponding model.
      *
      * @var string
      */
-    protected $model = Exposants::class;
+    protected $model = Exposant::class;
 
     /**
      * Define the model's default state.

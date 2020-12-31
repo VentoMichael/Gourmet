@@ -30,7 +30,6 @@ class PraticalInfosFactory extends Factory
             'website' => $this->faker->url,
             'stock'=>'100',
             'phone' => $this->faker->e164PhoneNumber,
-
         ];
     }
 }

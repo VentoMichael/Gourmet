@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateExposantTagTable extends Migration
+class CreateGalleriesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,12 @@ class CreateExposantTagTable extends Migration
      */
     public function up()
     {
-        Schema::create('exposant_tag', function (Blueprint $table) {
+        Schema::create('galleries', function (Blueprint $table) {
             $table->id();
+            $table->string('image', 256);
+            $table->string('alt', 256);
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
@@ -26,6 +29,6 @@ class CreateExposantTagTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('exposant_tag');
+        Schema::dropIfExists('galleries');
     }
 }

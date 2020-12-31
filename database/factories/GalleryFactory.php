@@ -24,7 +24,7 @@ class GalleryFactory extends Factory
         return [
             'image' => $this->faker->imageUrl($width = 640, $height = 480),
             'alt' => $this->faker->sentence($nbWords = 4, $variableNbWords = true),
-            'edition_id'=>1,
+            'editions_id'=>1,
         ];
     }
 }

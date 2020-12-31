@@ -2,10 +2,10 @@
 
 namespace Database\Seeders;
 
-use App\Models\Sales;
+use App\Models\Sale;
 use Illuminate\Database\Seeder;
 
-class SalesSeeder extends Seeder
+class SaleSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -14,6 +14,6 @@ class SalesSeeder extends Seeder
      */
     public function run()
     {
-        Sales::factory(10)->create();
+        Sale::factory(10)->create();
     }
 }

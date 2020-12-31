@@ -11,15 +11,14 @@ class PraticalInfos extends Model
     use HasFactory;
 
     protected $table = 'praticalInfos';
-    public $timestamps = true;
 
     use SoftDeletes;
 
     protected $dates = ['deleted_at'];
     protected $guarded =[];
 
-    public function edition(){
-        return $this->hasOne(Editions::class);
+    public function editions(){
+        return $this->hasOne(Edition::class);
     }
 
 }

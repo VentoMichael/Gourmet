@@ -13,16 +13,16 @@ class AddForeignKeysTable extends Migration
      */
     public function up()
     {
-        Schema::table('gallery', function(Blueprint $table) {
+        Schema::table('galleries', function(Blueprint $table) {
             $table->foreignId("edition_id")->constrained('editions');
         });
-        Schema::table('exposants_tags', function(Blueprint $table) {
-            $table->bigInteger('exposants_id')->unsigned();
-            $table->bigInteger('tags_id')->unsigned();
-            $table->foreign('exposants_id')
+        Schema::table('exposant_tag', function(Blueprint $table) {
+            $table->bigInteger('exposant_id')->unsigned();
+            $table->bigInteger('tag_id')->unsigned();
+            $table->foreign('exposant_id')
                 ->references('id')
                 ->on('exposants');
-            $table->foreign('tags_id')
+            $table->foreign('tag_id')
                 ->references('id')
                 ->on('tags');
         });

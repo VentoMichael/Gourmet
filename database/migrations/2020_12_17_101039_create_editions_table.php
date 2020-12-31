@@ -15,7 +15,7 @@ class CreateEditionsTable extends Migration
     {
         Schema::create('editions', function (Blueprint $table) {
             $table->id();
-            $table->string('year');
+            $table->string('year')->unique();
             $table->timestamps();
         });
     }
