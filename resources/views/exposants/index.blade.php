@@ -100,7 +100,6 @@
             @foreach($exposants as $exposant)
                 <section class="containerExposant">
                     <div>
-                        <img src="resources/svg/wine.svg" alt="Picto d'une bouteille de vin">
                         <h3 aria-level="3">
                             {{$exposant->shop_name}}
                         </h3>

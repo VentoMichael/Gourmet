@@ -27,6 +27,7 @@ class ExposantFactory extends Factory
             'email' => $this->faker->email,
             'website' => $this->faker->url,
             'country'=>$this->faker->country,
+            'product_proposed_id'=>1,
             'firstPicRepresentExpo'=>$this->faker->imageUrl(140, 95, 'cats'),
             'secondPicRepresentExpo'=>$this->faker->imageUrl(140, 95, 'cats'),
             'thirdPicRepresentExpo'=>$this->faker->imageUrl(140, 95, 'cats'),

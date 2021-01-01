@@ -37,7 +37,7 @@
             </p>
             <ul class="titleForm containerShoppingCart" role="list">
                 <li class="infoBuyTicket" role="listitem">1 ticket</li>
-                <li class="infoBuyPrice" role="listitem">6€ l'unité</li>
+                <li class="infoBuyPrice" role="listitem">{{$praticalInformations->first()->priceTicketVisitor}}€ l'unité</li>
             </ul>
             <p class="itemTotalPrice">
                 TOTAL : 6.00€

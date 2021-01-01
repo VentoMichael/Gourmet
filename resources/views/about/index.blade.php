@@ -67,9 +67,7 @@
                     Notre historique
                 </h3>
                 <div class="containerHistorical">
-                    <img src="resources/img/market.jpg"
-                         srcset="resources/img/market_small.jpg 320w, resources/img/market.jpg 640w"
-                         sizes="100vw" alt="Image du salon du marché des gourmets">
+                    <img src="{{$oneRandomImage->first()->image}}" alt="{{$oneRandomImage->first()->alt}}">
                     <div class="containerAboutText">
                         <p>
                             <b>Depuis plus de 20 ans,</b> nous organisons le marché des Gourmets, chaque année, dans

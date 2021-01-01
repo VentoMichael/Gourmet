@@ -15,7 +15,7 @@ class ExposantController extends Controller
     {
         $firstThreeRandomImages = RandomImageOfGourmet::inRandomOrder()->limit(3)->get();
         $praticalInformations = PraticalInfos::all();
-        return view('exposants.become',compact('firstThreeRandomImages','praticalInformations'));
+        return view('exposants.become', compact('firstThreeRandomImages', 'praticalInformations'));
     }
 
     /**
@@ -25,10 +25,11 @@ class ExposantController extends Controller
      */
     public function index()
     {
+
         $firstThreeRandomImages = RandomImageOfGourmet::inRandomOrder()->limit(3)->get();
         $praticalInformations = PraticalInfos::all();
         $exposants = Exposant::with('tags')->get();
-        return view('exposants.index',compact('firstThreeRandomImages','praticalInformations','exposants'));
+        return view('exposants.index', compact('firstThreeRandomImages', 'praticalInformations', 'exposants'));
     }
 
     /**

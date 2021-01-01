@@ -38,12 +38,14 @@
                 Le marché des gourmets
             </p>
             <ul role="list">
-                <li role="listitem" class="infoContactDate">24, 25 mars 2021</li>
-                <li role="listitem" class="infoContactPlace">À la salle des moines, Val-Saint-Lambert, 4450 Amay</li>
-                <li role="listitem" class="infoContactMail"><a href="mailto:marchedesgourmets@gmail.com">marchedesgourmets@gmail.com</a>
+                @foreach($praticalInformations as $praticalInformation)
+                <li role="listitem" class="infoContactDate">{{$praticalInformation->startDate}} & {{$praticalInformation->endDate}}</li>
+                <li role="listitem" class="infoContactPlace">{{$praticalInformation->place}}, {{$praticalInformation->postalCode}}, {{$praticalInformation->region}}</li>
+                <li role="listitem" class="infoContactMail"><a href="mailto:marchedesgourmets@gmail.com">{{$praticalInformation->email}}</a>
                 </li>
-                <li role="listitem" class="infoContactWebsite"><a href="www.marchedesgourmets.be">www.marchedesgourmets.be</a></li>
-                <li role="listitem" class="infoContactPhone"><a href="tel:+32494827265">0494 827 265</a></li>
+                <li role="listitem" class="infoContactWebsite"><a href="{{$praticalInformation->website}}">{{$praticalInformation->website}}</a></li>
+                <li role="listitem" class="infoContactPhone"><a href="tel:{{$praticalInformation->phone}}">{{$praticalInformation->phone}}</a></li>
+                @endforeach
             </ul>
         </div>
         <div class="formContactContainer">

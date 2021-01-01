@@ -49,6 +49,40 @@
                             </li>
                         </ul>
                     </section>
+                    <section class="containerPrincipalMeat containerSandwichs">
+                        <h3 aria-level="3" class="menuSandwichs">
+                            Sandwichs
+                        </h3>
+                        <ul role="list">
+                            <li role="listitem">
+                                Dagobert
+                                <span>5€</span>
+                            </li>
+                            <li role="listitem">
+                                Campagnard (Brie, miel, lardons, roquette)
+                                <span>5€</span>
+                            </li>
+                            <li role="listitem">
+                                Italien (Jambon fumé, roquette, tomate confite)
+                                <span>5€</span>
+                            </li>
+                        </ul>
+                    </section>
+                    <section class="containerPrincipalMeat">
+                        <h3 aria-level="3" class="menuDesserts">
+                            Desserts
+                        </h3>
+                        <ul role="list">
+                            <li role="listitem">
+                                Mousse au chocolat, caramel au beurre salé
+                                <span>5€</span>
+                            </li>
+                            <li role="listitem">
+                                Tiramisu au spéculoos et fruits rouges
+                                <span>5€</span>
+                            </li>
+                        </ul>
+                    </section>
                 @endforeach
             </div>
             <div>

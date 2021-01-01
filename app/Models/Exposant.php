@@ -21,4 +21,8 @@ class Exposant extends Model
     public function tags(){
         return $this->belongsToMany(Tag::class);
     }
+
+    public function product(){
+        return $this->belongsTo(ProductProposed::class);
+    }
 }
