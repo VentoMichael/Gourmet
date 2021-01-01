@@ -18,6 +18,7 @@ class AddForeignKeysTable extends Migration
         });
         Schema::table('exposants', function(Blueprint $table) {
             $table->foreignId("product_id")->constrained('products');
+            $table->foreignId("country_id")->constrained('countries');
         });
         Schema::table('exposant_tag', function(Blueprint $table) {
             $table->bigInteger('exposant_id')->unsigned();

@@ -10,7 +10,7 @@ use Illuminate\Http\Request;
 class DashboardController extends Controller
 {
     public function index(){
-        $exposantsFirstThree = Exposant::inRandomOrder()->limit(3)->get();
+        $exposantsFirstThree = Exposant::inRandomOrder()->limit(3)->where('accepted','1')->get();
         $firstThreeRandomImages = RandomImageOfGourmet::inRandomOrder()->limit(3)->get();
         $praticalInformations = PraticalInfos::all();
         return view('dashboard',compact('exposantsFirstThree','praticalInformations','firstThreeRandomImages'));

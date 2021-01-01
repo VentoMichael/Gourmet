@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Country;
 use App\Models\Exposant;
 use App\Models\PraticalInfos;
 use App\Models\RandomImageOfGourmet;
@@ -15,7 +16,9 @@ class ExposantController extends Controller
     {
         $firstThreeRandomImages = RandomImageOfGourmet::inRandomOrder()->limit(3)->get();
         $praticalInformations = PraticalInfos::all();
-        return view('exposants.become', compact('firstThreeRandomImages', 'praticalInformations'));
+        $countries = Country::all();
+        $tags = Tag::all();
+        return view('exposants.become', compact('firstThreeRandomImages', 'praticalInformations','tags','countries'));
     }
 
     /**

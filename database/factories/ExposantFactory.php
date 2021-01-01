@@ -36,6 +36,7 @@ class ExposantFactory extends Factory
             'product_description'=> $this->faker->text($maxNbChars = 256),
             'comment_for_organizer'=> $this->faker->text($maxNbChars = 256),
             'product_id'=>1,
+            'country_id'=>1,
         ];
     }
 }

@@ -103,9 +103,9 @@
     </nav>
 </header>
 <div class="containerBckgImages">
-    <img src="resources/img/cheese.png" alt="Cheese" class="cheese">
-    <img src="resources/img/coldcuts.png" alt="Coldcuts" class="coldcuts">
-    <img src="resources/img/wine.png" alt="Wine bottle" class="wineBckg">
+    <img src="{{asset('resources/img/cheese.png')}}" alt="Cheese" class="cheese">
+    <img src="{{asset('resources/img/coldcuts.png')}}" alt="Coldcuts" class="coldcuts">
+    <img src="{{asset('resources/img/wine.png')}}" alt="Wine bottle" class="wineBckg">
 </div>
 <main>
 

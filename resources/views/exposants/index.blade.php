@@ -67,9 +67,9 @@
                         <span class="productsFilter">
                     <label for="product">Produits</label>
                     <select name="product" id="product">
-                        <option value="" disabled selected>Produits</option>
-                        <option value="cheese">Fromages</option>
-                        <option value="wine">Vins</option>
+                        @foreach($exposants as $exposant)
+                            <option value="{{$exposant->country}}">{{$exposant->country}}</option>
+                        @endforeach
                     </select>
                 </span>
                         <span class="pageFilter">
@@ -110,9 +110,9 @@
                         </p>
                         @if($exposant->tags->count() > 1)
                             <div class="tagsContainer">
-                                @foreach($exposant->tags as $tag)
+                                @foreach($exposants as $exposant)
                                     <div class="moduleTag">
-                                        {{$tag->name}}
+                                        {{$exposant->country}}
                                     </div>
                                 @endforeach
                             </div>

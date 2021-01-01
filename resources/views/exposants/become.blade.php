@@ -14,17 +14,7 @@
                         </h2>
                     </div>
                 </div>
-                <div class="containerImagesHome" role="img">
-                    <img src="../resources/img/ja-ma--gOUx23DNks-unsplash.jpg"
-                         srcset="../resources/img/ja-ma--gOUx23DNks-unsplash_small.jpg 320w, ../resources/img/ja-ma--gOUx23DNks-unsplash.jpg 640w"
-                         sizes="100vw" alt="Image du salon du marché des gourmets">
-                    <img src="../resources/img/ja-ma--gOUx23DNks-unsplash.jpg"
-                         srcset="../resources/img/ja-ma--gOUx23DNks-unsplash_small.jpg 320w, ../resources/img/ja-ma--gOUx23DNks-unsplash.jpg 640w"
-                         sizes="100vw" alt="Image du salon du marché des gourmets">
-                    <img src="../resources/img/ja-ma--gOUx23DNks-unsplash.jpg"
-                         srcset="../resources/img/ja-ma--gOUx23DNks-unsplash_small.jpg 320w, ../resources/img/ja-ma--gOUx23DNks-unsplash.jpg 640w"
-                         sizes="100vw" alt="Image du salon du marché des gourmets">
-                </div>
+                @include('partials.randomImagesGourmet')
             </div>
             <div class="containerTextHome">
                 <p>
@@ -36,7 +26,8 @@
                     Alors, n’hésitez pas à nous rendre visite au Val-Saint-Lambert lors de cette 21<sup>e</sup> édition.
                 </p>
                 <div>
-                    <a href="{{route('expoBecome.index')}}" class="btnCta">Devenir exposant <span class="arrowCta"></span></a>
+                    <a href="{{route('expoBecome.index')}}" class="btnCta">Devenir exposant <span
+                            class="arrowCta"></span></a>
                 </div>
             </div>
         </div>
@@ -50,7 +41,8 @@
             </p>
         </div>
         <div class="containerButtonExpo">
-            <p class="btnCta priceBecomeExpo">Le prix du billet : 255€</p>
+            <p class="btnCta priceBecomeExpo" style="cursor:inherit;">Le prix du billet
+                : {{$praticalInformations->first()->priceTicketExposant}} €</p>
         </div>
     </div>
     <section class="containerFormulary">
@@ -92,9 +84,9 @@
                     <div class="containerInput containerInputBecomeExpo">
                         <label for="country">Pays</label>
                         <select name="country" class="selectTicket selectCountry" id="country">
-                            <option value="" disabled selected hidden class="defaultSelectOption">Sicile</option>
-                            <option value="sicily">Sicile</option>
-                            <option value="france">France</option>
+                            @foreach($countries as $countrie)
+                                <option value="{{$countrie->name}}">{{$countrie->name}}</option>
+                            @endforeach
                         </select>
                     </div>
                 </div>
@@ -108,6 +100,9 @@
                     <div class="containerInput containerInputBecomeExpo">
                         <label for="tags">Tags</label>
                         <select name="tags" class="selectTicket selectCountry" id="tags">
+                            @foreach($tags as $tag)
+                                <option value="{{$tag->name}}">{{$tag->name}}</option>
+                            @endforeach
                             <option value="" disabled selected hidden class="defaultSelectOption">Vins</option>
                             <option value="vins">Vins</option>
                             <option value="cheese">Fromages</option>
@@ -153,7 +148,8 @@
                 <div class="containerTextAreaBecomeExpo containerCommentsOrgany">
                     <div class="containerInput containerInputTextArea">
                         <label for="commentsOrganizers">Commentaires pour les organisateurs</label>
-                        <textarea id="commentsOrganizers" name="commentsOrganizers" placeholder="Commentaire(s) éventuel(s) ..."
+                        <textarea id="commentsOrganizers" name="commentsOrganizers"
+                                  placeholder="Commentaire(s) éventuel(s) ..."
                                   rows="10"></textarea>
                     </div>
                     <span>256 caractères max</span>

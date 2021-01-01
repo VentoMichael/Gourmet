@@ -25,4 +25,7 @@ class Exposant extends Model
     public function product(){
         return $this->belongsTo(Product::class);
     }
+    public function country(){
+        return $this->belongsTo(Country::class);
+    }
 }
