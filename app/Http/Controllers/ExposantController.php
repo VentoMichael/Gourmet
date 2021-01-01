@@ -28,7 +28,7 @@ class ExposantController extends Controller
 
         $firstThreeRandomImages = RandomImageOfGourmet::inRandomOrder()->limit(3)->get();
         $praticalInformations = PraticalInfos::all();
-        $exposants = Exposant::with('tags')->get();
+        $exposants = Exposant::with('tags','product')->where('accepted','1')->get();
         return view('exposants.index', compact('firstThreeRandomImages', 'praticalInformations', 'exposants'));
     }
 

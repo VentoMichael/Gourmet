@@ -100,6 +100,7 @@
             @foreach($exposants as $exposant)
                 <section class="containerExposant">
                     <div>
+                        <img src="{{$exposant->product->icone}}" alt="{{$exposant->product->alt}}">
                         <h3 aria-level="3">
                             {{$exposant->shop_name}}
                         </h3>
