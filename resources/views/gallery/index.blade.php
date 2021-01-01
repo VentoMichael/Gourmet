@@ -14,17 +14,7 @@
                         </h2>
                     </div>
                 </div>
-                <div class="containerImagesHome">
-                    <img src="resources/img/ja-ma--gOUx23DNks-unsplash.jpg"
-                         srcset="resources/img/ja-ma--gOUx23DNks-unsplash_small.jpg 320w, resources/img/ja-ma--gOUx23DNks-unsplash.jpg 640w"
-                         sizes="100vw" alt="Image du salon du marché des gourmets">
-                    <img src="resources/img/ja-ma--gOUx23DNks-unsplash.jpg"
-                         srcset="resources/img/ja-ma--gOUx23DNks-unsplash_small.jpg 320w, resources/img/ja-ma--gOUx23DNks-unsplash.jpg 640w"
-                         sizes="100vw" alt="Image du salon du marché des gourmets">
-                    <img src="resources/img/ja-ma--gOUx23DNks-unsplash.jpg"
-                         srcset="resources/img/ja-ma--gOUx23DNks-unsplash_small.jpg 320w, resources/img/ja-ma--gOUx23DNks-unsplash.jpg 640w"
-                         sizes="100vw" alt="Image du salon du marché des gourmets">
-                </div>
+                @include('partials.randomImagesGourmet')
             </div>
             <div class="containerTextHome">
                 <p>
@@ -68,33 +58,9 @@
             Gallerie d'images
         </h2>
         <div class="containerImagesGallery">
-            <img src="resources/img/sausage.jpg"
-                 srcset="resources/img/sausage_small.jpg 320w, resources/img/sausage.jpg 640w"
-                 sizes="100vw" alt="Image de saucissons">
-            <img src="resources/img/sausage.jpg"
-                 srcset="resources/img/sausage_small.jpg 320w, resources/img/sausage.jpg 640w"
-                 sizes="100vw" alt="Image de saucissons">
-            <img src="resources/img/sausage.jpg"
-                 srcset="resources/img/sausage_small.jpg 320w, resources/img/sausage.jpg 640w"
-                 sizes="100vw" alt="Image de saucissons">
-            <img src="resources/img/sausage.jpg"
-                 srcset="resources/img/sausage_small.jpg 320w, resources/img/sausage.jpg 640w"
-                 sizes="100vw" alt="Image de saucissons">
-            <img src="resources/img/sausage.jpg"
-                 srcset="resources/img/sausage_small.jpg 320w, resources/img/sausage.jpg 640w"
-                 sizes="100vw" alt="Image de saucissons">
-            <img src="resources/img/sausage.jpg"
-                 srcset="resources/img/sausage_small.jpg 320w, resources/img/sausage.jpg 640w"
-                 sizes="100vw" alt="Image de saucissons">
-            <img src="resources/img/sausage.jpg"
-                 srcset="resources/img/sausage_small.jpg 320w, resources/img/sausage.jpg 640w"
-                 sizes="100vw" alt="Image de saucissons">
-            <img src="resources/img/sausage.jpg"
-                 srcset="resources/img/sausage_small.jpg 320w, resources/img/sausage.jpg 640w"
-                 sizes="100vw" alt="Image de saucissons">
-            <img src="resources/img/sausage.jpg"
-                 srcset="resources/img/sausage_small.jpg 320w, resources/img/sausage.jpg 640w"
-                 sizes="100vw" alt="Image de saucissons">
+            @foreach($randomImages as $randomImage)
+                <img src="{{$randomImage->image}}" alt="{{$randomImage->alt}}">
+            @endforeach
         </div>
         <div class="containerPaginate containerPaginateGallery">
             <ul class="listPaginate">

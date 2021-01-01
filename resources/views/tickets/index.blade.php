@@ -14,17 +14,7 @@
                         </h2>
                     </div>
                 </div>
-                <div class="containerImagesHome">
-                    <img src="resources/img/ja-ma--gOUx23DNks-unsplash.jpg"
-                         srcset="resources/img/ja-ma--gOUx23DNks-unsplash_small.jpg 320w, resources/img/ja-ma--gOUx23DNks-unsplash.jpg 640w"
-                         sizes="100vw" alt="Image du salon du marché des gourmets">
-                    <img src="resources/img/ja-ma--gOUx23DNks-unsplash.jpg"
-                         srcset="resources/img/ja-ma--gOUx23DNks-unsplash_small.jpg 320w, resources/img/ja-ma--gOUx23DNks-unsplash.jpg 640w"
-                         sizes="100vw" alt="Image du salon du marché des gourmets">
-                    <img src="resources/img/ja-ma--gOUx23DNks-unsplash.jpg"
-                         srcset="resources/img/ja-ma--gOUx23DNks-unsplash_small.jpg 320w, resources/img/ja-ma--gOUx23DNks-unsplash.jpg 640w"
-                         sizes="100vw" alt="Image du salon du marché des gourmets">
-                </div>
+                @include('partials.randomImagesGourmet')
             </div>
             <div class="containerTextHome">
                 <p>

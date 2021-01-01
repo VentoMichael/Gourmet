@@ -11,8 +11,8 @@ class DashboardController extends Controller
 {
     public function index(){
         $exposantsFirstThree = Exposant::inRandomOrder()->limit(3)->get();
-        $randomImages = RandomImageOfGourmet::inRandomOrder()->limit(3)->get();
+        $firstThreeRandomImages = RandomImageOfGourmet::inRandomOrder()->limit(3)->get();
         $praticalInformations = PraticalInfos::all();
-        return view('dashboard',compact('exposantsFirstThree','praticalInformations','randomImages'));
+        return view('dashboard',compact('exposantsFirstThree','praticalInformations','firstThreeRandomImages'));
     }
 }

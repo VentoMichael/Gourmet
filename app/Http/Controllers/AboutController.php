@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use Faker\Factory;
-use Illuminate\Http\Request;
+use App\Models\PraticalInfos;
+use App\Models\RandomImageOfGourmet;
 
 class AboutController extends Controller
 {
     public function index(){
-        return view('about.index');
+        $firstThreeRandomImages = RandomImageOfGourmet::inRandomOrder()->limit(3)->get();
+        $praticalInformations = PraticalInfos::all();
+        return view('about.index',compact('praticalInformations','firstThreeRandomImages'));
     }
 }

@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Gallery;
+use App\Models\PraticalInfos;
+use App\Models\RandomImageOfGourmet;
 use Illuminate\Http\Request;
 
 class GalleryController extends Controller
@@ -13,7 +15,10 @@ class GalleryController extends Controller
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
      */
     public function index(){
-        return view('gallery.index');
+        $firstThreeRandomImages = RandomImageOfGourmet::inRandomOrder()->limit(3)->get();
+        $randomImages = RandomImageOfGourmet::all();
+        $praticalInformations = PraticalInfos::all();
+        return view('gallery.index',compact('praticalInformations','firstThreeRandomImages','randomImages'));
     }
 
     /**

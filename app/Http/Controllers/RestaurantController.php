@@ -2,11 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Models\PraticalInfos;
+use App\Models\RandomImageOfGourmet;
+use App\Models\Restaurant;
 
 class RestaurantController extends Controller
 {
     public function index(){
-        return view('restaurant.index');
+        $firstThreeRandomImages = RandomImageOfGourmet::inRandomOrder()->limit(3)->get();
+        $praticalInformations = PraticalInfos::all();
+        $restaurant = Restaurant::all();
+        return view('restaurant.index',compact('praticalInformations','firstThreeRandomImages','restaurant'));
     }
 }

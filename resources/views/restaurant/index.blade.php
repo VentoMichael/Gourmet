@@ -14,17 +14,7 @@
                         </h2>
                     </div>
                 </div>
-                <div class="containerImagesHome">
-                    <img src="resources/img/ja-ma--gOUx23DNks-unsplash.jpg"
-                         srcset="resources/img/ja-ma--gOUx23DNks-unsplash_small.jpg 320w, resources/img/ja-ma--gOUx23DNks-unsplash.jpg 640w"
-                         sizes="100vw" alt="Image du salon du marché des gourmets">
-                    <img src="resources/img/ja-ma--gOUx23DNks-unsplash.jpg"
-                         srcset="resources/img/ja-ma--gOUx23DNks-unsplash_small.jpg 320w, resources/img/ja-ma--gOUx23DNks-unsplash.jpg 640w"
-                         sizes="100vw" alt="Image du salon du marché des gourmets">
-                    <img src="resources/img/ja-ma--gOUx23DNks-unsplash.jpg"
-                         srcset="resources/img/ja-ma--gOUx23DNks-unsplash_small.jpg 320w, resources/img/ja-ma--gOUx23DNks-unsplash.jpg 640w"
-                         sizes="100vw" alt="Image du salon du marché des gourmets">
-                </div>
+                @include('partials.randomImagesGourmet')
             </div>
             <div class="containerTextHome">
                 <p>
@@ -47,67 +37,23 @@
             <h2 aria-level="2">
                 Menu du restaurant
             </h2>
-            <section class="containerPrincipalMeat">
-                <h3 aria-level="3" class="menuPrincipalMeat">
-                    Plats
-                </h3>
-                <ul role="list">
-                    <li role="listitem">
-                        Croquettes aux crevettes grises et salade composée<span>13€</span>
-                    </li>
-                    <li role="listitem">
-                        Rigatoni aux petits lardons, basilic et tomates confites<span>13€</span>
-                    </li>
-                    <li role="listitem">
-                        Cannellonis a la ricotta et épinards (Végétarien)<span>13€</span>
-                    </li>
-                    <li role="listitem">
-                        Boulets à la Liégeoise (Frites, salades)<span>14€</span>
-                    </li>
-                    <li role="listitem">
-                        Boulets de volaille a l’estragon (Frites, salade)<span>14€</span>
-                    </li>
-                    <li role="listitem">
-                        Carbonnade de boeuf, carottes fondantes et galettes de pommes de terre<span>15€</span>
-                    </li>
-                </ul>
-            </section>
-            <section class="containerPrincipalMeat containerSandwichs">
-                <h3 aria-level="3" class="menuSandwichs">
-                    Sandwichs
-                </h3>
-                <ul role="list">
-                    <li role="listitem">
-                        Dagobert
-                        <span>5€</span>
-                    </li>
-                    <li role="listitem">
-                        Campagnard (Brie, miel, lardons, roquette)
-                        <span>5€</span>
-                    </li>
-                    <li role="listitem">
-                        Italien (Jambon fumé, roquette, tomate confite)
-                        <span>5€</span>
-                    </li>
-                </ul>
-            </section>
-            <section class="containerPrincipalMeat">
-                <h3 aria-level="3" class="menuDesserts">
-                    Desserts
-                </h3>
-                <ul role="list">
-                    <li role="listitem">
-                        Mousse au chocolat, caramel au beurre salé
-                        <span>5€</span>
-                    </li>
-                    <li role="listitem">
-                        Tiramisu au spéculoos et fruits rouges
-                        <span>5€</span>
-                    </li>
-                </ul>
-            </section>
+            <div class="containerRestaurant">
+                @foreach($restaurant as $r)
+                    <section class="containerPrincipalMeat">
+                        <h3 aria-level="3" class="menuPrincipalMeat">
+                            {{$r->dish_section}}
+                        </h3>
+                        <ul role="list">
+                            <li role="listitem">
+                                {{$r->title_dish}} ({{$r->description_dish}})<span>{{$r->price_dish}} €</span>
+                            </li>
+                        </ul>
+                    </section>
+                @endforeach
+            </div>
             <div>
-                <a href="{{route('tickets.index')}}" class="btnCta MenuCta">Acheter un billet <span class="arrowCta"></span></a>
+                <a href="{{route('tickets.index')}}" class="btnCta MenuCta">Acheter un billet <span
+                        class="arrowCta"></span></a>
             </div>
         </div>
     </section>
