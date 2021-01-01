@@ -2,10 +2,15 @@
 
 namespace App\Providers;
 
+use App\Nova\Metrics\Contact;
+use App\Nova\Metrics\ExposantsAsk;
+use App\Nova\Metrics\NewContactMsg;
 use Illuminate\Support\Facades\Gate;
 use Laravel\Nova\Cards\Help;
+use Laravel\Nova\Events\ServingNova;
 use Laravel\Nova\Nova;
 use Laravel\Nova\NovaApplicationServiceProvider;
+use Wlmsg\Welcomemsg\Welcomemsg;
 
 class NovaServiceProvider extends NovaApplicationServiceProvider
 {
@@ -17,6 +22,9 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
     public function boot()
     {
         parent::boot();
+        Nova::serving(function (ServingNova $event) {
+            app()->setLocale('fr');
+        });
     }
 
     /**
@@ -56,16 +64,18 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
     protected function cards()
     {
         return [
-            new Help,
+            (new Welcomemsg())->width('full'),
+            (new NewContactMsg())->width('full'),
+            (new ExposantsAsk)->width('2/3'),
             (new \ChrisWare\NovaClockCard\NovaClockCard)
-                ->locale('sk')
+                ->locale('be')
                 ->dateFormat('dddd, Do MMMM YYYY')
                 ->timeFormat('LTS')
-                ->timezone('UTC')
+                ->timezone('CET')
                 ->display('analogue'),
         ];
     }
-
+//getQualifiedCreatedAtColumn()
     /**
      * Get the extra dashboards that should be displayed on the Nova dashboard.
      *

@@ -27,17 +27,7 @@
                         </p>
                     </div>
                 </div>
-                <div class="containerImagesHome">
-                    <img src="resources/img/ja-ma--gOUx23DNks-unsplash.jpg"
-                         srcset="resources/img/ja-ma--gOUx23DNks-unsplash_small.jpg 320w, resources/img/ja-ma--gOUx23DNks-unsplash.jpg 640w"
-                         sizes="100vw" alt="Image du salon du marché des gourmets">
-                    <img src="resources/img/ja-ma--gOUx23DNks-unsplash.jpg"
-                         srcset="resources/img/ja-ma--gOUx23DNks-unsplash_small.jpg 320w, resources/img/ja-ma--gOUx23DNks-unsplash.jpg 640w"
-                         sizes="100vw" alt="Image du salon du marché des gourmets">
-                    <img src="resources/img/ja-ma--gOUx23DNks-unsplash.jpg"
-                         srcset="resources/img/ja-ma--gOUx23DNks-unsplash_small.jpg 320w, resources/img/ja-ma--gOUx23DNks-unsplash.jpg 640w"
-                         sizes="100vw" alt="Image du salon du marché des gourmets">
-                </div>
+                @include('partials.randomImagesGourmet')
             </div>
             <div class="containerTextHome">
                 <p>
@@ -152,80 +142,37 @@
                 </div>
             </div>
             <div class="slideshow-container">
-                <section class="mySlides fade">
-                    <div class="containerSlide">
-                        <div>
-                            <h3 aria-level="3">
-                                Vins nobles de la sicile
-                            </h3>
-                            <p class="regionExposant">
-                                Sicile
-                            </p>
-                            <div class="containerImagesHome">
-                                <img src="resources/img/ja-ma--gOUx23DNks-unsplash.jpg"
-                                     srcset="resources/img/ja-ma--gOUx23DNks-unsplash_small.jpg 320w, resources/img/ja-ma--gOUx23DNks-unsplash.jpg 640w"
-                                     sizes="100vw" alt="Image d'un exposant">
-                                <img src="resources/img/ja-ma--gOUx23DNks-unsplash.jpg"
-                                     srcset="resources/img/ja-ma--gOUx23DNks-unsplash_small.jpg 320w, resources/img/ja-ma--gOUx23DNks-unsplash.jpg 640w"
-                                     sizes="100vw" alt="Image d'un exposant">
-                                <img src="resources/img/ja-ma--gOUx23DNks-unsplash.jpg"
-                                     srcset="resources/img/ja-ma--gOUx23DNks-unsplash_small.jpg 320w, resources/img/ja-ma--gOUx23DNks-unsplash.jpg 640w"
-                                     sizes="100vw" alt="Image d'un exposant">
-                            </div>
-                        </div>
-                        <div class="containerTextExposant">
-                            <p class="textExposant">Situé à 600 mètres d'altitude, au nord-est de l'Etna. Des vins
-                                classiques
-                                qui
-                                expriment pleinement son extraordinaire terroir, à savoir celui de l'Etna, le plus grand
-                                volcan
-                                actif d'Europe. Son caractère à la fois raffiné, austère et puissant lui donne un goût
-                                original
-                                et
-                                unique!</p>
+                @foreach($exposantsFirstThree as $exposantFirstThree)
+                    <section class="mySlides fade">
+                        <div class="containerSlide">
                             <div>
-                                <a href="{{route('expoShow.index')}}" class="btnCta">Vins nobles de la sicile <span
-                                        class="arrowCta"></span></a>
+                                <h3 aria-level="3">
+                                    {{$exposantFirstThree->shop_name}}
+                                </h3>
+                                <p class="regionExposant">
+                                    {{$exposantFirstThree->country}}
+                                </p>
+                                <div class="containerImagesHome">
+                                    <img src="{{$exposantFirstThree->firstPicRepresentExpo}}"
+                                         alt="Image d'un exposant">
+                                    <img src="{{$exposantFirstThree->secondPicRepresentExpo}}"
+                                         alt="Deuxième image d'un exposant">
+                                    <img src="{{$exposantFirstThree->thirdPicRepresentExpo}}"
+                                         alt="Troisième image d'un exposant">
+                                </div>
+                            </div>
+                            <div class="containerTextExposant">
+                                <p class="textExposant">
+                                    {{$exposantFirstThree->product_description}}</p>
+                                <div>
+                                    <a href="{{route('expoShow.index')}}"
+                                       class="btnCta">{{$exposantFirstThree->shop_name}}<span
+                                            class="arrowCta"></span></a>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </section>
-                <section class="mySlides fade">
-                    <div class="containerSlide">
-                        <div>
-                            <h3 aria-level="3">
-                                Rob Market
-                            </h3>
-                            <p class="regionExposant">
-                                Belgique
-                            </p>
-                            <div class="containerImagesHome">
-                                <img src="resources/img/ja-ma--gOUx23DNks-unsplash.jpg"
-                                     srcset="resources/img/ja-ma--gOUx23DNks-unsplash_small.jpg 320w, resources/img/ja-ma--gOUx23DNks-unsplash.jpg 640w"
-                                     sizes="100vw" alt="Image d'un exposant">
-                                <img src="resources/img/ja-ma--gOUx23DNks-unsplash.jpg"
-                                     srcset="resources/img/ja-ma--gOUx23DNks-unsplash_small.jpg 320w, resources/img/ja-ma--gOUx23DNks-unsplash.jpg 640w"
-                                     sizes="100vw" alt="Image d'un exposant">
-                                <img src="resources/img/ja-ma--gOUx23DNks-unsplash.jpg"
-                                     srcset="resources/img/ja-ma--gOUx23DNks-unsplash_small.jpg 320w, resources/img/ja-ma--gOUx23DNks-unsplash.jpg 640w"
-                                     sizes="100vw" alt="Image d'un exposant">
-                            </div>
-                        </div>
-                        <div class="containerTextExposant">
-                            <p class="textExposant">Patrice et Philippe Marchand ne sont pas frères par hasard tant leur
-                                passion commune pour les
-                                fromages d’exception est intense. Un lien d’autant plus fort qu’ils partagent des
-                                secrets de famille
-                                pour fabriquer de vraies merveilles ! Rob vous propose près de 30 fromages créés et
-                                affinés par les
-                                frères Marchand.</p>
-                            <div>
-                                <a href="{{route('expoShow.index')}}" class="btnCta">Rob Market <span
-                                        class="arrowCta"></span></a>
-                            </div>
-                        </div>
-                    </div>
-                </section>
+                    </section>
+                @endforeach
                 <div class="containerAllExposants">
                     <a href="{{route('exposants.index')}}" class="btnCta">Tous les exposants <span
                             class="arrowCta"></span></a>

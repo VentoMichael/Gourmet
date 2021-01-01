@@ -132,6 +132,8 @@
       <path value="$PROJECT_DIR$/vendor/benjaminhirsch/nova-slug-field" />
       <path value="$PROJECT_DIR$/vendor/codebykyle/calculated-field" />
       <path value="$PROJECT_DIR$/vendor/chris-ware/nova-clock-card" />
+      <path value="$PROJECT_DIR$/vendor/example/miami-ice" />
+      <path value="$PROJECT_DIR$/vendor/wlmsg/welcomemsg" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="7.3" />

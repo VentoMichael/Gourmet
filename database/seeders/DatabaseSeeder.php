@@ -20,6 +20,7 @@ class DatabaseSeeder extends Seeder
         $this->call(SaleSeeder::class);
         $this->call(ContactSeeder::class);
         $this->call(ExposantSeeder::class);
+        $this->call(RandomImageOfGourmetSeeder::class);
         $this->call(TagSeeder::class);
         $this->call(ExposantTagSeeder::class);
     }

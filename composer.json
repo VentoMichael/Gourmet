@@ -19,7 +19,9 @@
         "guzzlehttp/guzzle": "^7.0.1",
         "laravel/framework": "^8.12",
         "laravel/nova": "*",
-        "laravel/tinker": "^2.5"
+        "laravel/tinker": "^2.5",
+        "example/miami-ice": "*",
+        "wlmsg/welcomemsg": "*"
     },
     "require-dev": {
         "facade/ignition": "^2.5",
@@ -59,6 +61,14 @@
         {
             "type": "path",
             "url": "./nova-components/Analytics"
+        },
+        {
+            "type": "path",
+            "url": "./nova-components/MiamiIce"
+        },
+        {
+            "type": "path",
+            "url": "./nova-components/Welcomemsg"
         }
     ],
     "minimum-stability": "dev",

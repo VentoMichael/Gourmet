@@ -123,7 +123,7 @@ window.addEventListener("load", function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/vento/test/gourmetTest/resources/js/slide.js */"./resources/js/slide.js");
+module.exports = __webpack_require__(/*! /Users/vento/test/gourmet/resources/js/slide.js */"./resources/js/slide.js");
 
 
 /***/ })

@@ -14,17 +14,7 @@
                         </h2>
                     </div>
                 </div>
-                <div class="containerImagesHome" role="img">
-                    <img src="resources/img/ja-ma--gOUx23DNks-unsplash.jpg"
-                         srcset="resources/img/ja-ma--gOUx23DNks-unsplash_small.jpg 320w, resources/img/ja-ma--gOUx23DNks-unsplash.jpg 640w"
-                         sizes="100vw" alt="Image du salon du marché des gourmets">
-                    <img src="resources/img/ja-ma--gOUx23DNks-unsplash.jpg"
-                         srcset="resources/img/ja-ma--gOUx23DNks-unsplash_small.jpg 320w, resources/img/ja-ma--gOUx23DNks-unsplash.jpg 640w"
-                         sizes="100vw" alt="Image du salon du marché des gourmets">
-                    <img src="resources/img/ja-ma--gOUx23DNks-unsplash.jpg"
-                         srcset="resources/img/ja-ma--gOUx23DNks-unsplash_small.jpg 320w, resources/img/ja-ma--gOUx23DNks-unsplash.jpg 640w"
-                         sizes="100vw" alt="Image du salon du marché des gourmets">
-                </div>
+                @include('partials.randomImagesGourmet')
             </div>
             <div class="containerTextHome">
                 <p>
@@ -98,7 +88,8 @@
                 <form action="#">
                     <span class="searchFilter searchFilterId" id="searchFilter" role="search">
                         <label id="expoSearchLabel" for="expo-search">Chercher un exposant</label>
-                        <input class="search expo-searchId" type="search" spellcheck="false" id="expo-searchId" name="exposantName"
+                        <input class="search expo-searchId" type="search" spellcheck="false" id="expo-searchId"
+                               name="exposantName"
                                placeholder="Rob Harry ...">
                         <button class="buttonSearch hidden">Rechercher l'exposant</button>
                     </span>
@@ -106,70 +97,33 @@
             </div>
         </div>
         <div class="containerExposants">
-            <section class="containerExposant">
-                <div>
-                    <img src="resources/svg/wine.svg" alt="Picto d'une bouteille de vin">
-                    <h3 aria-level="3">
-                        Vins nobles de la Sicile
-                    </h3>
-                    <p class="textRegionExposant">Sicile</p>
-                    <p>
-                        Situé à 600 mètres d'altitude, au nord-est de l'Etna. Des vins classiques qui expriment
-                        pleinement
-                        son extraordinaire terroir, à savoir celui de l'Etna, le plus grand volcan actif d'Europe. Son
-                        caractère à la fois raffiné, austère et puissant lui donne un goût original et unique!
-                    </p>
-                    <div class="tagsContainer">
-                        <div class="moduleTag">
-                            Vins
-                        </div>
-                        <div class="moduleTag">
-                            Sicile
-                        </div>
-                        <div class="moduleTag">
-                            Multifruits
-                        </div>
-                        <div class="moduleTag">
-                            Bio
-                        </div>
+            @foreach($exposants as $exposant)
+                <section class="containerExposant">
+                    <div>
+                        <img src="resources/svg/wine.svg" alt="Picto d'une bouteille de vin">
+                        <h3 aria-level="3">
+                            {{$exposant->shop_name}}
+                        </h3>
+                        <p class="textRegionExposant">{{$exposant->country}}</p>
+                        <p>
+                            {{$exposant->product_description}}
+                        </p>
+                        @if($exposant->tags->count() > 1)
+                            <div class="tagsContainer">
+                                @foreach($exposant->tags as $tag)
+                                    <div class="moduleTag">
+                                        {{$tag->name}}
+                                    </div>
+                                @endforeach
+                            </div>
+                        @endif
                     </div>
-                </div>
-                <div>
-                    <a href="{{route('expoShow.index')}}" class="btnCta">Vins nobles de la Sicile <span
-                            class="arrowCta"></span></a>
-                </div>
-            </section>
-            <section class="containerExposant">
-                <img src="resources/svg/cheese.svg" alt="Picto de fromage">
-                <h3 aria-level="3">
-                    Rob Market
-                </h3>
-                <p class="textRegionExposant">France</p>
-                <p>
-                    Patrice et Philippe Marchand ne sont pas frères par hasard tant leur passion commune pour les
-                    fromages d’exception est intense. Un lien d’autant plus fort qu’ils partagent des secrets de famille
-                    pour fabriquer de vraies merveilles ! Rob vous propose près de 30 fromages créés et affinés par les
-                    frères Marchand.
-                </p>
-                <div class="tagsContainer">
-                    <div class="moduleTag">
-                        Vins
+                    <div>
+                        <a href="{{route('expoShow.index')}}" class="btnCta">{{$exposant->shop_name}}<span
+                                class="arrowCta"></span></a>
                     </div>
-                    <div class="moduleTag">
-                        Sicile
-                    </div>
-                    <div class="moduleTag">
-                        Multifruits
-                    </div>
-                    <div class="moduleTag">
-                        Bio
-                    </div>
-                </div>
-                <div>
-                    <a href="{{route('expoShow.index')}}" class="btnCta">Vins nobles de la Sicile <span
-                            class="arrowCta"></span></a>
-                </div>
-            </section>
+                </section>
+            @endforeach
         </div>
         <div class="containerPaginate">
             <ul class="listPaginate">

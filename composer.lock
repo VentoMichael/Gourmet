@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "17fadf34c8c0de44a0da139b29e97d9f",
+    "content-hash": "9302e9eea1ead0c5005e1d0de6085a81",
     "packages": [
         {
             "name": "acme/analytics",
@@ -1124,6 +1124,42 @@
                 }
             ],
             "time": "2020-12-29T14:50:06+00:00"
+        },
+        {
+            "name": "example/miami-ice",
+            "version": "dev-main",
+            "dist": {
+                "type": "path",
+                "url": "./nova-components/MiamiIce",
+                "reference": "377ad5cefafcd94e1b83d21d95f1032084b808d5"
+            },
+            "require": {
+                "php": ">=7.1.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Example\\MiamiIce\\ThemeServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Example\\MiamiIce\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "A Laravel Nova theme.",
+            "keywords": [
+                "laravel",
+                "nova"
+            ],
+            "transport-options": {
+                "relative": true
+            }
         },
         {
             "name": "fideloper/proxy",
@@ -6490,6 +6526,42 @@
                 "source": "https://github.com/webmozart/assert/tree/master"
             },
             "time": "2020-07-08T17:02:28+00:00"
+        },
+        {
+            "name": "wlmsg/welcomemsg",
+            "version": "dev-main",
+            "dist": {
+                "type": "path",
+                "url": "./nova-components/Welcomemsg",
+                "reference": "3016b0c7f8cf2be77d1ffb31b502804f27a764a3"
+            },
+            "require": {
+                "php": ">=7.1.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Wlmsg\\Welcomemsg\\CardServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Wlmsg\\Welcomemsg\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "A Laravel Nova card.",
+            "keywords": [
+                "laravel",
+                "nova"
+            ],
+            "transport-options": {
+                "relative": true
+            }
         }
     ],
     "packages-dev": [

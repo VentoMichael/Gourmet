@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Exposant;
+use App\Models\PraticalInfos;
+use App\Models\RandomImageOfGourmet;
+use App\Models\Tag;
 use Illuminate\Http\Request;
 
 class ExposantController extends Controller
@@ -10,7 +13,9 @@ class ExposantController extends Controller
 
     public function become()
     {
-        return view('exposants.become');
+        $randomImages = RandomImageOfGourmet::inRandomOrder()->limit(3)->get();
+        $praticalInformations = PraticalInfos::all();
+        return view('exposants.become',compact('randomImages','praticalInformations'));
     }
 
     /**
@@ -20,7 +25,10 @@ class ExposantController extends Controller
      */
     public function index()
     {
-        return view('exposants.index');
+        $randomImages = RandomImageOfGourmet::inRandomOrder()->limit(3)->get();
+        $praticalInformations = PraticalInfos::all();
+        $exposants = Exposant::with('tags')->get();
+        return view('exposants.index',compact('randomImages','praticalInformations','exposants'));
     }
 
     /**

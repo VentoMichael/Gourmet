@@ -147,7 +147,7 @@
                 </div>
                 <div class="textPracticalInformation">
                     <p>
-                        Entrée simple : 6 €
+                        Entrée simple : {{$praticalInformations->first()->priceTicketVisitor}} €
                     </p>
                     <p>
                         Entrée gratuite pour les moins de 16 ans.
@@ -165,10 +165,10 @@
                 <div class="textPracticalInformation" itemprop="address" itemscope itemtype="https://schema.org/Place">
                     <div>
                         <p>
-                            À la salle des moines,
+                            {{$praticalInformations->first()->place}}
                         </p>
                         <p itemprop="streetAddress">
-                            Val-Saint-Lambert, <span itemprop="postalCode">4540</span> Seraing
+                            <span itemprop="postalCode">{{$praticalInformations->first()->postalCode}}</span> {{$praticalInformations->first()->region}}
                         </p>
                     </div>
                 </div>

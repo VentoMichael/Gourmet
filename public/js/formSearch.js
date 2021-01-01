@@ -117,7 +117,7 @@ window.addEventListener("load", function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/vento/test/gourmetTest/resources/js/formSearch.js */"./resources/js/formSearch.js");
+module.exports = __webpack_require__(/*! /Users/vento/test/gourmet/resources/js/formSearch.js */"./resources/js/formSearch.js");
 
 
 /***/ })

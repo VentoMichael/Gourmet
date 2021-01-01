@@ -16,7 +16,7 @@ class PraticalInfos extends Model
 
     protected $dates = ['deleted_at'];
     protected $guarded =[];
-
+protected $fillable = ['startDate','endDate'];
     public function editions(){
         return $this->hasOne(Edition::class);
     }

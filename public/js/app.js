@@ -114,7 +114,7 @@ burgerMenu.addEventListener("click", function (e) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/vento/test/gourmetTest/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /Users/vento/test/gourmet/resources/js/app.js */"./resources/js/app.js");
 
 
 /***/ })
