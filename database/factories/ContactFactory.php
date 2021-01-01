@@ -26,7 +26,6 @@ class ContactFactory extends Factory
             'email' => $this->faker->email,
             'subject' => $this->faker->word,
             'comment' => $this->faker->text($maxNbChars = 200),
-
         ];
     }
 }

@@ -18,7 +18,7 @@ class CreateExposantsTable extends Migration
             $table->string('shop_name', 256);
             $table->string('phone',256);
             $table->string('email', 256);
-            $table->string('website', 256);
+            $table->string('website', 256)->nullable();
             $table->string('postal_code')->nullable();
             $table->string('firstPicRepresentExpo')->nullable();
             $table->string('secondPicRepresentExpo')->nullable();

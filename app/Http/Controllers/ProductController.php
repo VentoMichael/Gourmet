@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\ProductProposed;
+use App\Models\Product;
 use Illuminate\Http\Request;
 
-class ProductProposedController extends Controller
+class ProductController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -41,10 +41,10 @@ class ProductProposedController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\ProductProposed  $productProposed
+     * @param  \App\Models\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function show(ProductProposed $productProposed)
+    public function show(Product $product)
     {
         //
     }
@@ -52,10 +52,10 @@ class ProductProposedController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\ProductProposed  $productProposed
+     * @param  \App\Models\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function edit(ProductProposed $productProposed)
+    public function edit(Product $product)
     {
         //
     }
@@ -64,10 +64,10 @@ class ProductProposedController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\ProductProposed  $productProposed
+     * @param  \App\Models\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, ProductProposed $productProposed)
+    public function update(Request $request, Product $product)
     {
         //
     }
@@ -75,10 +75,10 @@ class ProductProposedController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\ProductProposed  $productProposed
+     * @param  \App\Models\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function destroy(ProductProposed $productProposed)
+    public function destroy(Product $product)
     {
         //
     }

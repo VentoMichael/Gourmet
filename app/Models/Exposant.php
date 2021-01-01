@@ -23,6 +23,6 @@ class Exposant extends Model
     }
 
     public function product(){
-        return $this->belongsTo(ProductProposed::class);
+        return $this->belongsTo(Product::class);
     }
 }
