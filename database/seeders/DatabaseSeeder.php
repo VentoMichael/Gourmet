@@ -20,10 +20,11 @@ class DatabaseSeeder extends Seeder
         $this->call(RestaurantSeeder::class);
         $this->call(SaleSeeder::class);
         $this->call(ContactSeeder::class);
-        $this->call(RandomImageOfGourmetSeeder::class);
+        $this->call(EditionSeeder::class);
         $this->call(TagSeeder::class);
         $this->call(CountrySeeder::class);
         $this->call(ProductSeeder::class);
+        $this->call(GallerySeeder::class);
         $this->call(ExposantSeeder::class);
     }
 }

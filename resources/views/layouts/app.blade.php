@@ -20,6 +20,7 @@
         {{ Request::is('contact') ? ' | Contact' : "" }}
         {{ Request::is('tickets') ? ' | Billets' : "" }}
     </title>
+    @livewireStyles
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -108,7 +109,6 @@
     <img src="{{asset('resources/img/wine.png')}}" alt="Wine bottle" class="wineBckg">
 </div>
 <main>
-
     @yield('content')
 </main>
 <footer>
@@ -188,5 +188,6 @@
     <small>Placé sous le patronage de : Simonis Isabelle, Mottard Paul-Emile et Javaux Jean-Michel</small>
 </footer>
 <script type="text/javascript" src="{{ asset('js/app.js') }}"></script>
+@livewireScripts
 </body>
 </html>

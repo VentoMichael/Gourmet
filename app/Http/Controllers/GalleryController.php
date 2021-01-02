@@ -15,8 +15,8 @@ class GalleryController extends Controller
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
      */
     public function index(){
-        $firstThreeRandomImages = RandomImageOfGourmet::inRandomOrder()->limit(3)->get();
-        $randomImages = RandomImageOfGourmet::all();
+        $firstThreeRandomImages = \App\Models\Gallery::inRandomOrder()->limit(3)->get();
+        $randomImages = \App\Models\Gallery::all();
         $praticalInformations = PraticalInfos::all();
         return view('gallery.index',compact('praticalInformations','firstThreeRandomImages','randomImages'));
     }

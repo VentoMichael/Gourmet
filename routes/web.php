@@ -22,8 +22,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/',
     [DashboardController::class, 'index'])->template(\App\Nova\Templates\Home::class)->name('dashboard.index');
 
-Route::get('/exposants',[ExposantController::class, 'index'])->template(\App\Nova\Templates\Exposant::class)->name('exposants.index');
-Route::get('/exposants/create',[ExposantController::class, 'create'])->template(\App\Nova\Templates\Exposant::class)->name('exposants.create');
+Route::get('/exposants',
+    [ExposantController::class, 'index'])->template(\App\Nova\Templates\Exposant::class)->name('exposants.index');
+Route::get('/exposants/create',
+    [ExposantController::class, 'create'])->template(\App\Nova\Templates\Exposant::class)->name('exposants.create');
 Route::get('/exposants/{exposant}', [ExposantController::class, 'show'])->name('exposants.show');
 
 

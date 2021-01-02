@@ -16,7 +16,7 @@ class SaleController extends Controller
      */
     public function index()
     {
-        $firstThreeRandomImages = RandomImageOfGourmet::inRandomOrder()->limit(3)->get();
+        $firstThreeRandomImages = \App\Models\Gallery::inRandomOrder()->limit(3)->get();
         $praticalInformations = PraticalInfos::all();
         return view('tickets.index',compact('praticalInformations','firstThreeRandomImages'));
     }

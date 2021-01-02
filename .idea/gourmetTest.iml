@@ -139,6 +139,7 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/example/miami-ice" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/wlmsg/welcomemsg" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/whitecube/nova-page" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/livewire/livewire" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

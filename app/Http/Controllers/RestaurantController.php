@@ -9,7 +9,7 @@ use App\Models\Restaurant;
 class RestaurantController extends Controller
 {
     public function index(){
-        $firstThreeRandomImages = RandomImageOfGourmet::inRandomOrder()->limit(3)->get();
+        $firstThreeRandomImages = \App\Models\Gallery::inRandomOrder()->limit(3)->get();
         $praticalInformations = PraticalInfos::all();
         $restaurant = Restaurant::all();
         return view('restaurant.index',compact('praticalInformations','firstThreeRandomImages','restaurant'));

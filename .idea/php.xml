@@ -135,6 +135,7 @@
       <path value="$PROJECT_DIR$/vendor/example/miami-ice" />
       <path value="$PROJECT_DIR$/vendor/wlmsg/welcomemsg" />
       <path value="$PROJECT_DIR$/vendor/whitecube/nova-page" />
+      <path value="$PROJECT_DIR$/vendor/livewire/livewire" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="7.3" />
