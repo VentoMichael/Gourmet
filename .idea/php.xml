@@ -134,7 +134,6 @@
       <path value="$PROJECT_DIR$/vendor/chris-ware/nova-clock-card" />
       <path value="$PROJECT_DIR$/vendor/example/miami-ice" />
       <path value="$PROJECT_DIR$/vendor/wlmsg/welcomemsg" />
-      <path value="$PROJECT_DIR$/vendor/livewire/livewire" />
       <path value="$PROJECT_DIR$/vendor/whitecube/nova-page" />
     </include_path>
   </component>

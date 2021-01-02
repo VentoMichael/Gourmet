@@ -95,10 +95,7 @@
             </div>
             <div class="containerExpoPlaceTagInfo">
                 <div>
-                    <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2517.353993366886!2d4.29603331574703!3d50.88015827953696!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c3c16fcb77f069%3A0xf913948a7a585e16!2sZone1%20Research%20Park%20120%2C%201731%20Asse!5e0!3m2!1sfr!2sbe!4v1607590415394!5m2!1sfr!2sbe"
-                        width="400" style="border:0; height: 300px" allowfullscreen=""
-                        aria-hidden="false" tabindex="0"></iframe>
+                    <
                     <div class="containerTagsExpo">
                         <p class="label">
                             Tags associé aux produits

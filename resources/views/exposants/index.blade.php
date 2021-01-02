@@ -47,20 +47,18 @@
                 <span class="countriesFilter">
                     <label for="country">Pays</label>
                     <select name="country" id="country">
-                        <option value="" disabled selected>Pays</option>
-                        <option value="italy">
-                            Italie
-                        </option>
-                        <option value="sicily">
-                            Sicile
-                        </option>
+                            <option value="" disabled selected>Pays</option>
+                        @foreach($exposants as $exposant)
+                            <option value="{{$exposant->country}}">{{$exposant->country}}</option>
+                        @endforeach
                     </select>
                 </span>
                         <span class="productsFilter">
                     <label for="product">Produits</label>
                     <select name="product" id="product">
+                        <option value="" disabled selected>Produit</option>
                         @foreach($exposants as $exposant)
-                            <option value="{{$exposant->country}}">{{$exposant->country}}</option>
+                            <option value="{{$exposant->product->name}}">{{$exposant->product->name}}</option>
                         @endforeach
                     </select>
                 </span>
