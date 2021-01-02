@@ -138,6 +138,8 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/chris-ware/nova-clock-card" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/example/miami-ice" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/wlmsg/welcomemsg" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/livewire/livewire" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/whitecube/nova-page" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

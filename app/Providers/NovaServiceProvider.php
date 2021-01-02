@@ -2,14 +2,13 @@
 
 namespace App\Providers;
 
-use App\Nova\Metrics\Contact;
 use App\Nova\Metrics\ExposantsAsk;
 use App\Nova\Metrics\NewContactMsg;
 use Illuminate\Support\Facades\Gate;
-use Laravel\Nova\Cards\Help;
 use Laravel\Nova\Events\ServingNova;
 use Laravel\Nova\Nova;
 use Laravel\Nova\NovaApplicationServiceProvider;
+use Whitecube\NovaPage\NovaPageTool;
 use Wlmsg\Welcomemsg\Welcomemsg;
 
 class NovaServiceProvider extends NovaApplicationServiceProvider
@@ -93,7 +92,9 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
      */
     public function tools()
     {
-        return [];
+        return [
+            NovaPageTool::make(),
+        ];
     }
 
     /**

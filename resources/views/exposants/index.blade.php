@@ -10,37 +10,29 @@
                 <div class="containerTitleHome">
                     <div>
                         <h2 aria-level="2" class="titleExposant">
-                            Notre liste des exposants
+                            @get('titlePage')
                         </h2>
                     </div>
                 </div>
                 @include('partials.randomImagesGourmet')
             </div>
             <div class="containerTextHome">
-                <p>
-                    Au marché des gourmets d’Amay, nous receuillons <b>plus de 30 exposants !</b> Ces
-                    personnes passionnées donnent tous les jours <b>le meilleurs d’eux-mêmes</b> pour vous proposer <b>des
-                        produits sains et de qualité.</b>
-                </p>
-                <p>
-                    Alors, n’hésitez pas à nous rendre visite au Val-Saint-Lambert lors de cette 21<sup>e</sup> édition.
-                </p>
+                <div class="containerAllText">
+                    @get('textPresentation')
+                </div>
                 <div>
-                    <a href="{{route('expoBecome.index')}}" class="btnCta">Devenir exposant <span
+                    <a href="{{route('exposants.create')}}" class="btnCta">Devenir exposant <span
                             class="arrowCta"></span></a>
                 </div>
             </div>
         </div>
     </section>
     <div class="containerBecomeExposant">
-        <div class="containerBecomeVigneron">
-            <p>
-                Vous êtes vigneron, producteur ou commerçant et vous souhaitez participer au marché des gourmets ? Alors
-                vous êtes au bon endroit !
-            </p>
+        <div class="containerBecomeVigneron containerAllText">
+            @get('textDescribeExposant')
         </div>
         <div class="containerButtonExpo">
-            <a href="{{route('expoBecome.index')}}" class="btnCta btnExposant">Devenir exposant <span
+            <a href="{{route('exposants.create')}}" class="btnCta btnExposant">Devenir exposant <span
                     class="arrowCta"></span></a>
         </div>
     </div>
@@ -87,7 +79,7 @@
                 </form>
                 <form action="#">
                     <span class="searchFilter searchFilterId" id="searchFilter" role="search">
-                        <label id="expoSearchLabel" for="expo-search">Chercher un exposant</label>
+                        <label id="expoSearchLabel" for="expo-searchId">Chercher un exposant</label>
                         <input class="search expo-searchId" type="search" spellcheck="false" id="expo-searchId"
                                name="exposantName"
                                placeholder="Rob Harry ...">
@@ -105,11 +97,11 @@
                             {{$exposant->shop_name}}
                         </h3>
                         <p class="textRegionExposant">{{$exposant->country}}</p>
-                        <p>
+                        <p class="containerAllText">
                             {{$exposant->product_description}}
                         </p>
                         @if($exposant->tags->count() > 1)
-                            <div class="tagsContainer">
+                            <div class="tagsContainer containerAllText">
                                 @foreach($exposants as $exposant)
                                     <div class="moduleTag">
                                         {{$exposant->country}}
@@ -119,7 +111,7 @@
                         @endif
                     </div>
                     <div>
-                        <a href="{{route('expoShow.index')}}" class="btnCta">{{$exposant->shop_name}}<span
+                        <a href="{{route('exposants.show',['exposant'=>$exposant])}}" class="btnCta">{{$exposant->shop_name}}<span
                                 class="arrowCta"></span></a>
                     </div>
                 </section>

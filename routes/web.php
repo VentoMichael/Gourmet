@@ -19,14 +19,25 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/', [DashboardController::class, 'index'])->name('dashboard.index');
-Route::get('/exposants', [ExposantController::class, 'index'])->name('exposants.index');
-Route::get('/exposants/add', [ExposantController::class, 'become'])->name('expoBecome.index');
-Route::get('/exposants/a', [ExposantController::class, 'show'])->name('expoShow.index');
+Route::get('/',
+    [DashboardController::class, 'index'])->template(\App\Nova\Templates\Home::class)->name('dashboard.index');
+
+Route::get('/exposants',[ExposantController::class, 'index'])->template(\App\Nova\Templates\Exposant::class)->name('exposants.index');
+Route::get('/exposants/create',[ExposantController::class, 'create'])->template(\App\Nova\Templates\Exposant::class)->name('exposants.create');
+Route::get('/exposants/{exposant}', [ExposantController::class, 'show'])->name('exposants.show');
 
 
-Route::get('/gallery', [GalleryController::class, 'index'])->name('gallery.index');
-Route::get('/restaurant', [RestaurantController::class, 'index'])->name('restaurant.index');
-Route::get('/about', [AboutController::class, 'index'])->name('about.index');
-Route::get('/contact', [ContactController::class, 'index'])->name('contact.index');
-Route::get('/tickets', [SaleController::class, 'index'])->name('tickets.index');
+Route::get('/gallery',
+    [GalleryController::class, 'index'])->template(\App\Nova\Templates\Gallerie::class)->name('gallery.index');
+
+Route::get('/restaurant',
+    [RestaurantController::class, 'index'])->template(\App\Nova\Templates\Restaurant::class)->name('restaurant.index');
+
+Route::get('/about',
+    [AboutController::class, 'index'])->template(\App\Nova\Templates\About::class)->name('about.index');
+
+Route::get('/contact',
+    [ContactController::class, 'index'])->template(\App\Nova\Templates\Contact::class)->name('contact.index');
+
+Route::get('/tickets',
+    [SaleController::class, 'index'])->template(\App\Nova\Templates\Ticket::class)->name('tickets.index');

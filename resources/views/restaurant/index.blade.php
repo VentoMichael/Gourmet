@@ -10,22 +10,16 @@
                 <div class="containerTitleHome">
                     <div>
                         <h2 aria-level="2" class="titleExposant">
-                            Un restaurant avec des aliments à votre goût
+                            @get('titlePage')
                         </h2>
                     </div>
                 </div>
                 @include('partials.randomImagesGourmet')
             </div>
             <div class="containerTextHome">
-                <p>
-                    Le Marché des Gourmets vous propose un restaurant avec <b>des plats diversifiés</b>, à <b>tous les
-                        goûts</b> ainsi qu’à tous les prix.
-                </p>
-                <p>
-                    L'occasion idéale de déguster vos achats au salon autour d'une bonne table!
-                </p>
-                <p>
-                    Alors, n’hésitez pas à nous rendre visite au Val-Saint-Lambert lors de cette 21<sup>e</sup> édition.
+                <div class="containerAllText">
+                    @get('textPresentation')
+                </div>
                 <div>
                     <a href="{{route('tickets.index')}}" class="btnCta">Acheter un billet <span class="arrowCta"></span></a>
                 </div>
@@ -35,7 +29,7 @@
     <section>
         <div class="containerMenu">
             <h2 aria-level="2">
-                Menu du restaurant
+                @get('titleMenu')
             </h2>
             <div class="containerRestaurant">
                 @foreach($restaurant as $r)

@@ -18,12 +18,10 @@ class CreateExposantsTable extends Migration
             $table->string('shop_name', 256);
             $table->string('phone',256);
             $table->string('email', 256);
-            $table->string('website', 256)->nullable();
+            $table->string('website', 256);
             $table->string('postal_code')->nullable();
-            $table->string('firstPicRepresentExpo')->nullable();
-            $table->string('secondPicRepresentExpo')->nullable();
-            $table->string('thirdPicRepresentExpo')->nullable();
             $table->string('country');
+            $table->string('location');
             $table->boolean('participate_other_exhibition_belgium');
             $table->boolean('bio_product');
             $table->boolean('accepted')->default(false);

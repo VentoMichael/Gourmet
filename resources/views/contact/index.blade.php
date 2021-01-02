@@ -10,19 +10,16 @@
                 <div class="containerTitleHome">
                     <div>
                         <h2 aria-level="2" class="titleExposant">
-                            Une question ou une envie spéciale ?
+                            @get('titlePresentation')
                         </h2>
                     </div>
                 </div>
                 @include('partials.randomImagesGourmet')
             </div>
             <div class="containerTextHome">
-                <p>
-                    Le Marché des Gourmets est disponible pour <b>toute question</b>, une envie spéciale ou même une <b>simple
-                        envie de discuter ?</b>
-                </p>
-                <p>
-                    Alors, n’hésitez pas à nous rendre visite au Val-Saint-Lambert lors de cette 21<sup>e</sup> édition.
+                <div class="containerAllText">
+                    @get('textpresentation')
+                </div>
                 <div>
                     <a href="{{route('tickets.index')}}" class="btnCta">Acheter un billet <span class="arrowCta"></span></a>
                 </div>
@@ -35,7 +32,7 @@
         </h2>
         <div class="informationsContact">
             <p class="titleForm">
-                Le marché des gourmets
+                @get('titleOfGourmets')
             </p>
             <ul role="list">
                 @foreach($praticalInformations as $praticalInformation)

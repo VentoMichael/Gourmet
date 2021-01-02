@@ -12,15 +12,6 @@ use Illuminate\Http\Request;
 class ExposantController extends Controller
 {
 
-    public function become()
-    {
-        $firstThreeRandomImages = RandomImageOfGourmet::inRandomOrder()->limit(3)->get();
-        $praticalInformations = PraticalInfos::all();
-        $countries = Country::all();
-        $tags = Tag::all();
-        return view('exposants.become', compact('firstThreeRandomImages', 'praticalInformations','tags','countries'));
-    }
-
     /**
      * Display a listing of the resource.
      *
@@ -38,11 +29,15 @@ class ExposantController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
      */
     public function create()
     {
-        //
+        $firstThreeRandomImages = RandomImageOfGourmet::inRandomOrder()->limit(3)->get();
+        $praticalInformations = PraticalInfos::all();
+        $countries = Country::all();
+        $tags = Tag::all();
+        return view('exposants.create', compact('firstThreeRandomImages', 'praticalInformations','tags','countries'));
     }
 
     /**
@@ -64,7 +59,9 @@ class ExposantController extends Controller
      */
     public function show(Exposant $exposant)
     {
-        return view('exposants.show');
+        $firstThreeRandomImages = RandomImageOfGourmet::inRandomOrder()->limit(3)->get();
+        $praticalInformations = PraticalInfos::all();
+        return view('exposants.show',compact('firstThreeRandomImages','praticalInformations','exposant'));
     }
 
 

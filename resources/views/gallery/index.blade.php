@@ -10,22 +10,17 @@
                 <div class="containerTitleHome">
                     <div>
                         <h2 aria-level="2" class="titleExposant">
-                            Revivez notre derniére édition
+                            @get('titlePage')
                         </h2>
                     </div>
                 </div>
                 @include('partials.randomImagesGourmet')
             </div>
             <div class="containerTextHome">
-                <p>
-                    Au marché des gourmets d’Amay, nous receuillons <b>les meilleus moments</b> des différents marchés
-                    sous <b>différents clichés</b>, listés ci-dessous.
-                </p>
-                <p>
-                    Alors, n’hésitez pas à nous rendre visite au Val-Saint-Lambert lors de cette 21<sup>e</sup> édition.
-                <div>
-                    <a href="{{route('tickets.index')}}" class="btnCta">Acheter un billet <span class="arrowCta"></span></a>
+                <div class="containerAllText">
+                    @get('textPresentation')
                 </div>
+                <a href="{{route('tickets.index')}}" class="btnCta">Acheter un billet <span class="arrowCta"></span></a>
             </div>
         </div>
     </section>

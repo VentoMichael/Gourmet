@@ -17,7 +17,10 @@ class Exposant extends Model
     protected $guarded = [];
     protected $dates = ['deleted_at'];
 
-
+    public function getRouteKeyName()
+    {
+        return 'shop_name';
+    }
     public function tags(){
         return $this->belongsToMany(Tag::class);
     }

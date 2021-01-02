@@ -10,35 +10,26 @@
                 <div class="containerTitleHome">
                     <div>
                         <h2 aria-level="2" class="titleExposant">
-                            Des bénévoles dans le but d'aider
+                            @get('titlePage')
                         </h2>
                     </div>
                 </div>
                 @include('partials.randomImagesGourmet')
             </div>
             <div class="containerTextHome">
-                <p>
-                    Le Marché des Gourmets est une initiative du Rotary Club de Flémalle afin de <b>soutenir</b> des
-                    associations locales, nationales, voire internationales <b>d'aide aux plus démunis.</b> Tous les
-                    bénéfices du Marché sont intégralement <b>distribués</b> à ces associations.
-                </p>
-                <p>
-                    Alors, n’hésitez pas à nous rendre visite au Val-Saint-Lambert lors de cette 21<sup>e</sup> édition.
-                </p>
+                <div class="containerAllText">
+                    @get('textPresentation')
+                </div>
                 <div>
-                    <a href="{{route('expoBecome.index')}}" class="btnCta">Devenir exposant <span
+                    <a href="{{route('exposants.create')}}" class="btnCta">Devenir exposant <span
                             class="arrowCta"></span></a>
                 </div>
             </div>
         </div>
     </section>
     <div class="containerBecomeExposant">
-        <div class="containerBecomeVigneron">
-            <p>
-                Vous êtes un producteur local et souhaitez <b>faire connaître vos produits ?</b>
-                Afin de vous inscrire et avoir <b>la chance d’y participer,</b> utiliser le formulaire ci-dessous, ne
-                tarder pas trop, <b>les places partent vite !</b>
-            </p>
+        <div class="containerBecomeVigneron containerAllText">
+            @get('textDescribeExposant')
         </div>
         <div class="containerButtonExpo">
             <p class="btnCta priceBecomeExpo" style="cursor:inherit;">Le prix du billet

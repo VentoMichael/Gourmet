@@ -10,34 +10,25 @@
                 <div class="containerTitleHome">
                     <div>
                         <h2 aria-level="2" class="titleExposant">
-                            Vins nobles de Siciles
+                            {{$exposant->shop_name}}
                         </h2>
                     </div>
                     <p class="regionExposant">
-                        Belgique
+                        {{$exposant->country}}
                     </p>
                 </div>
-                <div class="containerImagesHome">
-                    <img src="../resources/img/ja-ma--gOUx23DNks-unsplash.jpg"
-                         srcset="../resources/img/ja-ma--gOUx23DNks-unsplash_small.jpg 320w, ../resources/img/ja-ma--gOUx23DNks-unsplash.jpg 640w"
-                         sizes="100vw" alt="Image du salon du marché des gourmets">
-                    <img src="../resources/img/ja-ma--gOUx23DNks-unsplash.jpg"
-                         srcset="../resources/img/ja-ma--gOUx23DNks-unsplash_small.jpg 320w, ../resources/img/ja-ma--gOUx23DNks-unsplash.jpg 640w"
-                         sizes="100vw" alt="Image du salon du marché des gourmets">
-                    <img src="../resources/img/ja-ma--gOUx23DNks-unsplash.jpg"
-                         srcset="../resources/img/ja-ma--gOUx23DNks-unsplash_small.jpg 320w, ../resources/img/ja-ma--gOUx23DNks-unsplash.jpg 640w"
-                         sizes="100vw" alt="Image du salon du marché des gourmets">
-                </div>
+                @include('partials.randomImagesGourmet')
             </div>
             <div class="containerTextHome">
-                <p>
-                    Situé à 600 mètres d'altitude, au nord-est de l'Etna. Des vins classiques qui expriment pleinement
-                    son extraordinaire terroir, à savoir celui de l'Etna, le plus grand volcan actif d'Europe.
-                </p>
-                <p>
-                    Alors, n’hésitez pas à nous rendre visite au Val-Saint-Lambert lors de cette 21<sup>e</sup> édition.
-                </p>
+                <div class="containerTextHome containerAllText">
+                    {{$exposant->product_description}}
+                </div>
+                <div>
+                    <a href="{{route('exposants.create')}}" class="btnCta">Devenir exposant <span
+                            class="arrowCta"></span></a>
+                </div>
             </div>
+
         </div>
     </section>
     <section>
@@ -51,7 +42,7 @@
                         Nom du commerce
                     </p>
                     <p class="infoPersoExpo">
-                        Vins noble de la Sicile
+                        {{$exposant->shop_name}}
                     </p>
                 </div>
                 <div>
@@ -59,7 +50,7 @@
                         Adresse et n°
                     </p>
                     <p class="infoPersoExpo">
-                        Rue blanche, 4, bp 10
+                        {{$exposant->location}}
                     </p>
                 </div>
                 <div>
@@ -67,7 +58,7 @@
                         Email
                     </p>
                     <p class="infoPersoExpo">
-                        <a href="mailto:noblessicile@hotmail.com"></a>noblessicile@hotmail.com
+                        <a href="mailto:{{$exposant->email}}"></a>{{$exposant->email}}
                     </p>
                 </div>
                 <div>
@@ -75,7 +66,7 @@
                         Pays
                     </p>
                     <p class="infoPersoExpo">
-                        Sicile
+                        {{$exposant->country}}
                     </p>
                 </div>
                 <div>
@@ -83,7 +74,7 @@
                         Téléphone
                     </p>
                     <p class="infoPersoExpo">
-                        <a href="tel:+32494827265">0494 827 265</a>
+                        <a href="tel:+{{$exposant->phone}}">{{$exposant->phone}}</a>
                     </p>
                 </div>
                 <div>
@@ -91,17 +82,14 @@
                         Site internet
                     </p>
                     <p class="infoPersoExpo">
-                        <a href="http://www.champagne-leseurre.com"></a>http://www.champagne-leseurre.com
+                        <a href="{{$exposant->website}}"></a>{{$exposant->website}}
                     </p>
                 </div>
                 <div>
                     <p class="label">
                         Descriptif des produits
                     </p>
-                    <p class="infoPersoExpo">
-                        Le domaine Murgo est situé dans une position privilégiée sur le versant sud-est de l'Etna sur la
-                        côte est de la Sicile, à une hauteur de 500 mètres au-dessus du niveau de la mer.
-                    </p>
+                    <p class="infoPersoExpo containerAllText">{{$exposant->product_description}}</p>
                 </div>
 
             </div>
@@ -116,18 +104,11 @@
                             Tags associé aux produits
                         </p>
                         <div class="containerModulesTagsExpo">
-                            <div class="moduleTag moduleTagExpo">
-                                Vins
-                            </div>
-                            <div class="moduleTag moduleTagExpo">
-                                Sicile
-                            </div>
-                            <div class="moduleTag moduleTagExpo">
-                                Multifruits
-                            </div>
-                            <div class="moduleTag moduleTagExpo">
-                                Bio
-                            </div>
+                            @foreach($exposant->tags as $e)
+                                <div class="moduleTag moduleTagExpo">
+                                    {{$e->name}}
+                                </div>
+                            @endforeach
                         </div>
                     </div>
                     <div>

@@ -10,20 +10,16 @@
                 <div class="containerTitleHome">
                     <div>
                         <h2 aria-level="2" class="titleExposant">
-                            Le billet qui vous fera voyager
+                            @get('titlePage')
                         </h2>
                     </div>
                 </div>
                 @include('partials.randomImagesGourmet')
             </div>
             <div class="containerTextHome">
-                <p>
-                    Lors de cette visite du marché des Gourmets, vous pourrez <b>savourer des plats</b> venus d’un peu
-                    partout dans le monde, rencontrer <b>des personnes passionnées</b> et acheter les <b>produits de
-                        qualités</b> qui vous ont goûté.
-                </p>
-                <p>
-                    Cette 21<sup>e</sup> édition au Val-Saint-Lambert ne vous décevra pas.
+                <div class="containerAllText">
+                    @get('textPresentation')
+                </div>
             </div>
         </div>
     </section>

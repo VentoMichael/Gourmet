@@ -2,7 +2,6 @@
 @section('content')
     <section class="sectionContainerHome">
         <div class="containerHome">
-
             <div class="containerPresentationHome">
                 @include('partials.ctaTicket')
                 <div class="logo logoHome" role="banner">
@@ -11,7 +10,7 @@
                 <div class="containerTitleHome">
                     <div>
                         <h2 aria-level="2">
-                            Le marché des gourmets
+                            @get('titlePage')
                         </h2>
                     </div>
                     <div class="containerTitle">
@@ -22,7 +21,7 @@
                         </p>
                         <p class="marketTitle">
                         <span>
-                            21<sup>e</sup> marché
+                            @get('numberEdition')
                         </span>
                         </p>
                     </div>
@@ -30,19 +29,11 @@
                 @include('partials.randomImagesGourmet')
             </div>
             <div class="containerTextHome">
-                <p>
-                    Le Marché des Gourmets est <b>un événement annuel</b> organisé par le Rotary Club de Flémalle sur le
-                    prestigieux site <b>de Val-Saint-Lambert à la salle des moines</b> afin d'obtenir des fonds pour
-                    aider
-                    <b>les plus démunis.</b>
-                </p>
-                <p>
-                    Depuis lors, la fréquentation n'a cessé d'augmenter pour <b>atteindre 4000 visiteurs</b> et
-                    plusieurs
-                    pays et régions se sont succédé comme notamment : l'Irlande, le Portugal, l'Italie et tant d’autres.
-                </p>
+                <div class="containerAllText">
+                    @get('textPresentation')
+                </div>
                 <div>
-                    <a href="{{route('expoBecome.index')}}" class="btnCta">Devenir exposant <span
+                    <a href="{{route('exposants.create')}}" class="btnCta">Devenir exposant <span
                             class="arrowCta"></span></a>
                 </div>
             </div>
@@ -52,23 +43,15 @@
         <section>
             <div class="containerTextTitleAim">
                 <div class="containerImageHome">
-                    <img src="resources/img/sausage.jpg"
-                         srcset="resources/img/sausage_small.jpg 320w, resources/img/sausage.jpg 640w"
-                         sizes="100vw" alt="Image de saucissons">
+                    <img src="@get('imageFirstSection')" alt="@get('altFirstSection')">
                 </div>
                 <div class="containerText">
                     <h2 aria-level="2">
-                        Qu'est ce que l'on y retrouve ?
+                        @get('titleFirstSection')
                     </h2>
-                    <p>
-                        Le marché des gourmets vous propose <b>une large gamme de produits</b> comestible (charcuteries,
-                        vins,
-                        fromages
-                        …), une gamme que <b>vous ne trouverez pas ailleurs,</b> car nos commerçants viennent des quatre
-                        coins
-                        du
-                        monde.
-                    </p>
+                    <div class="containerAllText">
+                        @get('textFirstSection')
+                    </div>
                     <div class="containerCtaButton">
                         <a href="{{route('tickets.index')}}" class="btnCta btnCtaResto">Acheter un billet <span
                                 class="arrowCta"></span></a>
@@ -80,21 +63,16 @@
         <section>
             <div class="containerTextTitleAim containerTextTitleAimSecond">
                 <div class="containerImageHome">
-                    <img src="resources/img/market.jpg"
-                         srcset="resources/img/market_small.jpg 320w, resources/img/market.jpg 640w"
-                         sizes="100vw" alt="Image récente du salon du marché des gourmets">
+                    <img src="@get('imageSecondSection')"
+                         alt="@get('altSecondSection')">
                 </div>
                 <div class="containerText">
                     <h2 aria-level="2">
-                        Les années passées
+                        @get('titleSecondSection')
                     </h2>
-                    <p>
-                        Le marché des gourmets existe depuis plus de 20 ans. Dans le but de vous faire plaisir, <b>une
-                            trentaine
-                            d’exposants</b> y présenteront divers produits, mais également pour y passer un <b>délicieux
-                            moment de
-                            dégustations</b> et de rencontres et ce dans la bonne humeur bien sûr !
-                    </p>
+                    <div class="containerAllText">
+                        @get('textSecondSection')
+                    </div>
                     <div class="containerCtaButton">
                         <a href="{{route('tickets.index')}}" class="btnCta">Acheter un billet <span
                                 class="arrowCta"></span></a>
@@ -107,27 +85,21 @@
         <section>
             <div class="containerTextTitleAim">
                 <div class="containerImageHome">
-                    <img src="resources/img/restaurant.jpg"
-                         srcset="resources/img/restaurant_small.jpg 320w, resources/img/restaurant.jpg 640w"
-                         sizes="100vw" alt="Image d'un sandwiche">
+                    <img src="@get('imageThirdSection')" alt="@get('altThirdSection')">
                 </div>
                 <div class="containerText">
                     <h2 aria-level="2">
-                        Notre restaurant
+                        @get('titleThirdSection')
                     </h2>
-                    <p>Le marché des gourmets vous propose une carte digne de ce nom. <b>Prix généralement faible et
-                            varié</b>
-                        dans le
-                        goût, nous mettons tout en oeuvre pour que votre visite se passe pour le mieux.
-                    </p>
+                    <div class="containerAllText">
+                        @get('textThirdSection')
+                    </div>
                     <div class="containerCtaButton">
                         <a href="{{route('restaurant.index')}}" class="btnCta btnCtaResto">Notre restaurant <span
                                 class="arrowCta"></span></a>
                     </div>
                 </div>
-
             </div>
-
         </section>
     </div>
     <section class="sectionContainerSlide">
@@ -152,20 +124,14 @@
                                 <p class="regionExposant">
                                     {{$exposantFirstThree->country}}
                                 </p>
-                                <div class="containerImagesHome">
-                                    <img src="{{$exposantFirstThree->firstPicRepresentExpo}}"
-                                         alt="Image d'un exposant">
-                                    <img src="{{$exposantFirstThree->secondPicRepresentExpo}}"
-                                         alt="Deuxième image d'un exposant">
-                                    <img src="{{$exposantFirstThree->thirdPicRepresentExpo}}"
-                                         alt="Troisième image d'un exposant">
-                                </div>
+                                @include('partials.randomImagesGourmet')
                             </div>
                             <div class="containerTextExposant">
-                                <p class="textExposant">
-                                    {{$exposantFirstThree->product_description}}</p>
+                                <p class="textExposant containerAllText">
+                                    {{$exposantFirstThree->product_description}}
+                                </p>
                                 <div>
-                                    <a href="{{route('expoShow.index')}}"
+                                    <a href="{{route('exposants.show',[$exposantFirstThree->shop_name])}}"
                                        class="btnCta">{{$exposantFirstThree->shop_name}}<span
                                             class="arrowCta"></span></a>
                                 </div>
