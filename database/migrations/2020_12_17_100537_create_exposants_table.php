@@ -19,7 +19,6 @@ class CreateExposantsTable extends Migration
             $table->string('phone',256);
             $table->string('email', 256);
             $table->string('website', 256);
-            $table->string('postal_code')->nullable();
             $table->string('location');
             $table->boolean('participate_other_exhibition_belgium')->nullable();
             $table->boolean('bio_product');

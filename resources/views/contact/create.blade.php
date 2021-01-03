@@ -26,7 +26,7 @@
             </div>
         </div>
     </section>
-    <section class="containerFormulary">
+    <section class="containerFormulary" id="createMsg">
         <h2 aria-level="2" class="hidden">
             Formulaire de contact
         </h2>
@@ -76,7 +76,7 @@
                 <div>
                     <div class="containerInput">
                         <label for="comment">Message </label>
-                        <textarea id="message" value="{{old("comment")}}" name="comment" placeholder="Commentaires éventuels ..." rows="10"></textarea>
+                        <textarea id="message" name="comment" placeholder="Commentaires éventuels ..." rows="10">{{old("comment")}}</textarea>
                     </div>
                 </div>
                 <div class="form-example">

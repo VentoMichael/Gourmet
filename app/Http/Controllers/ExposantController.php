@@ -4,8 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\Country;
 use App\Models\Exposant;
+use App\Models\ExposantTag;
 use App\Models\PraticalInfos;
-use App\Models\RandomImageOfGourmet;
+use App\Models\Product;
 use App\Models\Tag;
 use Illuminate\Http\Request;
 
@@ -25,7 +26,12 @@ class ExposantController extends Controller
         $exposants = Exposant::with('tags','product')->where('accepted','1')->get();
         return view('exposants.index', compact('firstThreeRandomImages', 'praticalInformations','exposants'));
     }
-
+    public function show(Exposant $exposant)
+    {
+        $firstThreeRandomImages = \App\Models\Gallery::inRandomOrder()->limit(3)->get();
+        $praticalInformations = PraticalInfos::all();
+        return view('exposants.show',compact('firstThreeRandomImages','praticalInformations','exposant'));
+    }
     /**
      * Show the form for creating a new resource.
      *
@@ -37,65 +43,37 @@ class ExposantController extends Controller
         $praticalInformations = PraticalInfos::all();
         $countries = Country::all();
         $tags = Tag::all();
-        return view('exposants.create', compact('firstThreeRandomImages', 'praticalInformations','tags','countries'));
+        $products = Product::all();
+        return view('exposants.create', compact('firstThreeRandomImages', 'praticalInformations','tags','countries','products'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Exposant  $exposant
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
-     */
-    public function show(Exposant $exposant)
-    {
-        $firstThreeRandomImages = \App\Models\Gallery::inRandomOrder()->limit(3)->get();
-        $praticalInformations = PraticalInfos::all();
-        return view('exposants.show',compact('firstThreeRandomImages','praticalInformations','exposant'));
-    }
-
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Exposant  $exposant
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Exposant $exposant)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Exposant  $exposant
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Exposant $exposant)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Exposant  $exposant
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Exposant $exposant)
-    {
-        //
+        //request()->validate([
+        //    'shop_name' => 'required',
+        //    'phone' => 'required',
+        //    'email' => 'required|email',
+        //    'website' => 'required',
+        //    'location' => 'required',
+        //    'bio_product' => 'required',
+        //    'product_description' => 'required',
+        //]);
+        $exposant = new Exposant();
+        $tag = new ExposantTag();
+        $exposant->shop_name = request('shop_name');
+        $exposant->phone = request('phone');
+        $exposant->email = request('email');
+        $exposant->website = request('website');
+        $exposant->location = request('location');
+        $exposant->country_id = request('country');
+        $exposant->product_id = request('proposed_product');
+        $exposant->participate_other_exhibition_belgium = request('participate_other_exhibition_belgium');
+        $tag->tag_id = request('tags');
+        $exposant->bio_product = request('productBio');
+        $exposant->product_description = request('product_description');
+        $exposant->comment_for_organizer = request('commentsOrganizers');
+        $exposant->save();
+        return back()->with('success', 'Votre demande va être traitée.
+        Nous vous contacterons bientôt !');
     }
 }

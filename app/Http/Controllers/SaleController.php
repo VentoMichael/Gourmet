@@ -32,7 +32,6 @@ class SaleController extends Controller
         $sale->comment = request('comment');
         $sale->total_ticket_price = $sale->ticketCount * $ticketPrice;
         $sale->save();
-        return back()->with('success', 'Votre demande va être traitée.
-        Nous vous contacterons bientôt !');
+        return back()->with('success', 'Merci ! Vous recevrez vos tickets via mail, dès que la validation sera faite.');
     }
 }

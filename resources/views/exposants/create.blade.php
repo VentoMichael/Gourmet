@@ -41,98 +41,126 @@
             Formulaire de contact
         </h2>
         <div class="formContactContainer formBecomeContainer">
-            <form action="#" method="get" class="formContact formBecomeExpo" role="form" aria-label="Achat de billets">
+            @if(Session::has('success'))
+                <div class="successMessage">
+                    <img src="{{asset('resources/svg/checked.svg')}}" alt="Îcone de validation">
+                    <p>{{Session::get('success')}}</p>
+                </div>
+            @endif
+            <form aria-label="Formulaire pour devenir exposant" role="form" method="POST"
+                  action="{{route('exposants.store')}}" class="formContact formBecomeExpo">
+                @csrf
                 <div class="containerInputLabel">
                     <div class="containerInput containerInputBecomeExpo">
-                        <label for="nameMarket">Nom du commerce</label>
-                        <input type="text" name="nameMarket" id="nameMarket" required
+                        <label for="shop_name">Nom du commerce <span class="error">*</span></label>
+                        <input value="{{old("shop_name")}}" type="text" name="shop_name" id="shop_name" required
                                placeholder="Vins noble de Sicile">
+                        <p class="error">{{$errors->first('shop_name')}}</p>
                     </div>
 
                     <div class="containerInput containerInputBecomeExpo">
-                        <label for="phone">Téléphone</label>
-                        <input type="text" name="phone" id="phone" placeholder="0494 827 265">
+                        <label for="phone">Téléphone <span class="error">*</span></label>
+                        <input value="{{old("phone")}}" type="text" name="phone" id="phone" placeholder="0494 827 265">
+                        <p class="error">{{$errors->first('phone')}}</p>
                     </div>
                 </div>
                 <div class="containerInputLabel">
                     <div class="containerInput containerInputBecomeExpo">
-                        <label for="email">Email</label>
-                        <input type="email" name="email" id="email" required placeholder="lardomarco@gmail.com">
+                        <label for="email">Email <span class="error">*</span></label>
+                        <input value="{{old("email")}}" type="email" name="email" id="email" required
+                               placeholder="lardomarco@gmail.com">
+                        <p class="error">{{$errors->first('email')}}</p>
                     </div>
 
                     <div class="containerInput containerInputBecomeExpo">
-                        <label for="website">Site internet</label>
-                        <input type="text" name="website" id="website" placeholder="https://noblesicile.com">
+                        <label for="website">Site internet <span class="error">*</span></label>
+                        <input value="{{old("website")}}" type="text" name="website" id="website"
+                               placeholder="https://noblesicile.com">
+                        <p class="error">{{$errors->first('website')}}</p>
                     </div>
                 </div>
                 <div class="containerInputLabel">
                     <div class="containerInput containerInputBecomeExpo">
-                        <label for="localisation">Adresse et n°</label>
-                        <input type="text" name="localisation" id="localisation" required
+                        <label for="location">Adresse et n° <span class="error">*</span></label>
+                        <input value="{{old("location")}}" type="text" name="location" id="location" required
                                placeholder="Rue blanche, 3, bp 2">
+                        <p class="error">{{$errors->first('location')}}</p>
                     </div>
 
                     <div class="containerInput containerInputBecomeExpo">
-                        <label for="country">Pays</label>
+                        <label for="country">Pays <span class="error">*</span></label>
                         <select name="country" class="selectTicket selectCountry" id="country">
-                            @foreach($countries as $countrie)
-                                <option value="{{$countrie->name}}">{{$countrie->name}}</option>
+                            @foreach($countries as $country)
+                                <option value="{{$country->id}}">{{$country->name}}</option>
                             @endforeach
                         </select>
+                        <p class="error">{{$errors->first('country')}}</p>
                     </div>
                 </div>
                 <div class="containerInputLabel">
                     <div class="containerInput containerInputBecomeExpo">
-                        <label for="postalCode">Code postal</label>
-                        <input type="number" name="postalCode" id="postalCode" required
-                               placeholder="Rue blanche, 3, bp 2">
+                        <label for="postalCode">Produit proposé</label>
+                        <select name="proposed_product" class="selectTicket selectCountry" id="proposed_product">
+                            <option value="" disabled selected hidden class="defaultSelectOption">Séléctionner un produit
+                            </option>
+                            @foreach($products as $product)
+                                <option value="{{$product->id}}">{{$product->name}}</option>
+                            @endforeach
+                        </select>
+                        <small class="noProductFound">Votre produit n'est pas présent ? <a href="{{route('contact.create')}}/#createMsg">J'envoie un message pour intégrer mon produit</a></small>
+                        <p class="error">{{$errors->first('proposed_product')}}</p>
                     </div>
 
                     <div class="containerInput containerInputBecomeExpo">
-                        <label for="tags">Tags</label>
+                        <label for="tags">Tags <span class="error">*</span></label>
                         <select name="tags" class="selectTicket selectCountry" id="tags">
+                            <option value="" disabled selected hidden class="defaultSelectOption">Séléctionner un/des
+                                tag(s)
+                            </option>
                             @foreach($tags as $tag)
-                                <option value="{{$tag->name}}">{{$tag->name}}</option>
+                                <option value="{{$tag->id}}">{{$tag->name}}</option>
                             @endforeach
-                            <option value="" disabled selected hidden class="defaultSelectOption">Vins</option>
-                            <option value="vins">Vins</option>
-                            <option value="cheese">Fromages</option>
                         </select>
+                        <p class="error">{{$errors->first('tags')}}</p>
                     </div>
                 </div>
                 <div class="containerButtonsRadio">
                     <p>Je participe déjà à d'autres salons en Belgique</p>
                     <div class="containerButtonRadio">
                         <div class="buttonRadio">
-                            <input type="radio" id="participateSaloon" name="participateSaloon" value="yes">
+                            <input type="radio" id="participateSaloon" name="participateSaloon" value="1">
                             <label for="participateSaloon">Oui</label>
                         </div>
                         <div class="buttonRadio">
-                            <input type="radio" id="dontParticipateSaloon" name="participateSaloon" value="no">
+                            <input type="radio" id="dontParticipateSaloon" name="participateSaloon" value="0">
                             <label for="dontParticipateSaloon">Non</label>
                         </div>
+                        <p class="error">{{$errors->first('participateSaloon')}}</p>
+
                     </div>
                 </div>
                 <div class="containerButtonsRadio">
-                    <p>Avez vous au moins un produit certifié bio ?</p>
+                    <p>Avez vous au moins un produit bio ? <span class="error">*</span></p>
                     <div class="containerButtonRadio">
                         <div class="buttonRadio">
-                            <input type="radio" id="productBio" name="productBio" value="yes">
+                            <input type="radio" id="productBio" name="productBio" value="1">
                             <label for="productBio">Oui</label>
                         </div>
                         <div class="buttonRadio">
-                            <input type="radio" id="notProductBio" name="productBio" value="no">
+                            <input type="radio" id="noProductBio" name="productBio" value="0">
                             <label for="notProductBio">Non</label>
                         </div>
+                        <p class="error">{{$errors->first('productBio')}}</p>
                     </div>
                 </div>
                 <div class="containerTextAreaBecomeExpo">
                     <div class="containerInput containerInputTextArea">
-                        <label for="descriptifProducts">Descriptif des produits que je souhaiterais présenter durant le
-                            salon</label>
-                        <textarea id="descriptifProducts" name="descriptifProducts"
+                        <label for="product_description">Descriptif des produits que je souhaiterais présenter durant le
+                            salon <b class="error">*</b></label>
+                        <textarea id="product_description" name="product_description"
                                   placeholder="Ce sont des vins typiques de la Sicile, réaliser près du volcan Etna, le vin est autant meilleur que les vins fabriqués autre part que près d'un volcan ..."
-                                  rows="10"></textarea>
+                                  rows="10">{{old("product_description")}}</textarea>
+                        <p class="error">{{$errors->first('product_description')}}</p>
                     </div>
                     <span>256 caractères max</span>
                 </div>
@@ -141,7 +169,8 @@
                         <label for="commentsOrganizers">Commentaires pour les organisateurs</label>
                         <textarea id="commentsOrganizers" name="commentsOrganizers"
                                   placeholder="Commentaire(s) éventuel(s) ..."
-                                  rows="10"></textarea>
+                                  rows="10">{{old("commentsOrganizers")}}</textarea>
+                        <p class="error">{{$errors->first('commentsOrganizers')}}</p>
                     </div>
                     <span>256 caractères max</span>
                 </div>

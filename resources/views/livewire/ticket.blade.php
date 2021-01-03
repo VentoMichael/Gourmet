@@ -2,13 +2,14 @@
     <h2 aria-level="2" class="hidden">
         Formulaire d'achat de billet(s)
     </h2>
-    <div class="informationsContact">
+    <div class="informationsContact" wire:loading.class="containerExposantLoad">
         <p class="titleForm">
             Mon panier
         </p>
         <ul class="titleForm containerShoppingCart" role="list">
             <li class="infoBuyTicket" wire:model="ticketCount" role="listitem">{{$ticketCount}} ticket</li>
-            <li class="infoBuyPrice" role="listitem">{{$praticalInformations->first()->priceTicketVisitor}}€ l'unité</li>
+            <li class="infoBuyPrice" role="listitem">{{$praticalInformations->first()->priceTicketVisitor}}€ l'unité
+            </li>
         </ul>
         <p class="itemTotalPrice">
             TOTAL : {{$ticketPrice * $ticketCount}} €
@@ -21,24 +22,28 @@
                 <p>{{Session::get('success')}}</p>
             </div>
         @endif
-        <form aria-label="Achat de billets" role="form" method="POST" action="{{route('tickets.store')}}" class="formContact">
+        <form aria-label="Achat de billets" role="form" method="POST" action="{{route('tickets.store')}}"
+              class="formContact">
             @csrf
             <div>
                 <div class="containerInput">
                     <label for="name_surname">Nom et prénom <span class="error">*</span></label>
-                    <input type="text" value="{{old("name_surname")}}" name="name_surname" id="name_surname" required placeholder="Lardo Marco">
+                    <input type="text" value="{{old("name_surname")}}" name="name_surname" id="name_surname" required
+                           placeholder="Lardo Marco">
                     <p class="error">{{$errors->first('name_surname')}}</p>
                 </div>
                 <div class="containerInput">
                     <label for="phone">Téléphone <span class="error">*</span></label>
-                    <input type="text" value="{{old("phone")}}" name="phone" id="phone" required placeholder="0494 827 265">
+                    <input type="text" value="{{old("phone")}}" name="phone" id="phone" required
+                           placeholder="0494 827 265">
                     <p class="error">{{$errors->first('phone')}}</p>
                 </div>
             </div>
             <div>
                 <div class="containerInput">
                     <label for="email">Email <span class="error">*</span></label>
-                    <input type="email" value="{{old("email")}}" name="email" id="email" required placeholder="lardomarco@gmail.com">
+                    <input type="email" value="{{old("email")}}" name="email" id="email" required
+                           placeholder="lardomarco@gmail.com">
                     <p class="error">{{$errors->first('email')}}</p>
                 </div>
             </div>
@@ -63,13 +68,15 @@
             <div>
                 <div class="containerInput">
                     <label for="comment">Message</label>
-                    <textarea id="message" value="{{old("comment")}}" name="comment" placeholder="Commentaires éventuels ..."
-                              rows="10"></textarea>
+                    <textarea id="message" name="comment"
+                              placeholder="Commentaires éventuels ..."
+                              rows="10">{{old("comment")}}</textarea>
                     <p class="error">{{$errors->first('comment')}}</p>
                 </div>
             </div>
             <div class="form-example">
-                <button type="submit" role="button" aria-pressed="false" class="btnCta btnContact">Acheter un billet<span class="arrowCta"></span>
+                <button id="checkout-button" type="submit" role="button" aria-pressed="false" class="btnCta btnContact">
+                    Acheter un billet<span class="arrowCta"></span>
                 </button>
             </div>
         </form>

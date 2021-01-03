@@ -14,7 +14,7 @@
                         </h2>
                     </div>
                     <p class="regionExposant">
-                        {{$exposant->country}}
+                        {{$exposant->country->name}}
                     </p>
                 </div>
                 @include('partials.randomImagesGourmet')
@@ -66,7 +66,7 @@
                         Pays
                     </p>
                     <p class="infoPersoExpo">
-                        {{$exposant->country}}
+                        {{$exposant->country->name}}
                     </p>
                 </div>
                 <div>
@@ -95,7 +95,6 @@
             </div>
             <div class="containerExpoPlaceTagInfo">
                 <div>
-                    <
                     <div class="containerTagsExpo">
                         <p class="label">
                             Tags associé aux produits
