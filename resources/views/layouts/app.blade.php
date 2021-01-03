@@ -90,7 +90,7 @@
                     </a>
                 </li>
                 <li class="itemMenu {{ Request::is('contact') ? "current_page_item" : "" }}" aria-current="{{ Request::is('contact') ? "page" : "" }}">
-                    <a href="{{route('contact.index')}}">
+                    <a href="{{route('contact.create')}}">
                         Contact
                     </a>
                 </li>

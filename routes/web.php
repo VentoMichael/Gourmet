@@ -38,8 +38,17 @@ Route::get('/restaurant',
 Route::get('/about',
     [AboutController::class, 'index'])->template(\App\Nova\Templates\About::class)->name('about.index');
 
-Route::get('/contact',
-    [ContactController::class, 'index'])->template(\App\Nova\Templates\Contact::class)->name('contact.index');
+
+
+//Route::post('/contact', [ContactController::class, 'store']);
+
+//Route::get('/contact/create',
+    //[ContactController::class, 'create'])->template(\App\Nova\Templates\Contact::class)->name('contact.create');
+
+Route::get('/contact', [ContactController::class, 'create'])->template(\App\Nova\Templates\Contact::class)->name('contact.create');
+
+Route::post('/contact', [ContactController::class, 'store'])->name('contact.store');
+
 
 Route::get('/tickets',
     [SaleController::class, 'index'])->template(\App\Nova\Templates\Ticket::class)->name('tickets.index');

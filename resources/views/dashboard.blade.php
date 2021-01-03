@@ -122,7 +122,7 @@
                                     {{$exposantFirstThree->shop_name}}
                                 </h3>
                                 <p class="regionExposant">
-                                    {{$exposantFirstThree->country}}
+                                    {{$exposantFirstThree->country->name}}
                                 </p>
                                 @include('partials.randomImagesGourmet')
                             </div>

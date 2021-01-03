@@ -46,27 +46,37 @@
             </ul>
         </div>
         <div class="formContactContainer">
-            <form action="#" method="get" class="formContact">
+            @if(Session::has('success'))
+                <div class="successMessage">
+                    <img src="{{asset('resources/svg/checked.svg')}}" alt="Îcone de validation">
+                    <p>{{Session::get('success')}}</p>
+                </div>
+            @endif
+            <form aria-label="Création d'un message" role="form" method="POST" action="{{route('contact.store')}}" class="formContact">
+                @csrf
                 <div>
                     <div class="containerInput">
-                        <label for="nameSurname">Nom et prénom </label>
-                        <input type="text" name="nameSurname" id="nameSurname" required placeholder="Lardo Marco">
+                        <label for="name_surname">Nom et prénom <span class="error">*</span></label>
+                        <input type="text" value="{{old("name_surname")}}" name="name_surname" id="name_surname" required placeholder="Lardo Marco">
+                        <p class="error">{{$errors->first('name_surname')}}</p>
                     </div>
                     <div class="containerInput">
-                        <label for="email">Email</label>
-                        <input type="email" name="email" id="email" required placeholder="lardomarco@gmail.com">
+                        <label for="email">Email <span class="error">*</span></label>
+                        <input type="email" value="{{old("email")}}" name="email" id="email" required placeholder="lardomarco@gmail.com">
+                        <p class="error">{{$errors->first('email')}}</p>
                     </div>
                 </div>
                 <div>
                     <div class="containerInput">
-                        <label for="subject">Sujet </label>
-                        <input type="text" name="subject" id="subject" placeholder="Combien d'exposants seront admis ...">
+                        <label for="subject">Sujet <span  class="error">*</label>
+                        <input type="text" value="{{old("subject")}}" name="subject" id="subject" placeholder="Combien d'exposants seront admis ...">
+                        <p class="error">{{$errors->first('subject')}}</p>
                     </div>
                 </div>
                 <div>
                     <div class="containerInput">
-                        <label for="message">Message </label>
-                        <textarea id="message" name="message" placeholder="Commentaires éventuels ..." rows="10"></textarea>
+                        <label for="comment">Message </label>
+                        <textarea id="message" value="{{old("comment")}}" name="comment" placeholder="Commentaires éventuels ..." rows="10"></textarea>
                     </div>
                 </div>
                 <div class="form-example">
