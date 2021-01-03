@@ -53,7 +53,7 @@
                         @get('textFirstSection')
                     </div>
                     <div class="containerCtaButton">
-                        <a href="{{route('tickets.index')}}" class="btnCta btnCtaResto">Acheter un billet <span
+                        <a href="{{route('tickets.create')}}" class="btnCta btnCtaResto">Acheter un billet <span
                                 class="arrowCta"></span></a>
                     </div>
                 </div>
@@ -74,7 +74,7 @@
                         @get('textSecondSection')
                     </div>
                     <div class="containerCtaButton">
-                        <a href="{{route('tickets.index')}}" class="btnCta">Acheter un billet <span
+                        <a href="{{route('tickets.create')}}" class="btnCta">Acheter un billet <span
                                 class="arrowCta"></span></a>
                     </div>
                 </div>

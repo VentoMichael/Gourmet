@@ -95,7 +95,7 @@
                     </a>
                 </li>
                 <li class="containerBtnTickets btnTicketsMenu">
-                    <a href="{{route('tickets.index')}}" class="btnTickets">
+                    <a href="{{route('tickets.create')}}" class="btnTickets">
                         Billets
                     </a>
                 </li>

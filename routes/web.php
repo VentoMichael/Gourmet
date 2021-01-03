@@ -50,5 +50,8 @@ Route::get('/contact', [ContactController::class, 'create'])->template(\App\Nova
 Route::post('/contact', [ContactController::class, 'store'])->name('contact.store');
 
 
+
 Route::get('/tickets',
-    [SaleController::class, 'index'])->template(\App\Nova\Templates\Ticket::class)->name('tickets.index');
+    [SaleController::class, 'create'])->template(\App\Nova\Templates\Ticket::class)->name('tickets.create');
+
+Route::post('/tickets', [SaleController::class, 'store'])->name('tickets.store');
