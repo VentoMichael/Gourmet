@@ -15,7 +15,7 @@ class CreateExposantsTable extends Migration
     {
         Schema::create('exposants', function (Blueprint $table) {
             $table->id();
-            $table->string('shop_name', 256);
+            $table->string('shop_name', 256)->unique();
             $table->string('phone',256);
             $table->string('email', 256);
             $table->string('website', 256);

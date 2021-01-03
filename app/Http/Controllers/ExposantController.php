@@ -9,6 +9,7 @@ use App\Models\PraticalInfos;
 use App\Models\Product;
 use App\Models\Tag;
 use Illuminate\Http\Request;
+use function Sodium\increment;
 
 class ExposantController extends Controller
 {
@@ -44,20 +45,23 @@ class ExposantController extends Controller
         $countries = Country::all();
         $tags = Tag::all();
         $products = Product::all();
-        return view('exposants.create', compact('firstThreeRandomImages', 'praticalInformations','tags','countries','products'));
+        $caractereMax= strlen('ffffzeff');
+        return view('exposants.create', compact('firstThreeRandomImages', 'praticalInformations','tags','caractereMax','countries','products'));
     }
 
     public function store(Request $request)
     {
-        //request()->validate([
-        //    'shop_name' => 'required',
-        //    'phone' => 'required',
-        //    'email' => 'required|email',
-        //    'website' => 'required',
-        //    'location' => 'required',
-        //    'bio_product' => 'required',
-        //    'product_description' => 'required',
-        //]);
+        request()->validate([
+            'shop_name' => 'required',
+            'phone' => 'required',
+            'email' => 'required|email',
+            'website' => 'required',
+            'location' => 'required',
+            'country' => 'required',
+            'proposed_product' => 'required',
+            'productBio' => 'required',
+            'product_description' => 'required',
+        ]);
         $exposant = new Exposant();
         $tag = new ExposantTag();
         $exposant->shop_name = request('shop_name');
@@ -69,6 +73,7 @@ class ExposantController extends Controller
         $exposant->product_id = request('proposed_product');
         $exposant->participate_other_exhibition_belgium = request('participate_other_exhibition_belgium');
         $tag->tag_id = request('tags');
+        $tag->exposant_id = 1;
         $exposant->bio_product = request('productBio');
         $exposant->product_description = request('product_description');
         $exposant->comment_for_organizer = request('commentsOrganizers');
