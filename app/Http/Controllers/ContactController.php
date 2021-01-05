@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Contact;
 use App\Models\PraticalInfos;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\URL;
 
 class ContactController extends Controller
 {
@@ -27,7 +29,7 @@ class ContactController extends Controller
         $message->subject = request('subject');
         $message->comment = request('comment');
         $message->save();
-        return back()->with('success', 'Votre message a été envoyé avec succès.
+        return Redirect::to(URL::previous() . "#createMsg")->with('success', 'Votre message a été envoyé avec succès.
         Nous vous contacterons bientôt !');
     }
 

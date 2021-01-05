@@ -36,7 +36,7 @@
                 : {{$praticalInformations->first()->priceTicketExposant}} €</p>
         </div>
     </div>
-    <section class="containerFormulary">
+    <section class="containerFormulary" id="form">
         <h2 aria-level="2" class="hidden">
             Formulaire de contact
         </h2>

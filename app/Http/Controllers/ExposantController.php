@@ -9,6 +9,8 @@ use App\Models\PraticalInfos;
 use App\Models\Product;
 use App\Models\Tag;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\URL;
 use function Sodium\increment;
 
 class ExposantController extends Controller
@@ -24,15 +26,17 @@ class ExposantController extends Controller
 
         $firstThreeRandomImages = \App\Models\Gallery::inRandomOrder()->limit(3)->get();
         $praticalInformations = PraticalInfos::all();
-        $exposants = Exposant::with('tags','product')->where('accepted','1')->get();
-        return view('exposants.index', compact('firstThreeRandomImages', 'praticalInformations','exposants'));
+        $exposants = Exposant::with('tags', 'product')->where('accepted', '1')->get();
+        return view('exposants.index', compact('firstThreeRandomImages', 'praticalInformations', 'exposants'));
     }
+
     public function show(Exposant $exposant)
     {
         $firstThreeRandomImages = \App\Models\Gallery::inRandomOrder()->limit(3)->get();
         $praticalInformations = PraticalInfos::all();
-        return view('exposants.show',compact('firstThreeRandomImages','praticalInformations','exposant'));
+        return view('exposants.show', compact('firstThreeRandomImages', 'praticalInformations', 'exposant'));
     }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -45,8 +49,8 @@ class ExposantController extends Controller
         $countries = Country::all();
         $tags = Tag::all();
         $products = Product::all();
-        $caractereMax= strlen('ffffzeff');
-        return view('exposants.create', compact('firstThreeRandomImages', 'praticalInformations','tags','caractereMax','countries','products'));
+        return view('exposants.create',
+            compact('firstThreeRandomImages', 'praticalInformations', 'tags', 'countries', 'products'));
     }
 
     public function store(Request $request)
@@ -72,13 +76,13 @@ class ExposantController extends Controller
         $exposant->country_id = request('country');
         $exposant->product_id = request('proposed_product');
         $exposant->participate_other_exhibition_belgium = request('participate_other_exhibition_belgium');
-        $tag->tag_id = request('tags');
-        $tag->exposant_id = 1;
         $exposant->bio_product = request('productBio');
         $exposant->product_description = request('product_description');
         $exposant->comment_for_organizer = request('commentsOrganizers');
+        $tag->tag_id = request('tags');
         $exposant->save();
-        return back()->with('success', 'Votre demande va être traitée.
+        $exposant->tags()->attach($tag->tag_id);
+        return Redirect::to(URL::previous()."#form")->with('success', 'Votre demande va être traitée.
         Nous vous contacterons bientôt !');
     }
 }

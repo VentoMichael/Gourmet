@@ -93,17 +93,17 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-var burgerMenu = document.querySelector(".burgerId"),
-    navbarMenu = document.querySelector(".menuId"),
-    containerTicketsHome = document.querySelector(".containerTicketsHomeId"),
-    ctaTickets = document.querySelector(".ctaTicketsId");
-burgerMenu.addEventListener("click", function (e) {
-  e.preventDefault(), navbarMenu.classList.toggle("active"), burgerMenu.classList.toggle("active"), containerTicketsHome.classList.toggle("notVisible"), document.querySelector(".navbarId").classList.toggle("menuOpenNavbar");
-}), ctaTickets.addEventListener("mouseover", function (e) {
-  e.target.classList.add("ctaTicketsHover");
-}), ctaTickets.addEventListener("mouseleave", function (e) {
-  e.target.classList.remove("ctaTicketsHover");
-});
+//var burgerMenu = document.querySelector(".burgerId"),
+//    navbarMenu = document.querySelector(".menuId"),
+//    containerTicketsHome = document.querySelector(".containerTicketsHomeId"),
+//    ctaTickets = document.querySelector(".ctaTicketsId");
+//burgerMenu.addEventListener("click", function (e) {
+//  e.preventDefault(), navbarMenu.classList.toggle("active"), burgerMenu.classList.toggle("active"), containerTicketsHome.classList.toggle("notVisible"), document.querySelector(".navbarId").classList.toggle("menuOpenNavbar");
+//}), ctaTickets.addEventListener("mouseover", function (e) {
+//  e.target.classList.add("ctaTicketsHover");
+//}), ctaTickets.addEventListener("mouseleave", function (e) {
+//  e.target.classList.remove("ctaTicketsHover");
+//});
 
 /***/ }),
 

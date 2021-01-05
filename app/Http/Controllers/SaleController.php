@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\PraticalInfos;
 use App\Models\Sale;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\URL;
 
 class SaleController extends Controller
 {
@@ -32,6 +34,6 @@ class SaleController extends Controller
         $sale->comment = request('comment');
         $sale->total_ticket_price = $sale->ticketCount * $ticketPrice;
         $sale->save();
-        return back()->with('success', 'Merci ! Vous recevrez vos tickets via mail, dès que la validation sera faite.');
+        return Redirect::to(URL::previous() . "#form")->with('success', 'Merci ! Vous recevrez vos tickets via mail, dès que la validation sera faite.');
     }
 }

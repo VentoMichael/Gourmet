@@ -32,6 +32,9 @@
 </head>
 <body>
 <header>
+    <a href="{{route('dashboard.index')}}">
+        <h1 aria-level="1" class="principalTitle">Le marché des gourmets</h1>
+    </a>
     <h2 aria-level="2" class="hidden">
         Informations d'en-tête
     </h2>
@@ -39,63 +42,54 @@
         <h3 aria-level="3" class="hidden">
             Navigation Principale
         </h3>
-        <div class="navbrand" role="banner">
-            <div></div>
-            <div class="burger burgerId" id="burger" aria-label="menu">
-            <span class="burger-open">
-				<svg xmlns="http://www.w3.org/2000/svg" width="24" height="16">
-					<g fill="rgba(78, 0, 47, 1)" fill-rule="evenodd">
-						<path d="M0 0h24v2H0zM0 7h24v2H0zM0 14h24v2H0z"/>
-					</g>
-				</svg>
-			</span>
-                <span class="burger-close" aria-label="menu">
-				<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20">
-					<path fill="rgba(78, 0, 47, 1)" fill-rule="evenodd"
-                          d="M17.778.808l1.414 1.414L11.414 10l7.778 7.778-1.414 1.414L10 11.414l-7.778 7.778-1.414-1.414L8.586 10 .808 2.222 2.222.808 10 8.586 17.778.808z"/>
-				</svg>
-			</span>
-            </div>
-        </div>
-        <div>
-            <ul class="menu menuId" id="menu">
-                <li class="itemMenu">
+        <input type="checkbox" id="checkbox" class="mobile-menu__checkbox">
+        <label for="checkbox" class="mobile-menu__btn"><div class="mobile-menu__icon"></div></label>
+
+        <div class="mobile-menu__container">
+            <ul class="menu menuId mobile-menu__list" id="menu">
+                <li>
                     <a href="{{route('dashboard.index')}}">
-                        <h1 aria-level="1" class="principalTitle">Le marché des gourmets</h1>
+                        <p class="principalTitle titlePageMenu">Le marché des gourmets</p>
                     </a>
                 </li>
-                <li class="itemMenu {{ Request::is('/') ? "current_page_item" : "" }}" aria-current="{{ Request::is('/') ? "page" : "" }}">
-                    <a href="{{route('dashboard.index')}}">
+                <li class="mobile-menu__item {{ Request::is('/') ? "current_page_item" : "" }}"
+                    aria-current="{{ Request::is('/') ? "page" : "" }}">
+                    <a class="mobile-menu__link" href="{{route('dashboard.index')}}">
                         Accueil
                     </a>
                 </li>
-                <li class="itemMenu {{ Request::is('exposants/*') || Request::is('exposants') ? "current_page_item" : "" }}">
-                    <a href="{{route('exposants.index')}}">
+                <li class="mobile-menu__item {{ Request::is('exposants/*') || Request::is('exposants') ? "current_page_item" : "" }}">
+                    <a class="mobile-menu__link" href="{{route('exposants.index')}}">
                         Exposants
                     </a>
                 </li>
-                <li class="itemMenu {{ Request::is('gallery') ? "current_page_item" : "" }}" aria-current="{{ Request::is('gallery') ? "page" : "" }}">
-                    <a href="{{route('gallery.index')}}">
+                <li class="mobile-menu__item {{ Request::is('gallery') ? "current_page_item" : "" }}"
+                    aria-current="{{ Request::is('gallery') ? "page" : "" }}">
+                    <a class="mobile-menu__link" href="{{route('gallery.index')}}">
                         Photos
                     </a>
                 </li>
-                <li class="itemMenu {{ Request::is('restaurant') ? "current_page_item" : "" }}" aria-current="{{ Request::is('restaurant') ? "page" : "" }}">
-                    <a href="{{route('restaurant.index')}}">
+                <li class="mobile-menu__item {{ Request::is('restaurant') ? "current_page_item" : "" }}"
+                    aria-current="{{ Request::is('restaurant') ? "page" : "" }}">
+                    <a class="mobile-menu__link" href="{{route('restaurant.index')}}">
                         Restaurant
                     </a>
                 </li>
-                <li class="itemMenu {{ Request::is('about') ? "current_page_item" : "" }}" aria-current="{{ Request::is('about') ? "page" : "" }}">
-                    <a href="{{route('about.index')}}">
+                <li class="mobile-menu__item {{ Request::is('about') ? "current_page_item" : "" }}"
+                    aria-current="{{ Request::is('about') ? "page" : "" }}">
+                    <a class="mobile-menu__link" href="{{route('about.index')}}">
                         À propos
                     </a>
                 </li>
-                <li class="itemMenu {{ Request::is('contact') ? "current_page_item" : "" }}" aria-current="{{ Request::is('contact') ? "page" : "" }}">
-                    <a href="{{route('contact.create')}}">
+                <li class="mobile-menu__item {{ Request::is('contact') ? "current_page_item" : "" }}"
+                    aria-current="{{ Request::is('contact') ? "page" : "" }}">
+                    <a class="mobile-menu__link" href="{{route('contact.create')}}">
                         Contact
                     </a>
                 </li>
-                <li class="containerBtnTickets btnTicketsMenu">
-                    <a href="{{route('tickets.create')}}" class="btnTickets">
+                <li class="containerBtnTickets btnTicketsMenu"
+                    aria-current="{{ Request::is('ticket') ? "page" : "" }}">
+                    <a class="mobile-menu__link btnTickets" href="{{route('tickets.create')}}">
                         Billets
                     </a>
                 </li>
@@ -104,9 +98,12 @@
     </nav>
 </header>
 <div class="containerBckgImages">
-    <img src="{{asset('resources/img/cheese.png')}}" alt="Cheese" class="cheese">
-    <img src="{{asset('resources/img/coldcuts.png')}}" alt="Coldcuts" class="coldcuts">
-    <img src="{{asset('resources/img/wine.png')}}" alt="Wine bottle" class="wineBckg">
+    <img src="{{asset('resources/img/cheese_small.png')}}" alt="Cheese" class="cheese"
+         srcset="{{asset('resources/img/cheese.png')}} 1800w" sizes="(max-width: 1500px) 300px, 400px">
+    <img src="{{asset('resources/img/coldcuts_small.png')}}" srcset="{{asset('resources/img/coldcuts.png')}} 1800w"
+         sizes="(max-width: 1500px) 300px, 400px" alt="Coldcuts" class="coldcuts">
+    <img src="{{asset('resources/img/wine_small.png')}}" srcset="{{asset('resources/img/wine.png')}} 1800w"
+         sizes="(max-width: 1500px) 300px, 400px" alt="Wine bottle" class="wineBckg">
 </div>
 <main>
     @yield('content')
@@ -168,7 +165,8 @@
                             {{$praticalInformations->first()->place}}
                         </p>
                         <p itemprop="streetAddress">
-                            <span itemprop="postalCode">{{$praticalInformations->first()->postalCode}}</span> {{$praticalInformations->first()->region}}
+                            <span
+                                itemprop="postalCode">{{$praticalInformations->first()->postalCode}}</span> {{$praticalInformations->first()->region}}
                         </p>
                     </div>
                 </div>

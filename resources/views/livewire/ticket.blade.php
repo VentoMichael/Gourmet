@@ -2,7 +2,7 @@
     <h2 aria-level="2" class="hidden">
         Formulaire d'achat de billet(s)
     </h2>
-    <div class="informationsContact" wire:loading.class="containerExposantLoad">
+    <div class="informationsContact" wire:loading.class="containerExposantLoad" id="form">
         <p class="titleForm">
             Mon panier
         </p>

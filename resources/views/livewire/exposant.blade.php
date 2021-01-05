@@ -47,9 +47,11 @@
                     @endif
                         <button class="buttonSearch hidden">Rechercher l'exposant</button>
                     </span>
-                <button>
-                    Appliquer les filtres
-                </button>
+                <noscript>
+                    <button>
+                        Appliquer les filtres
+                    </button>
+                </noscript>
             </form>
         </div>
     </div>

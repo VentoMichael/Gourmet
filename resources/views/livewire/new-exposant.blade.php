@@ -71,8 +71,8 @@
             </div>
 
             <div class="containerInput containerInputBecomeExpo">
-                <label for="tags">Tags</label>
-                <select wire:model="tagsRepeat" required multiple name="tags"
+                <label for="tags">Tag(s)</label>
+                <select wire:model="tagsRepeat" required multiple name="tags[]"
                         class="tagsContainerSelect selectTicket selectCountry @if(!$tagsRepeat) tagsContainerSelectWithout @endif"
                         id="tags">
                     <option value="" disabled selected hidden class="defaultSelectOption">Séléctionner un/des
@@ -85,7 +85,6 @@
                 @if(!$tagsRepeat)
                     <small class="noProductFound">Ce champs n'est pas obligatoire mais fortement recommandé</small>
                 @endif
-
                 <p class="error">{{$errors->first('tags')}}</p>
             </div>
         </div>
@@ -102,7 +101,6 @@
                         <label for="dontParticipateSaloon">Non</label>
                     </div>
                     <p class="error">{{$errors->first('participateSaloon')}}</p>
-
                 </div>
             </div>
             @if($tagsRepeat)

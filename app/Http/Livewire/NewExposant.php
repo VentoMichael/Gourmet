@@ -10,7 +10,9 @@ use Livewire\Component;
 class NewExposant extends Component
 {
     public $commentString='';
-    public $tagsRepeat=[];
+    public $tagsRepeat=[
+
+    ];
 
     public function render()
     {
