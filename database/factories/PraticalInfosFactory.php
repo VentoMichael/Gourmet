@@ -27,7 +27,6 @@ class PraticalInfosFactory extends Factory
             'place' => $this->faker->streetAddress,
             'email' => $this->faker->email,
             'website' => $this->faker->url,
-            'stock'=>100,
             'postalCode' => $this->faker->postcode,
             'region' => $this->faker->citySuffix ,
             'priceTicketVisitor'=>6,

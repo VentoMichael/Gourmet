@@ -127,10 +127,11 @@
                 </div>
                 <div class="textPracticalInformation">
                     <p>
-                        Le 24 mars 2021 de 16h à 22h
+                        {{$praticalInformations->first()->startDate}}
                     </p>
                     <p>
-                        Le 25 mars 2021 de 16h à 22h
+                        {{$praticalInformations->first()->endDate}}
+
                     </p>
                 </div>
             </section>

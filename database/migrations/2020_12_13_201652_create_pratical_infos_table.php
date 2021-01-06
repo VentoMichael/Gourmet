@@ -19,8 +19,6 @@ class CreatePraticalInfosTable extends Migration {
 			$table->string('postalCode');
 			$table->string('region');
             $table->float('priceTicketVisitor')->default(6);
-            $table->float('stock');
-
 			$table->string('phone',256);
             $table->timestamps();
             $table->softDeletes();

@@ -24,5 +24,7 @@
             </div>
         </div>
     </section>
-    @livewire('gallery-filter')
+    <livewire:gallery-filter :rq="$rq" :firstThreeRandomImages="$firstThreeRandomImages" :praticalInformations="$praticalInformations">
+
+    </livewire:gallery-filter>
 @endsection

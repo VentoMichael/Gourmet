@@ -27,9 +27,8 @@ class ExposantController extends Controller
     {
         $firstThreeRandomImages = \App\Models\Gallery::inRandomOrder()->limit(3)->get();
         $praticalInformations = PraticalInfos::all();
-        $exposants = Exposant::with('tags', 'product')->where('accepted', '1')->get();
         $rq = \request()->query();
-        return view('exposants.index', compact('firstThreeRandomImages', 'praticalInformations', 'exposants','rq'));
+        return view('exposants.index', compact('firstThreeRandomImages', 'praticalInformations', 'rq'));
     }
 
     public function show(Exposant $exposant)

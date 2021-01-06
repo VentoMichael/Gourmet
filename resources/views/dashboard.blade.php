@@ -108,10 +108,12 @@
                 <h2 aria-level="2">
                     3 exposants aléatoire
                 </h2>
-                <div class="arrowsSlide">
-                    <a class="prev" id="prev"></a>
-                    <a class="next" id="next"></a>
-                </div>
+                @if($exposantsFirstThree->count() > 1)
+                    <div class="arrowsSlide">
+                        <a class="prev" id="prev"></a>
+                        <a class="next" id="next"></a>
+                    </div>
+                @endif
             </div>
             <div class="slideshow-container">
                 @foreach($exposantsFirstThree as $exposantFirstThree)
