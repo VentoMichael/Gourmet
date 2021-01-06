@@ -1556,7 +1556,6 @@ option {
     border-bottom: 2px solid #000;
     padding-bottom: 3px
 }
-
 @media only screen and (min-width: 650px) {
     .containerImagesHome {
         max-width: 500px

@@ -3,18 +3,17 @@
         <nav role="navigation" aria-label="Pagination Navigation" class="containerPaginate">
             <div class="listPaginate">
 
-                <span>
+                <span style="position:relative;">
                     <span>
                     @if ($paginator->onFirstPage())
-                            <span class="listPaginateNext">
+                            <span class="@if($paginator->onFirstPage()) hidden @endif listPaginateNext">
 
                         </span>
                         @else
-                            <button wire:click="previousPage" wire:loading.attr="disabled"
+                            <a href="{{$paginator->previousPageUrl()}}" wire:click="previousPage" wire:loading.attr="disabled"
                                     dusk="previousPage.before"
                                     class="listPaginateNext">
-
-                        </button>
+                        </a>
                         @endif
                 </span>
                         {{-- Pagination Elements --}}
@@ -35,10 +34,10 @@
                                                 <span class="currentPaginate buttonPaginate">{{ $page }}</span>
                                             </span>
                                     @else
-                                        <button wire:click="gotoPage({{ $page }})" class="buttonPaginate"
+                                        <a href="gallery?page={{ $page }}" wire:click="gotoPage({{ $page }})" class="buttonPaginate"
                                                 aria-label="{{ __('Go to page :page', ['page' => $page]) }}">
                                                 {{ $page }}
-                                            </button>
+                                            </a>
                                     @endif
                                     </span>
                             @endforeach
@@ -46,10 +45,9 @@
                     @endforeach
                     <span>
                     @if ($paginator->hasMorePages())
-                            <button wire:click="nextPage" wire:loading.attr="disabled" dusk="nextPage.before"
+                            <a href="{{ $paginator->nextPageUrl() }}" wire:click="nextPage" wire:loading.attr="disabled" dusk="nextPage.before"
                                     class="listPaginatePrevious">
-
-                        </button>
+                        </a>
                         @else
                             <span class="listPaginatePrevious">
 

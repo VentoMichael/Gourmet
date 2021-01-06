@@ -21,7 +21,8 @@
                     @get('textPresentation')
                 </div>
                 <div>
-                    <a href="{{route('tickets.create')}}" class="btnCta">Acheter un billet <span class="arrowCta"></span></a>
+                    <a href="{{route('tickets.create')}}" class="btnCta">Acheter un billet <span
+                            class="arrowCta"></span></a>
                 </div>
             </div>
         </div>
@@ -32,49 +33,19 @@
                 @get('titleMenu')
             </h2>
             <div class="containerRestaurant">
-                @foreach($restaurant as $r)
+                @foreach($restaurant as $key => $value)
                     <section class="containerPrincipalMeat">
-                        <h3 aria-level="3" class="menuPrincipalMeat">
-                            {{$r->dish_section}}
-                        </h3>
+                        @if($key != $oldRestaurant['dish_section'])
+                            <h3 aria-level="3" class="menuPrincipalMeat">
+                                {{$key}}
+                            </h3>
+                        @endif
                         <ul role="list">
-                            <li role="listitem">
-                                {{$r->title_dish}} ({{$r->description_dish}})<span>{{$r->price_dish}} €</span>
-                            </li>
-                        </ul>
-                    </section>
-                    <section class="containerPrincipalMeat containerSandwichs">
-                        <h3 aria-level="3" class="menuSandwichs">
-                            Sandwichs
-                        </h3>
-                        <ul role="list">
-                            <li role="listitem">
-                                Dagobert
-                                <span>5€</span>
-                            </li>
-                            <li role="listitem">
-                                Campagnard (Brie, miel, lardons, roquette)
-                                <span>5€</span>
-                            </li>
-                            <li role="listitem">
-                                Italien (Jambon fumé, roquette, tomate confite)
-                                <span>5€</span>
-                            </li>
-                        </ul>
-                    </section>
-                    <section class="containerPrincipalMeat">
-                        <h3 aria-level="3" class="menuDesserts">
-                            Desserts
-                        </h3>
-                        <ul role="list">
-                            <li role="listitem">
-                                Mousse au chocolat, caramel au beurre salé
-                                <span>5€</span>
-                            </li>
-                            <li role="listitem">
-                                Tiramisu au spéculoos et fruits rouges
-                                <span>5€</span>
-                            </li>
+                            @foreach($value as $v)
+                                <li role="listitem">
+                                    {{$v->title_dish}} ({{$v->description_dish}})<span>{{$v->price_dish}} €</span>
+                                </li>
+                            @endforeach
                         </ul>
                     </section>
                 @endforeach

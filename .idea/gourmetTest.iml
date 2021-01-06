@@ -140,6 +140,8 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/wlmsg/welcomemsg" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/whitecube/nova-page" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/livewire/livewire" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/intervention/image" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/ctessier/nova-advanced-image-field" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

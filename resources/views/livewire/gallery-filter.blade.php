@@ -1,25 +1,27 @@
-<section>
+<section id="gallery">
     <h2 aria-level="2" class="hidden">
         Gallerie d'images
     </h2>
     <div>
 
-    <form action="#">
+    <form action="{{route('gallery.index')}}">
         <div class="containerFiltersAll containerFilterGallery">
             <div class="containerFilters">
             <span class="pageFilter filterItemPage filterGallery">
                 <label for="filterPage">Nombre d'items par page</label>
-                <select wire:model="perpage" name="filterPage" id="filterPage">
+                <select wire:model="filterPage" name="filterPage" id="filterPage">
                     <option value="9" selected>9</option>
                     <option value="12">12</option>
                     <option value="18">18</option>
                 </select>
             </span>
+                <noscript>
                 <div class="containerButtonGallery">
                     <button class="buttonGallery">
                         Appliquer les filtres
                     </button>
                 </div>
+                </noscript>
             </div>
         </div>
     </form>

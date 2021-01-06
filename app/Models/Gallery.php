@@ -10,6 +10,7 @@ class Gallery extends Model
     use HasFactory;
 
     protected $table = 'galleries';
+    protected $guarded = [];
 
     protected $dates = ['deleted_at'];
 

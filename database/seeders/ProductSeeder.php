@@ -17,25 +17,25 @@ class ProductSeeder extends Seeder
         Product::create([
             'id'=> 1,
             'name'=> 'wine',
-            'icone'=> 'http://gourmet.test/resources/svg/wine.svg',
+            'icone'=> 'resources/svg/wine.svg',
             'alt'=> 'Picto représantant du vin'
         ]);
         Product::create([
             'id'=> 2,
             'name'=> 'cheese',
-            'icone'=> 'http://gourmet.test/resources/svg/cheese.svg',
+            'icone'=> 'resources/svg/cheese.svg',
             'alt'=> 'Picto représantant du fromage'
         ]);
         Product::create([
             'id'=> 3,
             'name'=> 'fruits',
-            'icone'=> 'http://gourmet.test/resources/svg/fruits.svg',
+            'icone'=> 'resources/svg/fruits.svg',
             'alt'=> 'Picto représantant des fruits'
         ]);
         Product::create([
             'id'=> 4,
             'name'=> 'milk',
-            'icone'=> 'http://gourmet.test/resources/svg/bootle.svg',
+            'icone'=> 'resources/svg/bottle.svg',
             'alt'=> 'Picto représantant une bouteille de lait'
         ]);
     }

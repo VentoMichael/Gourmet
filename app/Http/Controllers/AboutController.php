@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Gallery;
 use App\Models\PraticalInfos;
-use App\Models\RandomImageOfGourmet;
+
 
 class AboutController extends Controller
 {

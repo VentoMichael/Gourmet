@@ -36,6 +36,8 @@
                     class="arrowCta"></span></a>
         </div>
     </div>
-        @livewire('exposant')
+    <livewire:exposant :rq="$rq" :firstThreeRandomImages="$firstThreeRandomImages" :praticalInformations="$praticalInformations">
+
+    </livewire:exposant>
     </section>
 @endsection

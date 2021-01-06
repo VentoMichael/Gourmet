@@ -4,30 +4,29 @@
     </h2>
     <div class="containerFiltersAll containerExpo">
         <div class="containerFilters">
-            <form action="#">
+            <form action="{{route('exposants.index')}}">
                 <div class="container3firstFilters">
                         <span class="countriesFilter">
                             <label for="country_id">Pays</label>
-                            <select wire:model="country" name="country_id" id="country">
-                                    <option value="" disabled selected>Pays</option>
-                                @foreach($exposants as $exposant)
-
-                                    <option value="{{$exposant->country->id}}">{{$exposant->country->name}}</option>
+                            <select wire:model="country_id" name="country_id" id="country">
+                                    <option value="" selected>Pays</option>
+                                @foreach($countries as $country)
+                                    <option value="{{$country->id}}">{{$country->name}}</option>
                                 @endforeach
                             </select>
                         </span>
                     <span class="productsFilter">
                             <label for="product_id">Produits</label>
-                            <select wire:model="product" name="product_id" id="product">
-                                <option value="" disabled selected>Produit</option>
-                                @foreach($exposants as $exposant)
-                                    <option value="{{$exposant->product->id}}">{{$exposant->product->name}}</option>
+                            <select wire:model="product_id" name="product_id" id="product">
+                                <option value="" selected>Produit</option>
+                                @foreach($products as $product)
+                                    <option value="{{$product->id}}">{{$product->name}}</option>
                                 @endforeach
                             </select>
                         </span>
                     <span class="pageFilter">
                             <label for="filterPage">Nombre d'item</label>
-                            <select wire:model="perpage" name="filterPage" id="filterPage">
+                            <select wire:model="filterPage" name="filterPage" id="filterPage">
                                 <option value="6" selected>6</option>
                                 <option value="9">9</option>
                                 <option value="12">12</option>
@@ -36,7 +35,7 @@
                 </div>
                 <span class="searchFilter searchFilterId" id="searchFilter" role="search">
                         <label id="expoSearchLabel" for="expo-searchId">Chercher un exposant</label>
-                        <input wire:model="search" class="search expo-searchId" type="search" spellcheck="false"
+                        <input wire:model="exposantName" class="search expo-searchId" type="search" spellcheck="false"
                                id="expo-searchId"
                                name="exposantName"
 
@@ -60,7 +59,7 @@
             @forelse($exposants as $exposant)
                 <section wire:loading.class="containerExposantLoad" class="containerExposant">
                     <div>
-                        <img src="{{$exposant->product->icone}}" alt="{{$exposant->product->alt}}">
+                        <img src="{{asset($exposant->product->icone)}}" alt="{{$exposant->product->alt}}">
                         <h3 aria-level="3">
                             {{$exposant->shop_name}}
                         </h3>
@@ -71,9 +70,11 @@
                         @if($exposant->tags->count() > 1)
                             <div class="tagsContainer containerAllText">
                                 @foreach($exposants as $exposant)
-                                    <div class="moduleTag">
-                                        {{$exposant->country}}
-                                    </div>
+                                    @foreach($exposant->tags as $exposantTag)
+                                        <div class="moduleTag">
+                                            {{$exposantTag->name}}
+                                        </div>
+                                    @endforeach
                                 @endforeach
                             </div>
                         @endif
@@ -85,7 +86,7 @@
                     </div>
                 </section>
             @empty
-                <section class="containerExposant">
+                <section wire:loading.class="containerExposantLoad" class="containerExposant">
                     <div>
                         <img src="{{asset('resources/svg/idea.svg')}}" alt="Pictogramme d'une ampoule">
                         <h3 aria-level="3">
