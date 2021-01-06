@@ -14,6 +14,33 @@ class CountrySeeder extends Seeder
      */
     public function run()
     {
-        Country::factory()->count(5)->create();
+        Country::create([
+            'id'=> 1,
+            'name'=> 'Allemagne',
+        ]);
+        Country::create([
+            'id'=> 2,
+            'name'=> 'Italie',
+        ]);
+        Country::create([
+            'id'=> 3,
+            'name'=> 'France',
+        ]);
+        Country::create([
+            'id'=> 4,
+            'name'=> 'Pays-bas',
+        ]);
+        Country::create([
+            'id'=> 5,
+            'name'=> 'Suisse',
+        ]);
+        Country::create([
+            'id'=> 6,
+            'name'=> 'Belgique',
+        ]);
+        Country::create([
+            'id'=> 7,
+            'name'=> 'Espagne',
+        ]);
     }
 }

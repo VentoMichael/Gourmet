@@ -59,7 +59,7 @@
             @forelse($exposants as $exposant)
                 <section wire:loading.class="containerExposantLoad" class="containerExposant">
                     <div>
-                        <img src="{{asset($exposant->product->icone)}}" alt="{{$exposant->product->alt}}">
+                        <img src="{{asset('storage/'.$exposant->product->icone)}}" alt="{{$exposant->product->alt}}">
                         <h3 aria-level="3">
                             {{$exposant->shop_name}}
                         </h3>

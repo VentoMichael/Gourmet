@@ -14,6 +14,5 @@ class ExposantSeeder extends Seeder
      */
     public function run()
     {
-        Exposant::factory()->count(30)->create();
     }
 }

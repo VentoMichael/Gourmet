@@ -16,7 +16,7 @@
                 </div>
                 @include('partials.randomImagesGourmet')
             </div>
-            <div class="containerCtaPresentation">
+            <div class="containerCtaPresentation containerTextHome">
                 <div class="containerAllText">
                     @get('presentationRotaryClub')
                 </div>
@@ -57,7 +57,7 @@
                 </h3>
                 <div class="containerHistorical">
                     <img src="{{$oneRandomImage->first()->image}}" alt="{{$oneRandomImage->first()->alt}}">
-                    <div>
+                    <div class="containerHistoricalCta">
                         <div class="containerAllText">
                             @get('textAboutUs')
                         </div>

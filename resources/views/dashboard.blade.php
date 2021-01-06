@@ -2,7 +2,7 @@
 @section('content')
     <section class="sectionContainerHome">
         <div class="containerHome">
-            <div class="containerPresentationHome">
+            <div class="containerPresentationHome containerHomeCta">
                 @include('partials.ctaTicket')
                 <div class="logo logoHome" role="banner">
                     <img src="../resources/svg/Logo_club.png" alt="Logo des marchés des gourmets">
