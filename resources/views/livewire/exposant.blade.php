@@ -69,13 +69,11 @@
                         </p>
                         @if($exposant->tags->count() > 1)
                             <div class="tagsContainer containerAllText">
-                                @foreach($exposants as $exposant)
                                     @foreach($exposant->tags as $exposantTag)
                                         <div class="moduleTag">
                                             {{$exposantTag->name}}
                                         </div>
                                     @endforeach
-                                @endforeach
                             </div>
                         @endif
                     </div>

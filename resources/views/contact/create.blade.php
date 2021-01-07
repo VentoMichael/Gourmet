@@ -69,7 +69,7 @@
                 <div>
                     <div class="containerInput">
                         <label for="subject">Sujet <span  class="error">*</label>
-                        <input type="text" value="{{old("subject")}}" name="subject" id="subject" placeholder="Combien d'exposants seront admis ...">
+                        <input required type="text" value="{{old("subject")}}" name="subject" id="subject" placeholder="Combien d'exposants seront admis ...">
                         <p class="error">{{$errors->first('subject')}}</p>
                     </div>
                 </div>

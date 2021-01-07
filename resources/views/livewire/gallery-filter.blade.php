@@ -3,18 +3,17 @@
         Gallerie d'images
     </h2>
     <div>
-
         <form action="{{route('gallery.index')}}">
             <div class="containerFiltersAll containerFilterGallery">
                 <div class="containerFilters">
-            <span class="pageFilter filterItemPage filterGallery">
-                <label for="filterPage">Nombre d'items par page</label>
-                <select wire:model="filterPage" name="filterPage" id="filterPage">
-                    <option value="9" selected>9</option>
-                    <option value="12">12</option>
-                    <option value="18">18</option>
-                </select>
-            </span>
+                    <span class="pageFilter filterItemPage filterGallery">
+                        <label for="filterPage">Nombre d'items par page</label>
+                        <select wire:model="filterPage" name="filterPage" id="filterPage">
+                            <option value="9" selected>9</option>
+                            <option value="12">12</option>
+                            <option value="18">18</option>
+                        </select>
+                    </span>
                     <noscript>
                         <div class="containerButtonGallery">
                             <button class="buttonGallery">

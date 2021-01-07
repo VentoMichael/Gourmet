@@ -21,7 +21,6 @@ class CreateExposantsTable extends Migration
             $table->string('website', 256);
             $table->string('location');
             $table->boolean('participate_other_exhibition_belgium')->nullable();
-            $table->boolean('bio_product');
             $table->boolean('accepted')->default(false);
             $table->text('product_description');
             $table->text('comment_for_organizer')->nullable();

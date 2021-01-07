@@ -28,6 +28,11 @@ class SaleController extends Controller
             'phone' => 'required',
             'email' => 'required',
             'ticketCount' => 'required',
+        ], [
+            'name_surname.required' => 'Le nom du commerce est requis',
+            'email.required' => 'L\'email est requis',
+            'email.email' => 'L\'email ci-dessus est inhabituel',
+            'phone.required' => 'Le numéro de téléphone est requis'
         ]);
         $sale = new Sale();
         $sale->name_surname = request('name_surname');

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Mail\newExposant;
 use App\Mail\notificationExposant;
+use App\Mail\notificationForExposant;
 use App\Models\Country;
 use App\Models\Exposant;
 use App\Models\ExposantTag;
@@ -59,14 +60,26 @@ class ExposantController extends Controller
     {
         request()->validate([
             'shop_name' => 'required|unique:exposants',
-            'phone' => 'required|unique:exposants',
+            'phone' => 'required|unique:exposants|max:10',
             'email' => 'required|email|unique:exposants',
             'website' => 'required',
             'location' => 'required',
             'country' => 'required',
             'proposed_product' => 'required',
-            'productBio' => 'required',
             'product_description' => 'required',
+        ], [
+            'shop_name.required' => 'Le nom du commerce est requis',
+            'shop_name.unique' => 'Ce nom du commerce est déjà pris',
+            'phone.unique' => 'Ce numéro de téléphone est déjà pris',
+            'phone.required' => 'Le numéro de téléphone est requis',
+            'phone.max' => 'Le numéro de téléphone n\'est pas valide',
+            'email.required' => 'L\'email est requis',
+            'email.email' => 'L\'email ci-dessus est inhabituel',
+            'email.unique' => 'Cet email ci-dessus est déjà pris',
+            'website.required' => 'Le site internet est requis',
+            'location.required' => 'L\'adresse est requis',
+            'proposed_product.required' => 'Le produit proposé est requis',
+            'product_description.required' => 'Le descriptif est requis',
         ]);
         $exposant = new Exposant();
         $tag = new ExposantTag();
@@ -78,7 +91,6 @@ class ExposantController extends Controller
         $exposant->country_id = request('country');
         $exposant->product_id = request('proposed_product');
         $exposant->participate_other_exhibition_belgium = request('participate_other_exhibition_belgium');
-        $exposant->bio_product = request('productBio');
         $exposant->product_description = request('product_description');
         $exposant->comment_for_organizer = request('commentsOrganizers');
         $tag->tag_id = request('tags');
@@ -87,10 +99,10 @@ class ExposantController extends Controller
         Mail::to(env('MAIL_FROM_ADDRESS'))
             ->send(new newExposant());
         Mail::to(request('email'))
-            ->send(new notificationExposant());
-        //if ($exposant->accepted->update() === true) {
-        //    Mail::to(request('email'))
-        //        ->send(new notificationExposant());
+            ->send(new notificationForExposant());
+        //if ($exposant->accepted === true) {
+        //    Mail::to($exposant->email)
+        //        ->send(new notificationForExposant());
         //}
         return Redirect::to(URL::previous()."#form")->with('success', 'Votre demande va être traitée.
 Nous vous contacterons bientôt !');

@@ -102,51 +102,55 @@
             </div>
         </section>
     </div>
-    <section class="sectionContainerSlide">
-        <div class="slider">
-            <div class="containerTitleSlide">
-                <h2 aria-level="2">
-                    3 exposants aléatoire
-                </h2>
-                @if($exposantsFirstThree->count() > 1)
+    @if($exposantsFirstThree->count() > 0)
+
+        <section class="sectionContainerSlide">
+            <div class="slider">
+                <div class="containerTitleSlide">
+                    <h2 aria-level="2">
+                        3 exposants aléatoire
+                    </h2>
+                    @if($exposantsFirstThree->count() > 1)
                     <div class="arrowsSlide">
                         <a class="prev" id="prev"></a>
                         <a class="next" id="next"></a>
                     </div>
-                @endif
-            </div>
-            <div class="slideshow-container">
-                @foreach($exposantsFirstThree as $exposantFirstThree)
-                    <section class="mySlides fade">
-                        <div class="containerSlide">
-                            <div>
-                                <h3 aria-level="3">
-                                    {{$exposantFirstThree->shop_name}}
-                                </h3>
-                                <p class="regionExposant">
-                                    {{$exposantFirstThree->country->name}}
-                                </p>
-                                @include('partials.randomImagesGourmet')
-                            </div>
-                            <div class="containerTextExposant">
-                                <p class="textExposant containerAllText">
-                                    {{$exposantFirstThree->product_description}}
-                                </p>
+                        @endif
+                </div>
+                <div class="slideshow-container">
+                    @foreach($exposantsFirstThree as $exposantFirstThree)
+                        <section class="mySlides fade">
+                            <div class="containerSlide">
                                 <div>
-                                    <a href="{{route('exposants.show',[$exposantFirstThree->shop_name])}}"
-                                       class="btnCta">{{$exposantFirstThree->shop_name}}<span
-                                            class="arrowCta"></span></a>
+                                    <h3 aria-level="3">
+                                        {{$exposantFirstThree->shop_name}}
+                                    </h3>
+                                    <p class="regionExposant">
+                                        {{$exposantFirstThree->country->name}}
+                                    </p>
+                                    @include('partials.randomImagesGourmet')
+                                </div>
+                                <div class="containerTextExposant">
+                                    <p class="textExposant containerAllText">
+                                        {{$exposantFirstThree->product_description}}
+                                    </p>
+                                    <div>
+                                        <a href="{{route('exposants.show',[$exposantFirstThree->shop_name])}}"
+                                           class="btnCta">{{$exposantFirstThree->shop_name}}<span
+                                                class="arrowCta"></span></a>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </section>
-                @endforeach
-                <div class="containerAllExposants">
-                    <a href="{{route('exposants.index')}}" class="btnCta">Tous les exposants <span
-                            class="arrowCta"></span></a>
+                        </section>
+                    @endforeach
+                    <div class="containerAllExposants">
+                        <a href="{{route('exposants.index')}}" class="btnCta">Tous les exposants <span
+                                class="arrowCta"></span></a>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    @endif
+
 @endsection
 <script type="text/javascript" src="{{ asset('js/slide.js') }}"></script>

@@ -27,7 +27,6 @@ class ExposantFactory extends Factory
             'email' => $this->faker->email,
             'website' => $this->faker->url,
             'participate_other_exhibition_belgium'=> $this->faker->boolean($chanceOfGettingTrue = 50),
-            'bio_product'=> $this->faker->boolean($chanceOfGettingTrue = 50),
             'product_description'=> $this->faker->text($maxNbChars = 256),
             'comment_for_organizer'=> $this->faker->text($maxNbChars = 256),
             'location'=> $this->faker->word(),

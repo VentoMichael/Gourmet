@@ -60,7 +60,7 @@
 
                     <div class="containerInput containerInputBecomeExpo">
                         <label for="phone">Téléphone <span class="error">*</span></label>
-                        <input value="{{old("phone")}}" required type="text" name="phone" id="phone" placeholder="0494 827 265">
+                        <input value="{{old("phone")}}" required type="number" name="phone" id="phone" placeholder="0494827265">
                         <p class="error">{{$errors->first('phone')}}</p>
                     </div>
                 </div>
@@ -141,20 +141,6 @@
                                 <label for="dontParticipateSaloon">Non</label>
                             </div>
                             <p class="error">{{$errors->first('participateSaloon')}}</p>
-                        </div>
-                    </div>
-                    <div class="containerButtonsRadio containerInput containerInputBecomeExpo">
-                        <p>Avez vous au moins un produit bio ? <span class="error">*</span></p>
-                        <div class="containerButtonRadio">
-                            <div class="buttonRadio">
-                                <input required type="radio" id="productBio" name="productBio" value="1">
-                                <label for="productBio">Oui</label>
-                            </div>
-                            <div class="buttonRadio">
-                                <input required type="radio" id="noProductBio" name="productBio" value="0">
-                                <label for="notProductBio">Non</label>
-                            </div>
-                            <p class="error">{{$errors->first('productBio')}}</p>
                         </div>
                     </div>
                 </div>
