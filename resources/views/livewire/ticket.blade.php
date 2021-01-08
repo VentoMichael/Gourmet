@@ -75,8 +75,7 @@
                 </div>
             </div>
             <div class="form-example">
-                <button id="checkout-button" type="submit" role="button" aria-pressed="false" class="btnCta btnContact">
-                    Acheter un billet<span class="arrowCta"></span>
+                <button id="checkout-button" type="submit" role="button" aria-pressed="false" class="btnCta btnContact">Accéder au paiement<span class="arrowCta"></span>
                 </button>
             </div>
         </form>

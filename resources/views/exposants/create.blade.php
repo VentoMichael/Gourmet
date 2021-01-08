@@ -166,7 +166,7 @@
                     </div>
                 </div>
                 <div class="form-example">
-                    <button type="submit" class="btnCta btnContact">Envoyer ma candidature<span class="arrowCta"></span>
+                    <button type="submit" class="btnCta btnContact">Accéder au paiement<span class="arrowCta"></span>
                     </button>
                 </div>
             </form>

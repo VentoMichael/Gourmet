@@ -43,7 +43,9 @@
             Navigation Principale
         </h3>
         <input type="checkbox" id="checkbox" class="mobile-menu__checkbox">
-        <label for="checkbox" class="mobile-menu__btn"><div class="mobile-menu__icon"></div></label>
+        <label for="checkbox" class="mobile-menu__btn">
+            <div class="mobile-menu__icon"></div>
+        </label>
 
         <div class="mobile-menu__container">
             <ul class="menu menuId mobile-menu__list" id="menu">
@@ -131,7 +133,6 @@
                     </p>
                     <p>
                         {{$praticalInformations->first()->endDate}}
-
                     </p>
                 </div>
             </section>
@@ -186,7 +187,7 @@
     </div>
     <small>Placé sous le patronage de : Simonis Isabelle, Mottard Paul-Emile et Javaux Jean-Michel</small>
 </footer>
-<script type="text/javascript" src="{{ asset('js/app.js') }}"></script>
 @livewireScripts
+@yield('scripts')
 </body>
 </html>
