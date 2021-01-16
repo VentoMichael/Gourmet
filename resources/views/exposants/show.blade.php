@@ -4,9 +4,7 @@
         <div class="containerHome">
             <div class="containerPresentationHome">
                 @include('partials.ctaTicket')
-                <div class="logo logoHome" role="banner">
-                    <img src="../resources/svg/Logo_club.png" alt="Logo des marchés des gourmets">
-                </div>
+                @include('partials.logo')
                 <div class="containerTitleHome">
                     <div>
                         <h2 aria-level="2" class="titleExposant">
@@ -23,12 +21,8 @@
                 <div class="containerTextHome containerAllText">
                     {{$exposant->product_description}}
                 </div>
-                <div>
-                    <a href="{{route('exposants.create')}}" class="btnCta">Devenir exposant <span
-                            class="arrowCta"></span></a>
-                </div>
+                @include('partials.buyTicket')
             </div>
-
         </div>
     </section>
     <section>

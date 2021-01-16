@@ -4,9 +4,7 @@
         <div class="containerHome">
             <div class="containerPresentationHome">
                 @include('partials.ctaTicket')
-                <div class="logo logoHome" role="banner">
-                    <img src="../resources/svg/Logo_club.png" alt="Logo des marchés des gourmets">
-                </div>
+                @include('partials.logo')
                 <div class="containerTitleHome">
                     <div>
                         <h2 aria-level="2" class="titleExposant">
@@ -24,4 +22,7 @@
         </div>
     </section>
     @livewire('ticket')
+@endsection
+@section('scripts')
+    @livewireScripts
 @endsection

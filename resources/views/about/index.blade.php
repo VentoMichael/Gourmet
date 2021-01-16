@@ -4,9 +4,7 @@
         <div class="containerHome">
             <div class="containerPresentationHome">
                 @include('partials.ctaTicket')
-                <div class="logo logoHome" role="banner">
-                    <img src="{{asset('resources/svg/Logo_club.png')}}" alt="Logo des marchés des gourmets">
-                </div>
+                @include('partials.logo')
                 <div class="containerTitleHome containerAllText">
                     <div>
                         <h2 aria-level="2" class="titleExposant">
@@ -20,9 +18,7 @@
                 <div class="containerAllText">
                     @get('presentationRotaryClub')
                 </div>
-                <div>
-                    <a href="{{route('tickets.create')}}" class="btnCta">Acheter un billet <span class="arrowCta"></span></a>
-                </div>
+                @include('partials.buyTicket')
             </div>
         </div>
     </section>
@@ -32,7 +28,7 @@
         </h2>
         <div class="containerAboutUs">
             <section class="containerAboutUsWhySection">
-                <img src="@get('imageWhyAboutUs')" alt="@get('textAlternativeWhyAboutUs')">
+                <img src="{{asset('storage')}}/@get('imageWhyAboutUs')" alt="@get('textAlternativeWhyAboutUs')">
                 <h3 aria-level="3">
                     @get('titleWhyAboutUs')
                 </h3>
@@ -41,7 +37,7 @@
                 </div>
             </section>
             <section class="containerAboutUsHowSection">
-                <img src="@get('imageHowAboutUs')" alt="@get('textAlternativeHowAboutUs')">
+                <img src="{{asset('storage')}}/@get('imageHowAboutUs')" alt="@get('textAlternativeHowAboutUs')">
                 <h3 aria-level="3">
                     @get('titleHowAboutUs')
                 </h3>
@@ -56,7 +52,7 @@
                     Notre historique
                 </h3>
                 <div class="containerHistorical">
-                    <img src="{{$oneRandomImage->first()->image}}" alt="{{$oneRandomImage->first()->alt}}">
+                    <img src="{{asset('storage')}}/@get('imageMarket')" alt="@get('altImageMarket')">
                     <div class="containerHistoricalCta">
                         <div class="containerAllText">
                             @get('textAboutUs')

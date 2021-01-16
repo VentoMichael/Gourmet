@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Mail\newExposant;
 use App\Mail\notificationForUser;
 use App\Models\Contact;
 use App\Models\PraticalInfos;
@@ -25,12 +24,6 @@ class ContactController extends Controller
             'name_surname'=> 'required',
             'email'=> 'required|email',
             'subject'=> 'required',
-        ], [
-            'name_surname.required' => 'Le nom du commerce est requis',
-            'email.required' => 'L\'email est requis',
-            'email.email' => 'L\'email ci-dessus est inhabituel',
-            'email.unique' => 'Cet email ci-dessus est déjà pris',
-            'subject.required' => 'L\'email est requis'
         ]);
         $message = new Contact();
         $message->name_surname = request('name_surname');

@@ -146,6 +146,15 @@ return [
     |
     */
 
-    'attributes' => [],
+    'attributes' => [
+        'shop_name'=>'nom du magasin',
+        'phone'=>'téléphone',
+        'website'=>'site internet',
+        'location'=>'endroit',
+        'proposed_product'=>'produit proposé',
+        'product_description'=>'description du produit',
+        'name_surname'=>'nom et surnom',
+        'subject'=>'sujet',
+    ],
 
 ];

@@ -1,0 +1,20 @@
+{
+    "title": "\u00c0 propos de nous",
+    "created_at": "2021-01-13 12:00:00",
+    "updated_at": "2021-01-13 20:06:43",
+    "attributes": {
+        "titlePage": "Des b\u00e9n\u00e9voles dans le but d\u2019aider",
+        "presentationRotaryClub": "<div>Le March\u00e9 des Gourmets est une initiative du Rotary Club de Fl\u00e9malle afin de <strong>soutenir<\/strong> des associations locales, nationales, voire internationales <strong>d'aide aux plus d\u00e9munis.<\/strong> Tous les b\u00e9n\u00e9fices du March\u00e9 sont int\u00e9gralement <strong>distribu\u00e9s \u00e0 ces associations.<br><\/strong>&nbsp;<strong><br><\/strong>Alors, n\u2019h\u00e9sitez pas \u00e0 nous rendre visite au Val-Saint-Lambert lors de cette 21e \u00e9dition.<\/div>",
+        "textAlternativeWhyAboutUs": "Picto d'un point d'interrogation",
+        "titleWhyAboutUs": "Pourquoi ?",
+        "textWhyAboutUs": "<div>Afin de <strong>soutenir<\/strong> des associations locales, nationales et internationales pour aider les plus d\u00e9munis. Tous les b\u00e9n\u00e9fices du March\u00e9 sont int\u00e9gralement <strong>distribu\u00e9s \u00e0 des associations.<\/strong><\/div>",
+        "textAlternativeHowAboutUs": "Picto d'un point d'interrogation",
+        "titleHowAboutUs": "Comment ?",
+        "textHowAboutUs": "<div>&nbsp;Une initiative r\u00e9unissant plus de <strong>30 exposants passionn\u00e9s,<\/strong> ils donnent tous les jours <strong>le meilleurs d\u2019eux-m\u00eames<\/strong> pour vous proposer <strong>des produits sains et de qualit\u00e9.<\/strong><\/div>",
+        "textAboutUs": "<div><strong>Depuis plus de 20 ans,<\/strong> nous organisons le march\u00e9 des Gourmets, chaque ann\u00e9e, dans lesquels <strong>une trentaine d\u2019exposants <\/strong>vous proposent leurs meilleurs produits <strong>d\u2019une qualit\u00e9 irr\u00e9prochable.<\/strong><\/div>",
+        "imageWhyAboutUs": "FDUv7JSrEo0qaJN0KTFscv0gWj5o9ieWVi9RXI9Y.svg",
+        "imageHowAboutUs": "kSGugmQco7M1L7YCYN3uxxmr9yYc7u6v1mik9mIK.svg",
+        "imageMarket": "9U6gQWZw5ziXYb7KnoEAP1MwarwqJmIr5dsl8mdT.jpg",
+        "altImageMarket": "Repr\u00e9sentant des personnes dans le march\u00e9 des gourmets"
+    }
+}

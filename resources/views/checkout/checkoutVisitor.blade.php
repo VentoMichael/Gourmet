@@ -4,9 +4,7 @@
         <div class="containerHome">
             <div class="containerPresentationHome">
                 @include('partials.ctaTicket')
-                <div class="logo logoHome" role="banner">
-                    <img src="../resources/svg/Logo_club.png" alt="Logo des marchés des gourmets">
-                </div>
+                @include('partials.logo')
                 <div class="containerTitleHome">
                     <div>
                         <h2 aria-level="2" class="titleExposant">
@@ -43,9 +41,7 @@
                     </div>
                     <div class="card-body">
                         <div id="card-element">
-                            <!-- A Stripe Element will be inserted here. -->
                         </div>
-                        <!-- Used to display form errors. -->
                         <div id="card-errors" role="alert"></div>
                         <input type="hidden" name="plan" value=""/>
                     </div>
@@ -65,48 +61,5 @@
 @endsection
 @section('scripts')
     <script src="https://js.stripe.com/v3/"></script>
-    <script>
-
-        const stripe = Stripe('{{ env('PUBLIC_API_STRIPE') }}', {locale: 'fr'}); // Create a Stripe client.
-        const elements = stripe.elements(); // Create an instance of Elements.
-        const cardElement = elements.create('card'); // Create an instance of the card Element.
-        const cardButton = document.getElementById('card-button');
-        const clientSecret = cardButton.dataset.secret;
-
-        cardElement.mount('#card-element'); // Add an instance of the card Element into the `card-element` <div>.
-
-        // Handle real-time validation errors from the card Element.
-        cardElement.addEventListener('change', function (event) {
-            const displayError = document.getElementById('card-errors');
-            if (event.error) {
-                displayError.textContent = event.error.message;
-            } else {
-                displayError.textContent = '';
-            }
-        });
-
-        // Handle form submission.
-        const form = document.getElementById('payment-form');
-
-        form.addEventListener('submit', function (event) {
-            event.preventDefault();
-
-            stripe.handleCardPayment(clientSecret, cardElement, {
-                payment_method_data: {
-                    //billing_details: { name: cardHolderName.value }
-                }
-            })
-                .then(function (result) {
-                    console.log(result);
-                    if (result.error) {
-                        // Inform the user if there was an error.
-                        const errorElement = document.getElementById('card-errors');
-                        errorElement.textContent = result.error.message;
-                    } else {
-                        console.log(result);
-                        form.submit();
-                    }
-                });
-        });
-    </script>
+    <script>const stripe = Stripe('{{ env('PUBLIC_API_STRIPE') }}',{locale: 'fr'});const elements=stripe.elements(),cardElement=elements.create("card"),cardButton=document.getElementById("card-button"),clientSecret=cardButton.dataset.secret;cardElement.mount("#card-element"),cardElement.addEventListener("change",function(e){const t=document.getElementById("card-errors");e.error?t.textContent=e.error.message:t.textContent=""});const form=document.getElementById("payment-form");form.addEventListener("submit",function(e){e.preventDefault(),stripe.handleCardPayment(clientSecret,cardElement,{payment_method_data:{}}).then(function(e){if(console.log(e),e.error){document.getElementById("card-errors").textContent=e.error.message}else console.log(e),form.submit()})});</script>
 @endsection

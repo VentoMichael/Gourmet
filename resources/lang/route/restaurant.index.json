@@ -1,0 +1,10 @@
+{
+    "title": "Restaurant",
+    "created_at": "2021-01-13 12:00:00",
+    "updated_at": "2021-01-13 12:57:14",
+    "attributes": {
+        "titlePage": "Un restaurant avec des aliments \u00e0 votre go\u00fbt",
+        "textPresentation": "<div>Le March\u00e9 des Gourmets vous propose un restaurant avec <strong>des plats diversifi\u00e9s<\/strong>, \u00e0 <strong>tous les go\u00fbts<\/strong> ainsi qu\u2019\u00e0 tous les prix.<br><br>L'occasion id\u00e9ale de d\u00e9guster vos achats au salon autour d'une bonne table !<br><br>Alors, n\u2019h\u00e9sitez pas \u00e0 nous rendre visite au Val-Saint-Lambert lors de cette 21e \u00e9dition.<\/div>",
+        "titleMenu": "Menu du restaurant"
+    }
+}

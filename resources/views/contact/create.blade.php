@@ -4,9 +4,7 @@
         <div class="containerHome">
             <div class="containerPresentationHome">
                 @include('partials.ctaTicket')
-                <div class="logo logoHome" role="banner">
-                    <img src="../resources/svg/Logo_club.png" alt="Logo des marchés des gourmets">
-                </div>
+                @include('partials.logo')
                 <div class="containerTitleHome">
                     <div>
                         <h2 aria-level="2" class="titleExposant">
@@ -20,9 +18,7 @@
                 <div class="containerAllText">
                     @get('textpresentation')
                 </div>
-                <div>
-                    <a href="{{route('tickets.create')}}" class="btnCta">Acheter un billet <span class="arrowCta"></span></a>
-                </div>
+                @include('partials.buyTicket')
             </div>
         </div>
     </section>
@@ -36,11 +32,11 @@
             </p>
             <ul role="list">
                 @foreach($praticalInformations as $praticalInformation)
-                <li role="listitem" class="infoContactDate">{{$praticalInformation->startDate}} & {{$praticalInformation->endDate}}</li>
+                <li role="listitem" class="infoContactDate">Le {{\Carbon\Carbon::parse($praticalInformation->startDate)->format('d/m/Y')}} et le {{\Carbon\Carbon::parse($praticalInformation->endDate)->format('d/m/Y')}}</li>
                 <li role="listitem" class="infoContactPlace">{{$praticalInformation->place}}, {{$praticalInformation->postalCode}}, {{$praticalInformation->region}}</li>
                 <li role="listitem" class="infoContactMail"><a href="mailto:marchedesgourmets@gmail.com">{{$praticalInformation->email}}</a>
                 </li>
-                <li role="listitem" class="infoContactWebsite"><a href="{{$praticalInformation->website}}">{{$praticalInformation->website}}</a></li>
+                <li role="listitem" class="infoContactWebsite"><a href="{{$praticalInformation->facebook}}">{{$praticalInformation->facebook}}</a></li>
                 <li role="listitem" class="infoContactPhone"><a href="tel:{{$praticalInformation->phone}}">{{$praticalInformation->phone}}</a></li>
                 @endforeach
             </ul>
@@ -48,7 +44,7 @@
         <div class="formContactContainer">
             @if(Session::has('success'))
                 <div class="successMessage">
-                    <img src="{{asset('resources/svg/checked.svg')}}" alt="Îcone de validation">
+                    <img src="{{asset('public/resources/svg/checked.svg')}}" alt="Îcone de validation">
                     <p>{{Session::get('success')}}</p>
                 </div>
             @endif

@@ -9,9 +9,9 @@
                     <span class="pageFilter filterItemPage filterGallery">
                         <label for="filterPage">Nombre d'items par page</label>
                         <select wire:model="filterPage" name="filterPage" id="filterPage">
-                            <option value="9" selected>9</option>
-                            <option value="12">12</option>
-                            <option value="18">18</option>
+                            <option value="10" selected>10</option>
+                            <option value="15">15</option>
+                            <option value="20">20</option>
                         </select>
                     </span>
                     <noscript>

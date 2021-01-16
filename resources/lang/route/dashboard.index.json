@@ -1,0 +1,22 @@
+{
+    "title": "Page d'accueil",
+    "created_at": "2021-01-13 12:00:00",
+    "updated_at": "2021-01-13 13:41:12",
+    "attributes": {
+        "titlePage": "Le march\u00e9 des gourmets",
+        "numberEdition": "21e march\u00e9",
+        "textPresentation": "<div>Le March\u00e9 des Gourmets est <strong>un \u00e9v\u00e9nement annuel <\/strong>organis\u00e9 par le Rotary Club de Fl\u00e9malle sur le prestigieux site <strong>de Val-Saint-Lambert \u00e0 la salle des moines<\/strong> afin d'obtenir des fonds pour aider <strong>les plus d\u00e9munis.<br><br><\/strong>Depuis lors, la fr\u00e9quentation n'a cess\u00e9 d'augmenter pour <strong>atteindre 4000 visiteurs<\/strong> plusieurs plays et r\u00e9gions se sont succ\u00e9d\u00e9 comme notamment : l'Irlande, le Portugal, l'Italie et tant d\u2019autres.<\/div>",
+        "altFirstSection": "Image de saucissons",
+        "titleFirstSection": "Qu'est ce que l'on y retrouve ?",
+        "textFirstSection": "<div>Le march\u00e9 des gourmets vous propose <strong>une large gamme de produits<\/strong> comestible (charcuteries, vins, fromages \u2026), une gamme que <strong>vous ne trouverez pas ailleurs,<\/strong> car nos commer\u00e7ants viennent des quatre coins du monde.<\/div>",
+        "altSecondSection": "Image r\u00e9cente du salon du march\u00e9 des gourmets",
+        "titleSecondSection": "Les ann\u00e9es pass\u00e9es",
+        "textSecondSection": "<div>Le march\u00e9 des gourmets existe depuis plus de 20 ans. Dans le but de vous faire plaisir, <strong>une trentaine d\u2019exposants<\/strong> y pr\u00e9senteront divers produits, mais \u00e9galement pour y passer un <strong>d\u00e9licieux moment de d\u00e9gustations<\/strong> et de rencontres et ce dans la bonne humeur bien s\u00fbr !<\/div>",
+        "altThirdSection": "Image d'un sandwiche",
+        "titleThirdSection": "Notre restaurant",
+        "textThirdSection": "<div>Le march\u00e9 des gourmets vous propose une carte digne de ce nom. <strong>Prix g\u00e9n\u00e9ralement faible et vari\u00e9<\/strong> dans le go\u00fbt, nous mettons tout en oeuvre pour que votre visite se passe pour le mieux.<\/div>",
+        "imageFirstSection": "CkGidpafNbgPLsmIhsnSm8a53rVS0rYi3ve3Lrp3.jpg",
+        "imageSecondSection": "2dwOA68jSsL5MFQnLUnwOg6vlPVBJLvOpEglNnIi.jpg",
+        "imageThirdSection": "kde7zG08TPnPXBWwVMxsl0Z3xap5dA7Mgjr5vMQQ.jpg"
+    }
+}

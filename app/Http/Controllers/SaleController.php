@@ -31,11 +31,6 @@ class SaleController extends Controller
             'phone' => 'required',
             'email' => 'required',
             'ticketCount' => 'required',
-        ], [
-            'name_surname.required' => 'Le nom du commerce est requis',
-            'email.required' => 'L\'email est requis',
-            'email.email' => 'L\'email ci-dessus est inhabituel',
-            'phone.required' => 'Le numéro de téléphone est requis'
         ]);
         $sale = new Sale();
         $sale->name_surname = request('name_surname');
@@ -60,6 +55,7 @@ class SaleController extends Controller
             ->send(new ticketSale());
         Mail::to(request('email'))
             ->send(new notificationSale());
+        Session::flash('success', 'Merci ! Votre enregistrement à été effectuer avec succés.');
         return view('checkout.checkoutVisitor',
             compact('intent', 'amount', 'firstThreeRandomImages', 'praticalInformations'));
     }
@@ -68,7 +64,6 @@ class SaleController extends Controller
     {
         $firstThreeRandomImages = \App\Models\Gallery::inRandomOrder()->limit(3)->get();
         $praticalInformations = PraticalInfos::all();
-        Session::flash('success', 'Merci ! Votre enregistrement à été effectuer avec succés.');
         return view('tickets.create',
             compact('firstThreeRandomImages', 'praticalInformations'));
     }

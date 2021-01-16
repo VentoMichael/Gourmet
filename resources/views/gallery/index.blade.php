@@ -4,9 +4,7 @@
         <div class="containerHome">
             <div class="containerPresentationHome">
                 @include('partials.ctaTicket')
-                <div class="logo logoHome" role="banner">
-                    <img src="../resources/svg/Logo_club.png" alt="Logo des marchés des gourmets">
-                </div>
+                    @include('partials.logo')
                 <div class="containerTitleHome">
                     <div>
                         <h2 aria-level="2" class="titleExposant">
@@ -20,11 +18,14 @@
                 <div class="containerAllText">
                     @get('textPresentation')
                 </div>
-                <a href="{{route('tickets.create')}}" class="btnCta">Acheter un billet <span class="arrowCta"></span></a>
+                @include('partials.buyTicket')
             </div>
         </div>
     </section>
     <livewire:gallery-filter :firstThreeRandomImages="$firstThreeRandomImages" :praticalInformations="$praticalInformations">
 
     </livewire:gallery-filter>
+@endsection
+@section('scripts')
+    @livewireScripts
 @endsection

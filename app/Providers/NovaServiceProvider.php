@@ -50,7 +50,7 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
     {
         Gate::define('viewNova', function ($user) {
             return in_array($user->email, [
-                //
+                'vento.michael0705@hotmail.com'
             ]);
         });
     }
@@ -67,11 +67,11 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
             (new NewContactMsg())->width('full'),
             (new ExposantsAsk)->width('2/3'),
             (new \ChrisWare\NovaClockCard\NovaClockCard)
-                ->locale('be')
-                ->dateFormat('dddd, Do MMMM YYYY')
-                ->timeFormat('LTS')
-                ->timezone('CET')
-                ->display('analogue'),
+               ->locale('be')
+               ->dateFormat('dddd, Do MMMM YYYY')
+               ->timeFormat('LTS')
+               ->timezone('CET')
+               ->display('analogue'),
         ];
     }
 //getQualifiedCreatedAtColumn()

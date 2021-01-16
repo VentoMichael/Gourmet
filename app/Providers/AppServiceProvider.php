@@ -2,7 +2,9 @@
 
 namespace App\Providers;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -27,5 +29,6 @@ class AppServiceProvider extends ServiceProvider
         Builder::macro('search', function ($field, $string) {
             return $string ? $this->where($field, 'like', '%'. $string. '%') : $this;
         });
+        Schema::defaultStringLength(191);
     }
 }

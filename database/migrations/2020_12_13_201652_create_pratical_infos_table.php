@@ -15,7 +15,7 @@ class CreatePraticalInfosTable extends Migration {
             $table->string('endDate');
 			$table->string('place', 256);
 			$table->string('email', 256);
-			$table->string('website');
+			$table->string('facebook');
 			$table->string('postalCode');
 			$table->string('region');
             $table->float('priceTicketVisitor')->default(6);

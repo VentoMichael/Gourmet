@@ -95,23 +95,25 @@
 
 window.addEventListener("load", function () {
   var e = 1;
+  var l = document.querySelectorAll(".mySlides");
 
-  function t(t) {
-    var n;
-    var l = document.querySelectorAll(".mySlides");
+  if (l.length < 0){
+      function t(t) {
+        var n;
 
-    for (t > l.length && (e = 1), t < 1 && (e = l.length), n = 0; n < l.length; n++) {
-      l[n].style.display = "none";
-    }
+        for (t > l.length && (e = 1), t < 1 && (e = l.length), n = 0; n < l.length; n++) {
+          l[n].style.display = "none";
+        }
 
-    l[e - 1].style.display = "block";
+        l[e - 1].style.display = "block";
+      }
+
+      t(e), document.getElementById("next").addEventListener("click", function () {
+        t(e += 1);
+      }), document.getElementById("prev").addEventListener("click", function () {
+        t(e -= 1);
+      });
   }
-
-  t(e), document.getElementById("next").addEventListener("click", function () {
-    t(e += 1);
-  }), document.getElementById("prev").addEventListener("click", function () {
-    t(e -= 1);
-  });
 });
 
 /***/ }),

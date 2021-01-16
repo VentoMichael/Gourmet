@@ -4,9 +4,7 @@
         <div class="containerHome">
             <div class="containerPresentationHome containerHomeCta">
                 @include('partials.ctaTicket')
-                <div class="logo logoHome" role="banner">
-                    <img src="../resources/svg/Logo_club.png" alt="Logo des marchés des gourmets">
-                </div>
+                @include('partials.logo')
                 <div class="containerTitleHome">
                     <div>
                         <h2 aria-level="2">
@@ -43,7 +41,7 @@
         <section>
             <div class="containerTextTitleAim">
                 <div class="containerImageHome">
-                    <img src="@get('imageFirstSection')" alt="@get('altFirstSection')">
+                    <img src="{{asset('storage')}}/@get('imageFirstSection')" alt="@get('altFirstSection')">
                 </div>
                 <div class="containerText">
                     <h2 aria-level="2">
@@ -63,7 +61,7 @@
         <section>
             <div class="containerTextTitleAim containerTextTitleAimSecond">
                 <div class="containerImageHome">
-                    <img src="@get('imageSecondSection')"
+                    <img src="{{asset('storage')}}/@get('imageSecondSection')"
                          alt="@get('altSecondSection')">
                 </div>
                 <div class="containerText">
@@ -85,7 +83,7 @@
         <section>
             <div class="containerTextTitleAim">
                 <div class="containerImageHome">
-                    <img src="@get('imageThirdSection')" alt="@get('altThirdSection')">
+                    <img src="{{asset('storage')}}/@get('imageThirdSection')" alt="@get('altThirdSection')">
                 </div>
                 <div class="containerText">
                     <h2 aria-level="2">
@@ -111,11 +109,11 @@
                         3 exposants aléatoire
                     </h2>
                     @if($exposantsFirstThree->count() > 1)
-                    <div class="arrowsSlide">
-                        <a class="prev" id="prev"></a>
-                        <a class="next" id="next"></a>
-                    </div>
-                        @endif
+                        <div class="arrowsSlide">
+                            <a class="prev" id="prev"></a>
+                            <a class="next" id="next"></a>
+                        </div>
+                    @endif
                 </div>
                 <div class="slideshow-container">
                     @foreach($exposantsFirstThree as $exposantFirstThree)
@@ -153,4 +151,6 @@
     @endif
 
 @endsection
-<script type="text/javascript" src="{{ asset('js/slide.js') }}"></script>
+@section('scripts')
+    <script type="text/javascript" src="{{ asset('js/slide.js') }}"></script>
+@endsection

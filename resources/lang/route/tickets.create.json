@@ -1,0 +1,9 @@
+{
+    "title": "Page des tickets",
+    "created_at": "2021-01-13 12:00:00",
+    "updated_at": "2021-01-13 12:58:24",
+    "attributes": {
+        "titlePage": "Le billet qui vous fera voyager",
+        "textPresentation": "<div>Lors de cette visite du march\u00e9 des Gourmets, vous pourrez <strong>savourer des plats<\/strong> venus d\u2019un peu partout dans le monde, rencontrer <strong>des personnes passionn\u00e9es<\/strong> et acheter les <strong>produits de qualit\u00e9s<\/strong> qui vous ont go\u00fbt\u00e9.<br><br>Alors, n\u2019h\u00e9sitez pas \u00e0 nous rendre visite au Val-Saint-Lambert lors de cette 21e \u00e9dition.<\/div>"
+    }
+}

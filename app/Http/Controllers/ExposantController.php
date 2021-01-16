@@ -72,19 +72,6 @@ class ExposantController extends Controller
             'country' => 'required',
             'proposed_product' => 'required',
             'product_description' => 'required',
-        ], [
-            'shop_name.required' => 'Le nom du commerce est requis',
-            'shop_name.unique' => 'Ce nom du commerce est déjà pris',
-            'phone.unique' => 'Ce numéro de téléphone est déjà pris',
-            'phone.required' => 'Le numéro de téléphone est requis',
-            'phone.max' => 'Le numéro de téléphone n\'est pas valide',
-            'email.required' => 'L\'email est requis',
-            'email.email' => 'L\'email ci-dessus est inhabituel',
-            'email.unique' => 'Cet email ci-dessus est déjà pris',
-            'website.required' => 'Le site internet est requis',
-            'location.required' => 'L\'adresse est requis',
-            'proposed_product.required' => 'Le produit proposé est requis',
-            'product_description.required' => 'Le descriptif est requis',
         ]);
         $exposant = new Exposant();
         $tag = new ExposantTag();

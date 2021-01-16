@@ -4,9 +4,7 @@
         <div class="containerHome">
             <div class="containerPresentationHome">
                 @include('partials.ctaTicket')
-                <div class="logo logoHome" role="banner">
-                    <img src="../resources/svg/Logo_club.png" alt="Logo des marchés des gourmets">
-                </div>
+                @include('partials.logo')
                 <div class="containerTitleHome">
                     <div>
                         <h2 aria-level="2" class="titleExposant">
@@ -20,10 +18,7 @@
                 <div class="containerAllText">
                     @get('textPresentation')
                 </div>
-                <div>
-                    <a href="{{route('tickets.create')}}" class="btnCta">Acheter un billet <span
-                            class="arrowCta"></span></a>
-                </div>
+                @include('partials.buyTicket')
             </div>
         </div>
     </section>
@@ -52,7 +47,7 @@
             </div>
             <div>
                 <a href="{{route('tickets.create')}}" class="btnCta MenuCta">Acheter un billet <span
-                        class="arrowCta"></span></a>
+                            class="arrowCta"></span></a>
             </div>
         </div>
     </section>

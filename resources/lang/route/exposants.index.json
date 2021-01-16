@@ -1,0 +1,10 @@
+{
+    "title": "Page d'exposants",
+    "created_at": "2021-01-13 12:00:00",
+    "updated_at": "2021-01-13 12:53:27",
+    "attributes": {
+        "titlePage": "Notre liste des exposants",
+        "textPresentation": "<div>Au march\u00e9 des gourmets d\u2019Amay, nous recueillons <strong>plus de 30 exposants !<\/strong> Ces personnes passionn\u00e9es donnent tous les jours <strong>le meilleurs d\u2019eux-m\u00eames<\/strong> pour vous proposer <strong>des produits sains et de qualit\u00e9.<br><br><\/strong>Alors, n\u2019h\u00e9sitez pas \u00e0 nous rendre visite au Val-Saint-Lambert lors de cette 21e \u00e9dition.<\/div>",
+        "textDescribeExposant": "<div>Vous \u00eates vigneron, producteur ou commer\u00e7ant et vous souhaitez participer au march\u00e9 des gourmets ? Alors vous \u00eates au bon endroit !<\/div>"
+    }
+}

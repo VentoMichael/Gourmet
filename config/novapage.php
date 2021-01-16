@@ -80,8 +80,7 @@ return [
     | implements the Whitecube\NovaPage\Sources\SourceInterface.
     |
     */
-    'default_source' => \Whitecube\NovaPage\Sources\Database::class,
-
+    'default_source' => \Whitecube\NovaPage\Sources\Filesystem::class,
     /*
     |--------------------------------------------------------------------------
     | Sources configuration
